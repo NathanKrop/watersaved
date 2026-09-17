@@ -45,37 +45,6 @@ const responseAreas = [
   },
 ];
 
-const fieldNotes = [
-  { src: "/img/IMG_0528.jpeg", title: "Growing the canopy", copy: "Indigenous seedlings raised close to the landscapes they will restore." },
-  { src: "/img/IMG_0532.jpeg", title: "Protecting headwaters", copy: "Forest-edge action that keeps water moving downstream." },
-  { src: "/img/IMG_0533.jpeg", title: "Holding the soil", copy: "Healthier farms mean cleaner rivers and reservoirs." },
-  { src: "/img/IMG_0840.jpeg", title: "Planting together", copy: "Local people lead every restoration season." },
-  { src: "/img/IMG_0893.jpeg", title: "Learning outdoors", copy: "Young people building a lasting relationship with nature." },
-  { src: "/img/IMG_0901.jpeg", title: "Looking ahead", copy: "New catchments, new partnerships, the same shared purpose." },
-  { src: "/img/MVIMG_20260603_113312.jpg", title: "Kesup Forest", copy: "A living escarpment above the Kerio Valley." },
-  { src: "/img/MVIMG_20260603_130618.jpg", title: "Walking the line", copy: "Care and presence protect old-growth forest." },
-  { src: "/img/MVIMG_20260603_133646.jpg", title: "Terraces take hold", copy: "Practical work that keeps fertile soil on the farm." },
-  { src: "/img/MVIMG_20260603_130933.jpg", title: "From the field", copy: "Stories told by the people doing the work." },
-  { src: "/img/IMG_20260617_173433.jpg", title: "Community first", copy: "Restoration works when it belongs to everyone." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.51 PM (2).jpeg", title: "Shared momentum", copy: "Every gathering begins with listening and learning." },
-  { src: "/img/MVIMG_20260603_113331.jpg", title: "Rooted locally", copy: "Local action is the foundation of lasting change." },
-  { src: "/img/MVIMG_20260603_113345.jpg", title: "Restoring balance", copy: "Healthy vegetation helps land and water recover together." },
-  { src: "/img/IMG_20260617_173430(1).jpg", title: "Nursery care", copy: "The next forest begins with patient, skilled work." },
-  { src: "/img/IMG_20260617_173723(1).jpg", title: "Hands in the soil", copy: "Practical action connects people to place." },
-  { src: "/img/IMG_20260617_173732(1).jpg", title: "Working together", copy: "Shared knowledge turns plans into progress." },
-  { src: "/img/IMG_20260617_173557.jpg", title: "A connected watershed", copy: "What happens on the ridge matters far downstream." },
-  { src: "/img/IMG_20260617_173639.jpg", title: "A day of action", copy: "Small, steady contributions build a larger restoration movement." },
-  { src: "/img/IMG_20260617_173643.jpg", title: "Nature-positive futures", copy: "Restoration supports both ecological health and daily life." },
-  { src: "/img/MVIMG_20260603_130623.jpg", title: "Evidence in action", copy: "Field observations guide where care is needed most." },
-  { src: "/img/MVIMG_20260603_130627.jpg", title: "Stories worth sharing", copy: "Progress is best understood close to the landscape." },
-  { src: "/img/MVIMG_20260617_104556.jpg", title: "Forest stewards", copy: "Protection depends on people who show up, season after season." },
-  { src: "/img/PHOTO-2026-07-14-14-03-45.jpg", title: "Leadership in practice", copy: "Guiding restoration with purpose and accountability." },
-  { src: "/img/PHOTO-2026-07-14-14-03-49.jpg", title: "Local expertise", copy: "Knowledge, coordination and care move the work forward." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.50 PM.jpeg", title: "On the ground", copy: "Conversations in the field shape better decisions." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.50 PM (1).jpeg", title: "Shared responsibility", copy: "Water security is a collective commitment." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.51 PM.jpeg", title: "Looking after place", copy: "Care for a catchment begins with care for each other." },
-];
-
 export default function Home() {
   const latestNews = newsPosts.slice(0, 3);
 
@@ -114,24 +83,76 @@ export default function Home() {
         <ContourLines animate className="absolute -bottom-1 left-0 w-full h-24 text-forest-500" />
       </section>
 
-      <section className="border-t border-line bg-forest-900 text-mist-50">
-        <div className="mx-auto max-w-6xl px-5 py-16 lg:py-20">
-          <div className="max-w-2xl">
-            <p className="text-sm uppercase tracking-[0.18em] text-clay-600">From the field</p>
-            <h2 className="mt-3 font-display text-3xl text-paper sm:text-4xl">Every image carries a piece of the restoration story.</h2>
-            <p className="mt-4 text-forest-300">Nurseries, farms, forest patrols, and community days: this is what collective care for a water tower looks like.</p>
+      {/* Stylish 3-image feature strip */}
+      <section className="border-t border-line bg-forest-900">
+        <div className="mx-auto max-w-6xl px-5 py-16">
+          <div className="grid gap-4 lg:grid-cols-[2fr_1fr_1fr] lg:grid-rows-2">
+            {/* Large feature image */}
+            <div className="group relative lg:row-span-2 overflow-hidden">
+              <div className="relative aspect-[3/4] lg:aspect-auto lg:h-full min-h-[320px]">
+                <Image
+                  src="/img/MVIMG_20260603_113312.jpg"
+                  alt="Kesup Forest escarpment"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <p className="text-xs uppercase tracking-widest text-clay-500">Kesup Forest</p>
+                  <p className="mt-1 font-display text-2xl text-paper">A living escarpment above the Kerio Valley</p>
+                </div>
+              </div>
+            </div>
+            {/* Top-right */}
+            <div className="group relative overflow-hidden">
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/IMG_20260617_173433.jpg"
+                  alt="Community planting day"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent" />
+                <p className="absolute bottom-0 left-0 p-4 font-display text-lg text-paper">Community first</p>
+              </div>
+            </div>
+            {/* Middle-right */}
+            <div className="group relative overflow-hidden">
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/MVIMG_20260603_130933.jpg"
+                  alt="From the field"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent" />
+                <p className="absolute bottom-0 left-0 p-4 font-display text-lg text-paper">From the field</p>
+              </div>
+            </div>
+            {/* Bottom-right spanning 2 cols */}
+            <div className="group relative overflow-hidden lg:col-span-2">
+              <div className="relative aspect-video">
+                <Image
+                  src="/img/WhatsApp Image 2026-09-10 at 1.08.51 PM (2).jpeg"
+                  alt="Shared momentum"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-4">
+                  <p className="font-display text-lg text-paper">Shared momentum</p>
+                  <p className="mt-0.5 text-sm text-forest-300">Every gathering begins with listening and learning.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {fieldNotes.map((note) => (
-              <figure key={note.src} className="group relative aspect-[4/3] overflow-hidden bg-forest-700">
-                <Image src={note.src} alt={note.title} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-900 via-forest-900/20 to-transparent" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="font-display text-2xl text-paper">{note.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-mist-50">{note.copy}</p>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="mt-6 flex items-center justify-between">
+            <p className="text-sm text-forest-300">Nurseries, farms, forest patrols, and community days.</p>
+            <Link href="/where-we-work" className="text-sm text-clay-500 underline underline-offset-4">See where we work &rarr;</Link>
           </div>
         </div>
       </section>
@@ -246,7 +267,7 @@ export default function Home() {
         <div>
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Voices from the ground</p>
           <blockquote className="mt-4 font-display text-3xl leading-tight text-forest-900">&ldquo;Before, we walked three hours for water. Now the spring near our village runs again.&rdquo;</blockquote>
-          <p className="mt-5 text-sm text-ink-soft">- Community member, Elgeyo-Marakwet County</p>
+          <p className="mt-5 text-sm text-ink-soft">&mdash; Community member, Elgeyo-Marakwet County</p>
           <div className="mt-8 relative aspect-video overflow-hidden">
             <Image
               src="/img/WhatsApp Image 2026-09-10 at 1.08.51 PM (1).jpeg"
@@ -258,11 +279,40 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Our partners</p>
-          <p className="mt-4 max-w-xl font-display text-2xl text-forest-900">Working alongside government, communities, and partners to protect Kenya&apos;s water towers.</p>
-          <div className="mt-8 grid grid-cols-2 gap-3 text-sm font-medium text-forest-700 sm:grid-cols-4">
-            {["BMZ", "FAO", "AFR100", "Kenya Forest Service"].map((partner) => (
-              <div key={partner} className="border border-line bg-mist-50 px-4 py-5">{partner}</div>
+          <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Built on partnership</p>
+          <h2 className="mt-3 font-display text-2xl text-forest-900">Restoration at scale requires cooperation across communities, government, science and finance.</h2>
+          <p className="mt-4 text-ink-soft leading-relaxed">
+            We work alongside the Food and Agriculture Organization of the United Nations, BMZ, AFR100,
+            Kenya Forest Service, Kenya Forestry Research Institute, the University of Eldoret, the
+            World Resources Institute and others &mdash; each contributing technical expertise, funding,
+            policy support or community mobilisation to the landscapes we share.
+          </p>
+          <p className="mt-3 text-ink-soft leading-relaxed">
+            Together, these partnerships have helped us reach six counties, support hundreds of
+            households, and build the governance foundations that make restoration last.
+          </p>
+          <Link href="/get-involved#partners" className="mt-5 inline-block text-sm text-forest-500 underline underline-offset-4">
+            Meet our partners &rarr;
+          </Link>
+        </div>
+      </section>
+
+      <section className="border-t border-line bg-forest-900 text-mist-50">
+        <div className="mx-auto max-w-6xl px-5 py-16">
+          <p className="text-sm uppercase tracking-[0.18em] text-clay-600">How it works</p>
+          <h2 className="mt-3 font-display text-3xl text-paper max-w-xl">From degraded land to living forest &mdash; a clear pathway.</h2>
+          <div className="mt-10 grid gap-px bg-forest-700 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              ["Assess", "Map degraded hotspots, identify ecological zones and understand community land use."],
+              ["Plan", "Develop participatory forest management plans and integrated landscape management strategies."],
+              ["Restore", "Plant indigenous species, protect natural regeneration, rehabilitate riverbanks and soils."],
+              ["Monitor", "Track tree survival, spring flow, household income and vegetation recovery over time."],
+              ["Learn", "Publish results, refine methods and share knowledge with partners and communities."],
+            ].map(([step, desc]) => (
+              <div key={step} className="bg-forest-900 p-6">
+                <p className="font-display text-xl text-clay-500">{step}</p>
+                <p className="mt-3 text-sm text-forest-300 leading-relaxed">{desc}</p>
+              </div>
             ))}
           </div>
         </div>
