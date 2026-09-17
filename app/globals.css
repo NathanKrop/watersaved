@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+/*
+  DESIGN TOKENS — Kenya Water Towers
+  Palette grounded in the subject: montane forest green, elevation-map
+  ochre for the single call-to-action accent, and a limestone-grey
+  background (not cream) that reads like old survey paper.
+*/
+:root {
+  --color-mist-50: #f4f5f0;   /* page background — limestone, not cream */
+  --color-mist-100: #eceee5;
+  --color-line: #d7d9c9;      /* hairline / contour rule */
+
+  --color-forest-900: #16281f; /* near-black green — headlines on light */
+  --color-forest-700: #1f4d36; /* primary brand green */
+  --color-forest-500: #3c7a56; /* mid green — icons, secondary */
+  --color-forest-300: #8fb39d; /* pale green — borders on dark */
+
+  --color-clay-700: #8a5714;
+  --color-clay-600: #c17817;  /* single accent — donate / primary CTA only */
+  --color-clay-100: #f4e3c8;
+
+  --color-ink: #20241f;
+  --color-ink-soft: #4a5147;
+  --color-paper: #fbfbf8;
+}
+
+@theme inline {
+  --color-mist-50: var(--color-mist-50);
+  --color-mist-100: var(--color-mist-100);
+  --color-line: var(--color-line);
+  --color-forest-900: var(--color-forest-900);
+  --color-forest-700: var(--color-forest-700);
+  --color-forest-500: var(--color-forest-500);
+  --color-forest-300: var(--color-forest-300);
+  --color-clay-700: var(--color-clay-700);
+  --color-clay-600: var(--color-clay-600);
+  --color-clay-100: var(--color-clay-100);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-paper: var(--color-paper);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-worksans);
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-mist-50);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* visible focus state everywhere, matching the brand green rather than
+   the browser default blue */
+:focus-visible {
+  outline: 2px solid var(--color-clay-600);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* The hero's single orchestrated animation moment: a contour line
+   tracing itself in, evoking a surveyor drawing an elevation map. */
+.contour-draw {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-contour 2.4s ease-out forwards;
+}
+.contour-draw-delay {
+  animation-delay: 0.3s;
+}
+@keyframes draw-contour {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contour-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
