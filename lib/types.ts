@@ -88,3 +88,4 @@ export type ImpactGoal = {
   targetYear: number;
   methodologyNote: string;
 };
+

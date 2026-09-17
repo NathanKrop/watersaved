@@ -98,7 +98,7 @@ export default function GetInvolvedPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/IMG_20260617_173723.jpg"
+          src="/img/new/pexels-yunustug-38197486.jpg"
           alt="Volunteers at a community planting day"
           fill
           priority
@@ -203,3 +203,4 @@ export default function GetInvolvedPage() {
     </>
   );
 }
+

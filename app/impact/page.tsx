@@ -38,10 +38,21 @@ export default function ImpactPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <div className="grid gap-10 sm:grid-cols-2">
-          {impactGoals.map((goal) => (
-            <ImpactCounter key={goal.label} goal={goal} />
-          ))}
+        <div className="grid gap-10 lg:grid-cols-[1fr_auto]">
+          <div className="grid gap-10 sm:grid-cols-2">
+            {impactGoals.map((goal) => (
+              <ImpactCounter key={goal.label} goal={goal} />
+            ))}
+          </div>
+          <div className="relative hidden lg:block w-56 overflow-hidden">
+            <Image
+              src="/img/new/pexels-nairodreyes-15192480.jpg"
+              alt="Restoration in progress"
+              fill
+              sizes="224px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -91,8 +102,8 @@ export default function ImpactPage() {
           </div>
           <div className="relative hidden lg:block overflow-hidden">
             <Image
-              src="/img/WhatsApp Image 2026-09-10 at 1.08.50 PM (1).jpeg"
-              alt="Field team reviewing data"
+              src="/img/new/pexels-mateus-marques-147014077-10454534.jpg"
+              alt="Field team reviewing restoration data"
               fill
               sizes="256px"
               className="object-cover"
@@ -118,3 +129,4 @@ export default function ImpactPage() {
     </>
   );
 }
+

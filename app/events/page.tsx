@@ -12,7 +12,7 @@ export default function EventsPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/IMG_20260617_173639.jpg"
+          src="/img/new/pexels-utopia36-21352761.jpg"
           alt="Community planting day"
           fill
           priority
@@ -54,3 +54,4 @@ export default function EventsPage() {
     </>
   );
 }
+

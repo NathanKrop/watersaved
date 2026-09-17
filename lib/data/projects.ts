@@ -158,3 +158,4 @@ export function getProjectsByCounty(countySlug: string) {
 export function getProjectsByProgramme(programmeSlug: string) {
   return projects.filter((p) => p.programmeSlugs.includes(programmeSlug as never));
 }
+

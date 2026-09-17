@@ -179,3 +179,4 @@ export const impactGoals: ImpactGoal[] = [
     methodologyNote: "Households with an active nursery membership, farm-edge training, or forest-scout role.",
   },
 ];
+

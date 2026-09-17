@@ -80,3 +80,4 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
     </form>
   );
 }
+

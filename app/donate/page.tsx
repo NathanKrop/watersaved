@@ -12,7 +12,7 @@ export default function DonatePage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/WhatsApp Image 2026-09-10 at 1.08.50 PM.jpeg"
+          src="/img/new/pexels-vivian-venhasque-484321734-30096041.jpg"
           alt="Restoration work in the field"
           fill
           priority
@@ -68,3 +68,4 @@ export default function DonatePage() {
     </>
   );
 }
+

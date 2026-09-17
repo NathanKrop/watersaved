@@ -24,3 +24,4 @@ export function CtaLink({ href, children, variant = "primary", className = "" }:
     </Link>
   );
 }
+

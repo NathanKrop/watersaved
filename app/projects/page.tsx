@@ -8,7 +8,7 @@ export default function ProjectsPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/WhatsApp Image 2026-09-10 at 1.08.51 PM.jpeg"
+          src="/img/whatsapp-3.jpeg"
           alt="Every forest, every spring, every farm-edge site"
           fill
           priority
@@ -39,3 +39,4 @@ export default function ProjectsPage() {
     </>
   );
 }
+

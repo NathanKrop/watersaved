@@ -42,3 +42,4 @@ export const counties: County[] = [
     stat: "Newest county",
   },
 ];
+

@@ -19,12 +19,12 @@ const fieldNotes = [
   { src: "/img/MVIMG_20260603_133646.jpg", title: "Terraces take hold", copy: "Practical work that keeps fertile soil on the farm." },
   { src: "/img/MVIMG_20260603_130933.jpg", title: "From the field", copy: "Stories told by the people doing the work." },
   { src: "/img/IMG_20260617_173433.jpg", title: "Community first", copy: "Restoration works when it belongs to everyone." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.51 PM (2).jpeg", title: "Shared momentum", copy: "Every gathering begins with listening and learning." },
+  { src: "/img/whatsapp-5.jpeg", title: "Shared momentum", copy: "Every gathering begins with listening and learning." },
   { src: "/img/MVIMG_20260603_113331.jpg", title: "Rooted locally", copy: "Local action is the foundation of lasting change." },
   { src: "/img/MVIMG_20260603_113345.jpg", title: "Restoring balance", copy: "Healthy vegetation helps land and water recover together." },
-  { src: "/img/IMG_20260617_173430(1).jpg", title: "Nursery care", copy: "The next forest begins with patient, skilled work." },
-  { src: "/img/IMG_20260617_173723(1).jpg", title: "Hands in the soil", copy: "Practical action connects people to place." },
-  { src: "/img/IMG_20260617_173732(1).jpg", title: "Working together", copy: "Shared knowledge turns plans into progress." },
+  { src: "/img/IMG_20260617_173430b.jpg", title: "Nursery care", copy: "The next forest begins with patient, skilled work." },
+  { src: "/img/IMG_20260617_173723b.jpg", title: "Hands in the soil", copy: "Practical action connects people to place." },
+  { src: "/img/IMG_20260617_173732b.jpg", title: "Working together", copy: "Shared knowledge turns plans into progress." },
   { src: "/img/IMG_20260617_173639.jpg", title: "A day of action", copy: "Small, steady contributions build a larger restoration movement." },
   { src: "/img/IMG_20260617_173643.jpg", title: "Nature-positive futures", copy: "Restoration supports both ecological health and daily life." },
   { src: "/img/MVIMG_20260603_130623.jpg", title: "Evidence in action", copy: "Field observations guide where care is needed most." },
@@ -32,9 +32,9 @@ const fieldNotes = [
   { src: "/img/MVIMG_20260617_104556.jpg", title: "Forest stewards", copy: "Protection depends on people who show up, season after season." },
   { src: "/img/PHOTO-2026-07-14-14-03-45.jpg", title: "Leadership in practice", copy: "Guiding restoration with purpose and accountability." },
   { src: "/img/PHOTO-2026-07-14-14-03-49.jpg", title: "Local expertise", copy: "Knowledge, coordination and care move the work forward." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.50 PM.jpeg", title: "On the ground", copy: "Conversations in the field shape better decisions." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.50 PM (1).jpeg", title: "Shared responsibility", copy: "Water security is a collective commitment." },
-  { src: "/img/WhatsApp Image 2026-09-10 at 1.08.51 PM.jpeg", title: "Looking after place", copy: "Care for a catchment begins with care for each other." },
+  { src: "/img/whatsapp-1.jpeg", title: "On the ground", copy: "Conversations in the field shape better decisions." },
+  { src: "/img/whatsapp-2.jpeg", title: "Shared responsibility", copy: "Water security is a collective commitment." },
+  { src: "/img/whatsapp-3.jpeg", title: "Looking after place", copy: "Care for a catchment begins with care for each other." },
 ];
 
 export default function WhereWeWorkPage() {
@@ -42,7 +42,7 @@ export default function WhereWeWorkPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/IMG_20260617_173557(1).jpg"
+          src="/img/new/pexels-maurizio-catalucci-1869702690-28664804.jpg"
           alt="Six counties, one connected watershed"
           fill
           priority
@@ -148,3 +148,4 @@ export default function WhereWeWorkPage() {
     </>
   );
 }
+

@@ -64,3 +64,4 @@ export const programmes: Programme[] = [
 export function getProgrammeBySlug(slug: string) {
   return programmes.find((p) => p.slug === slug);
 }
+

@@ -17,3 +17,4 @@ export function StoryCard({ story }: { story: Story }) {
     </Link>
   );
 }
+

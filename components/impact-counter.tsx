@@ -67,3 +67,4 @@ export function ImpactCounter({ goal }: { goal: ImpactGoal }) {
     </div>
   );
 }
+

@@ -19,3 +19,4 @@ export function TeamMemberCard({ member }: { member: TeamMember }) {
     </div>
   );
 }
+

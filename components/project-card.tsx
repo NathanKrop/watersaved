@@ -31,3 +31,4 @@ export function ProjectCard({ project }: { project: Project }) {
     </Link>
   );
 }
+

@@ -22,3 +22,4 @@ export function EventCard({ event }: { event: EventItem }) {
     </article>
   );
 }
+

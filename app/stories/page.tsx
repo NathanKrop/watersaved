@@ -9,7 +9,7 @@ export default function StoriesPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/MVIMG_20260603_130933.jpg"
+          src="/img/new/pexels-rudi-chandra-1981866-37555098.jpg"
           alt="Field dispatches from the forest"
           fill
           priority
@@ -38,3 +38,4 @@ export default function StoriesPage() {
     </>
   );
 }
+

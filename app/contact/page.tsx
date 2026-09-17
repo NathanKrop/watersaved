@@ -8,7 +8,7 @@ export default function ContactPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/IMG_20260617_173732.jpg"
+          src="/img/new/pexels-shovan-datta-3275479-27328538.jpg"
           alt="Field team at work"
           fill
           priority
@@ -42,3 +42,4 @@ export default function ContactPage() {
     </>
   );
 }
+
