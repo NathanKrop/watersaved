@@ -8,33 +8,18 @@ import { PhotoPlaceholder } from "@/components/photo-placeholder";
 export const metadata = { title: "Where We Work" };
 
 const fieldNotes = [
+  { src: "/img/MVIMG_20260603_113312.jpg", title: "In the field", copy: "Restoration work on the ground, season after season." },
   { src: "/img/IMG_0528.jpeg", title: "Growing the canopy", copy: "Indigenous seedlings raised close to the landscapes they will restore." },
-  { src: "/img/IMG_0532.jpeg", title: "Protecting headwaters", copy: "Forest-edge action that keeps water moving downstream." },
-  { src: "/img/IMG_0533.jpeg", title: "Holding the soil", copy: "Healthier farms mean cleaner rivers and reservoirs." },
-  { src: "/img/IMG_0840.jpeg", title: "Planting together", copy: "Local people lead every restoration season." },
-  { src: "/img/IMG_0893.jpeg", title: "Learning outdoors", copy: "Young people building a lasting relationship with nature." },
-  { src: "/img/IMG_0901.jpeg", title: "Looking ahead", copy: "New catchments, new partnerships, the same shared purpose." },
-  { src: "/img/MVIMG_20260603_113312.jpg", title: "Kesup Forest", copy: "A living escarpment above the Kerio Valley." },
   { src: "/img/MVIMG_20260603_130618.jpg", title: "Walking the line", copy: "Care and presence protect old-growth forest." },
-  { src: "/img/MVIMG_20260603_133646.jpg", title: "Terraces take hold", copy: "Practical work that keeps fertile soil on the farm." },
-  { src: "/img/MVIMG_20260603_130933.jpg", title: "From the field", copy: "Stories told by the people doing the work." },
   { src: "/img/IMG_20260617_173433.jpg", title: "Community first", copy: "Restoration works when it belongs to everyone." },
-  { src: "/img/whatsapp-5.jpeg", title: "Shared momentum", copy: "Every gathering begins with listening and learning." },
+  { src: "/img/MVIMG_20260603_133646.jpg", title: "Terraces take hold", copy: "Practical work that keeps fertile soil on the farm." },
+  { src: "/img/IMG_0893.jpeg", title: "Learning outdoors", copy: "Young people building a lasting relationship with nature." },
   { src: "/img/MVIMG_20260603_113331.jpg", title: "Rooted locally", copy: "Local action is the foundation of lasting change." },
-  { src: "/img/MVIMG_20260603_113345.jpg", title: "Restoring balance", copy: "Healthy vegetation helps land and water recover together." },
-  { src: "/img/IMG_20260617_173430b.jpg", title: "Nursery care", copy: "The next forest begins with patient, skilled work." },
-  { src: "/img/IMG_20260617_173723b.jpg", title: "Hands in the soil", copy: "Practical action connects people to place." },
-  { src: "/img/IMG_20260617_173732b.jpg", title: "Working together", copy: "Shared knowledge turns plans into progress." },
-  { src: "/img/IMG_20260617_173639.jpg", title: "A day of action", copy: "Small, steady contributions build a larger restoration movement." },
   { src: "/img/IMG_20260617_173643.jpg", title: "Nature-positive futures", copy: "Restoration supports both ecological health and daily life." },
-  { src: "/img/MVIMG_20260603_130623.jpg", title: "Evidence in action", copy: "Field observations guide where care is needed most." },
-  { src: "/img/MVIMG_20260603_130627.jpg", title: "Stories worth sharing", copy: "Progress is best understood close to the landscape." },
-  { src: "/img/MVIMG_20260617_104556.jpg", title: "Forest stewards", copy: "Protection depends on people who show up, season after season." },
   { src: "/img/PHOTO-2026-07-14-14-03-45.jpg", title: "Leadership in practice", copy: "Guiding restoration with purpose and accountability." },
-  { src: "/img/PHOTO-2026-07-14-14-03-49.jpg", title: "Local expertise", copy: "Knowledge, coordination and care move the work forward." },
-  { src: "/img/whatsapp-1.jpeg", title: "On the ground", copy: "Conversations in the field shape better decisions." },
-  { src: "/img/whatsapp-2.jpeg", title: "Shared responsibility", copy: "Water security is a collective commitment." },
-  { src: "/img/whatsapp-3.jpeg", title: "Looking after place", copy: "Care for a catchment begins with care for each other." },
+  { src: "/img/whatsapp-5.jpeg", title: "Shared momentum", copy: "Every gathering begins with listening and learning." },
+  { src: "/img/IMG_0901.jpeg", title: "Looking ahead", copy: "New catchments, new partnerships, the same shared purpose." },
+  { src: "/img/MVIMG_20260617_104556.jpg", title: "Forest stewards", copy: "Protection depends on people who show up, season after season." },
 ];
 
 export default function WhereWeWorkPage() {
@@ -125,7 +110,7 @@ export default function WhereWeWorkPage() {
             <h2 className="mt-3 font-display text-3xl text-paper">Every image carries a piece of the restoration story.</h2>
             <p className="mt-4 text-forest-300">Nurseries, farms, forest patrols, and community days: this is what collective care for a water tower looks like.</p>
           </div>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {fieldNotes.map((note) => (
               <figure key={note.src} className="group relative aspect-[4/3] overflow-hidden bg-forest-700">
                 <Image

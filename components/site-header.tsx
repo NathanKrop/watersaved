@@ -65,7 +65,7 @@ export function SiteHeader() {
 
       {open && (
         <nav
-          className="lg:hidden fixed inset-0 top-16 bg-mist-50 px-5 py-8 flex flex-col gap-1"
+          className="lg:hidden border-t border-line bg-mist-50 px-5 py-6 flex flex-col gap-1"
           aria-label="Mobile"
         >
           {NAV_LINKS.map((link) => (
