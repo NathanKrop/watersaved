@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { counties } from "@/lib/data/counties";
+import { primaryLocation } from "@/lib/data/location";
 import { NewsletterForm } from "./newsletter-form";
 
 export function SiteFooter() {
@@ -7,9 +9,19 @@ export function SiteFooter() {
     <footer className="bg-forest-900 text-mist-50">
       <div className="mx-auto max-w-6xl px-5 py-14 grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <p className="font-display text-lg">Save Kenya Water Towers</p>
+          <div className="flex items-center gap-3">
+            <div className="relative h-16 w-16 overflow-hidden bg-transparent sm:h-20 sm:w-20">
+              <Image
+                src="/logo/mylogo/logo2.png"
+                alt="Save Kenya Water Towers logo"
+                fill
+                sizes="80px"
+                className="object-contain"
+              />
+            </div>
+          </div>
           <p className="mt-3 text-sm text-forest-300">
-            Restoring the montane forests that feed the rivers most of Kenya depends on.
+            Restoring the forests, springs and farms of {primaryLocation.name} and the connected water towers of Kenya.
           </p>
           <div className="mt-4 flex gap-4 text-sm text-forest-300">
             <a href="https://x.com/savewatertowers" className="hover:text-mist-50">
@@ -29,6 +41,9 @@ export function SiteFooter() {
               </li>
             ))}
           </ul>
+          <Link href={primaryLocation.projectHref} className="mt-4 inline-block text-sm text-clay-600 hover:text-mist-50">
+            Explore the Spencer Line project &rarr;
+          </Link>
         </div>
 
         <div>
@@ -82,7 +97,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-forest-700">
+      <div className="border-t border-forest-700/50">
         <div className="mx-auto max-w-6xl px-5 py-5 flex flex-col sm:flex-row gap-2 justify-between text-xs text-forest-300">
           <p>© {new Date().getFullYear()} Save Kenya Water Towers. All rights reserved.</p>
           <p>Registered NGO, Republic of Kenya</p>

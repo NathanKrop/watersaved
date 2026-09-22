@@ -13,8 +13,8 @@ const statusLabel: Record<Project["status"], string> = {
 export function ProjectCard({ project }: { project: Project }) {
   const county = counties.find((c) => c.slug === project.countySlug);
   return (
-    <Link href={`/projects/${project.slug}`} className="group block border border-line hover:border-forest-500 transition-colors">
-      <PhotoPlaceholder src={project.image} caption={`${project.name}, ${county?.name ?? ""}`} tone={project.status === "planned" ? "mist" : "forest"} />
+    <Link href={`/projects/${project.slug}`} className="soft-card group block overflow-hidden transition-colors hover:border-forest-500">
+      <PhotoPlaceholder src={project.image} alt={`${project.name} restoration site`} caption={`${project.name}, ${county?.name ?? ""}`} tone={project.status === "planned" ? "mist" : "forest"} />
       <div className="p-5">
         <div className="flex items-center justify-between gap-2">
           <p className="text-xs text-forest-500">{county?.name}</p>

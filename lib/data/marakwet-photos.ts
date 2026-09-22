@@ -1,0 +1,16 @@
+export const marakwetPhotos = {
+  nursery: "/img/marakwet/photo_2026-09-22_15-46-41.jpg",
+  community: "/img/marakwet/photo_2026-09-22_15-47-31.jpg",
+  restoration: "/img/marakwet/photo_2026-09-22_15-47-34.jpg",
+  species: "/img/marakwet/photo_2026-09-22_15-47-35.jpg",
+  orchard: "/img/marakwet/photo_2026-09-22_15-47-36.jpg",
+  landscape: "/img/marakwet/photo_2026-09-22_15-47-37.jpg",
+  fieldwork: "/img/marakwet/photo_2026-09-22_15-47-38.jpg",
+  seedlings: "/img/marakwet/photo_2026-09-22_15-47-39.jpg",
+  gathering: "/img/marakwet/photo_2026-09-22_15-47-40.jpg",
+  trees: "/img/marakwet/photo_2026-09-22_15-47-41.jpg",
+  highlands: "/img/marakwet/photo_2026-09-22_15-47-43.jpg",
+  communityWork: "/img/marakwet/photo_2026-09-22_15-47-44.jpg",
+  mountain: "/img/marakwet/photo_2026-09-22_15-47-45.jpg",
+  fieldView: "/img/marakwet/photo_2026-09-22_15-47-47.jpg",
+} as const;

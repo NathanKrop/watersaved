@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { StoryCard } from "@/components/story-card";
 import { stories } from "@/lib/data/content";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Stories" };
 
@@ -9,7 +10,7 @@ export default function StoriesPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/new/pexels-rudi-chandra-1981866-37555098.jpg"
+          src={marakwetPhotos.communityWork}
           alt="Field dispatches from the forest"
           fill
           priority

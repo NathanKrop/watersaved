@@ -3,6 +3,7 @@ import { ImpactCounter } from "@/components/impact-counter";
 import { CtaLink } from "@/components/cta-link";
 import { impactGoals, newsPosts } from "@/lib/data/content";
 import { formatDate } from "@/lib/format";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Impact" };
 
@@ -17,7 +18,7 @@ export default function ImpactPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/MVIMG_20260603_130623.jpg"
+          src={marakwetPhotos.highlands}
           alt="Impact of restoration work"
           fill
           priority
@@ -46,7 +47,7 @@ export default function ImpactPage() {
           </div>
           <div className="relative hidden lg:block w-56 overflow-hidden">
             <Image
-              src="/img/new/pexels-nairodreyes-15192480.jpg"
+              src={marakwetPhotos.restoration}
               alt="Restoration in progress"
               fill
               sizes="224px"
@@ -102,8 +103,8 @@ export default function ImpactPage() {
           </div>
           <div className="relative hidden lg:block overflow-hidden">
             <Image
-              src="/img/new/pexels-mateus-marques-147014077-10454534.jpg"
-              alt="Field team reviewing restoration data"
+              src={marakwetPhotos.species}
+              alt="Local plant species documented during field restoration work"
               fill
               sizes="256px"
               className="object-cover"

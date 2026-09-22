@@ -2,18 +2,18 @@ import type { County } from "@/lib/types";
 
 export const counties: County[] = [
   {
+    slug: "elgeyo-marakwet",
+    name: "Elgeyo-Marakwet",
+    summary:
+      "Our primary landscape: Cherangani escarpment forests and the Kesup and Spencer Line restoration areas above the Kerio Valley.",
+    stat: "Primary landscape",
+  },
+  {
     slug: "uasin-gishu",
     name: "Uasin Gishu",
     summary:
       "Home to our Eldoret headquarters and the farming plateau that drains into the Sosiani and Nzoia river systems.",
     stat: "HQ county",
-  },
-  {
-    slug: "elgeyo-marakwet",
-    name: "Elgeyo Marakwet",
-    summary:
-      "The Cherangani escarpment forests — Kesup, Kaptagat and the Elgeyo scarp — feed rivers that drop into the Kerio Valley.",
-    stat: "Cherangani Hills",
   },
   {
     slug: "baringo",

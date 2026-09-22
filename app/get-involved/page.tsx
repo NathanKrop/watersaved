@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import PartnerLogoSlideshow from "@/components/partner-logo-slideshow";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Get Involved" };
 
@@ -69,36 +71,12 @@ const partnerCategories = [
   },
 ];
 
-const PARTNER_LOGOS = [
-  { file: "CAOK.jpeg", label: "Conservation Alliance of Kenya" },
-  { file: "CGA.jpeg", label: "Cereal Growers Association" },
-  { file: "FAO.jpeg", label: "Food and Agriculture Organization" },
-  { file: "Image (3).jpeg", label: "" },
-  { file: "Image (4).jpeg", label: "" },
-  { file: "Image (5).jpeg", label: "" },
-  { file: "Image 1 (1).jpeg", label: "" },
-  { file: "Image 1 (2).jpeg", label: "" },
-  { file: "Image 1.jpeg", label: "" },
-  { file: "Image 11.jpeg", label: "" },
-  { file: "Image 14.jpeg", label: "" },
-  { file: "Image 15.jpeg", label: "" },
-  { file: "Image 18.jpeg", label: "" },
-  { file: "Image 19.jpeg", label: "" },
-  { file: "Image 2.jpeg", label: "" },
-  { file: "Image 20.jpeg", label: "" },
-  { file: "Image 4.jpeg", label: "" },
-  { file: "Image 5.jpeg", label: "" },
-  { file: "Image.jpeg", label: "" },
-  { file: "images.jpeg", label: "" },
-  { file: "SKWT.png", label: "Save Kenya Water Towers" },
-];
-
 export default function GetInvolvedPage() {
   return (
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/new/pexels-yunustug-38197486.jpg"
+          src={marakwetPhotos.community}
           alt="Volunteers at a community planting day"
           fill
           priority
@@ -144,23 +122,8 @@ export default function GetInvolvedPage() {
             project-by-project basis.
           </p>
 
-          {/* Logo grid */}
-          <div className="mt-10 grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-7">
-            {PARTNER_LOGOS.map((logo) => (
-              <div
-                key={logo.file}
-                className="relative flex h-20 items-center justify-center bg-white border border-line px-3 py-2"
-              >
-                <Image
-                  src={`/logo/partners%20logo/${encodeURIComponent(logo.file)}`}
-                  alt={logo.label}
-                  fill
-                  sizes="(min-width: 1024px) 14vw, (min-width: 640px) 20vw, 33vw"
-                  className="object-contain p-2"
-                />
-              </div>
-            ))}
-          </div>
+          {/* Logo slideshow */}
+          <PartnerLogoSlideshow />
 
           {/* Partner categories */}
           <div className="mt-14 grid gap-10 sm:grid-cols-2">

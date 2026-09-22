@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Contact" };
 
@@ -8,7 +9,7 @@ export default function ContactPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/new/pexels-shovan-datta-3275479-27328538.jpg"
+          src={marakwetPhotos.communityWork}
           alt="Field team at work"
           fill
           priority

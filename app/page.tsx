@@ -5,6 +5,15 @@ import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaLink } from "@/components/cta-link";
 import { newsPosts } from "@/lib/data/content";
 import { formatDate } from "@/lib/format";
+import { primaryLocation } from "@/lib/data/location";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { newPhotoHomepageFeature, newPhotoHomepageLandscape } from "@/lib/data/new-photos";
+
+export const metadata = {
+  title: `${primaryLocation.name} forest and water restoration`,
+  description:
+    "Community-led restoration in Elgeyo-Marakwet County, from Iten and Kesup Forest to the Spencer Line above the Kerio Valley.",
+};
 
 const responseAreas = [
   {
@@ -51,10 +60,10 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
+      <section className="soft-hero relative bg-forest-900 text-mist-50">
         <Image
-          src="/img/IMG_0526.jpeg"
-          alt="Highland forest catchment in Kenya"
+          src={primaryLocation.image}
+          alt={primaryLocation.imageAlt}
           fill
           priority
           sizes="100vw"
@@ -62,19 +71,29 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-forest-900/65" />
         <div className="relative z-10 mx-auto max-w-6xl px-5 pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <p className="text-sm uppercase tracking-[0.18em] text-mist-50">Save Kenya Water Towers</p>
+          <div className="flex justify-start">
+            <div className="relative h-28 w-28 overflow-hidden bg-transparent sm:h-32 sm:w-32 lg:h-40 lg:w-40">
+              <Image
+                src="/logo/mylogo/logo2.png"
+                alt="Save Kenya Water Towers logo"
+                fill
+                sizes="160px"
+                className="object-contain"
+              />
+            </div>
+          </div>
           <h1 className="mt-5 font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.98] max-w-4xl text-balance text-paper">
-            Restore the forests. Secure the water. Strengthen the communities.
+            Restore Elgeyo-Marakwet&apos;s escarpment. Secure the water. Strengthen the communities.
           </h1>
           <p className="mt-7 max-w-2xl text-mist-50 text-lg leading-relaxed">
-            Kenya&apos;s water towers feed rivers, farms, homes and livelihoods. We work with communities
-            and partners to restore degraded landscapes, protect water sources and build nature-positive
-            incomes across Kenya&apos;s Rift Valley.
+            From Iten and Kesup Forest to the Spencer Line above the Kerio Valley, we work with communities
+            to restore indigenous forest, protect springs and build nature-positive livelihoods. This is our
+            home landscape, connected to water-tower work across Kenya&apos;s Rift Valley.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <CtaLink href="/donate">Donate to restoration</CtaLink>
-            <CtaLink href="/impact" variant="secondary" className="border-forest-300 text-mist-50 hover:bg-mist-50 hover:text-forest-900">
-              Explore our impact
+            <CtaLink href={primaryLocation.countyHref} variant="secondary" className="border-forest-300 text-mist-50 hover:bg-mist-50 hover:text-forest-900">
+              Explore Elgeyo-Marakwet
             </CtaLink>
           </div>
           <p className="mt-8 text-xs uppercase tracking-[0.14em] text-mist-50">
@@ -89,9 +108,9 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 py-16">
           <div className="grid gap-2 lg:grid-cols-[2fr_1fr] lg:grid-rows-2 lg:h-[600px]">
             {/* Large left image — spans full height */}
-            <div className="group relative lg:row-span-2 overflow-hidden">
+            <div className="soft-image group relative lg:row-span-2">
               <Image
-                src="/img/new/pexels-nyar-kaheti-76506250-8614553.jpg"
+                src={newPhotoHomepageFeature}
                 alt="Forest restoration work"
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
@@ -104,9 +123,9 @@ export default function Home() {
               </div>
             </div>
             {/* Top-right */}
-            <div className="group relative overflow-hidden">
+            <div className="soft-image group relative">
               <Image
-                src="/img/MVIMG_20260603_113312.jpg"
+                src={marakwetPhotos.community}
                 alt="Community planting day"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -116,9 +135,9 @@ export default function Home() {
               <p className="absolute bottom-0 left-0 p-4 font-display text-lg text-paper">Community first</p>
             </div>
             {/* Bottom-right */}
-            <div className="group relative overflow-hidden">
+            <div className="soft-image group relative">
               <Image
-                src="/img/MVIMG_20260603_130618.jpg"
+                src={newPhotoHomepageLandscape}
                 alt="Landscape and water catchment"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -144,22 +163,22 @@ export default function Home() {
           <div>
             <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Why this matters</p>
             <p className="mt-4 font-display text-3xl leading-tight text-forest-900 sm:text-4xl">
-              Kenya&apos;s water towers cover just 2% of the country&apos;s land area — and supply an estimated 75% of its renewable surface water.
+              The Elgeyo-Marakwet escarpment is where forest, farms and springs meet above the Kerio Valley — a local landscape with consequences far beyond its ridgeline.
             </p>
             <p className="mt-4 text-ink-soft leading-relaxed">
-              Five upland forest blocks intercept rain-bearing clouds off the Indian Ocean before the rest of the country sees them. Their elevation, their soils and their root systems store, filter and release water that feeds rivers, fills reservoirs and irrigates farmland far downstream.
+              Around Iten, Kesup Forest and the Spencer Line, elevation, soils and root systems store, filter and release water that feeds the Kerio Valley and the farms, homes and livelihoods downstream.
             </p>
             <p className="mt-4 text-ink-soft leading-relaxed">
-              When these forests are degraded — through encroachment, charcoal cutting, unmanaged grazing — the consequences travel downstream: harder water access, soil erosion, flooding, landslides and the loss of productive land. The response must restore the whole landscape, not simply plant trees.
+              When these forests are degraded through encroachment, charcoal cutting or unmanaged grazing, the consequences travel downhill: thinner springs, soil erosion, landslides and lost productive land. The response must restore the whole landscape, not simply plant trees.
             </p>
             <p className="mt-4 text-ink-soft leading-relaxed">
-              Independent economic valuations have put the annual value of Kenya&apos;s major water towers at hundreds of millions of dollars to the national economy — through irrigation, piped water and hydropower. Protecting them is not a conservation luxury. It is infrastructure maintenance.
+              Elgeyo-Marakwet shows why water-tower protection is practical infrastructure work: healthy forest and stable soils help keep water available for people and farms below.
             </p>
           </div>
-          <div className="relative aspect-[3/4] overflow-hidden">
+            <div className="soft-image relative aspect-[3/4]">
             <Image
-              src="/img/new/pexels-timon-cornelissen-241844481-14078245.jpg"
-              alt="Forest canopy and water catchment"
+              src={marakwetPhotos.orchard}
+              alt="Fruit trees growing on a cultivated highland plot"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
@@ -194,7 +213,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {responseAreas.map((area) => (
-              <Link key={area.number} href={area.href} className="group border border-line bg-mist-50 p-6 hover:bg-forest-900 transition-colors">
+              <Link key={area.number} href={area.href} className="soft-card group block bg-mist-50 p-6 transition-colors hover:bg-forest-900">
                 <p className="text-sm text-clay-700 group-hover:text-clay-600">{area.number}</p>
                 <h3 className="mt-5 font-display text-xl text-forest-900 group-hover:text-mist-50 transition-colors">{area.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft group-hover:text-forest-300 transition-colors">{area.body}</p>
@@ -209,7 +228,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-16 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <PhotoPlaceholder
-            src="/img/IMG_0833.jpeg"
+            src={marakwetPhotos.nursery}
             alt="Community nursery seedlings"
             caption="Community nursery seedlings — the starting point for landscape restoration"
             aspect="wide"
@@ -252,7 +271,7 @@ export default function Home() {
       <section className="border-t border-line bg-clay-100">
         <div className="relative overflow-hidden">
           <Image
-            src="/img/new/pexels-feitenhenrique-33363890.jpg"
+            src={marakwetPhotos.trees}
             alt="Forest restoration landscape"
             fill
             sizes="100vw"
@@ -278,9 +297,9 @@ export default function Home() {
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Voices from the ground</p>
           <blockquote className="mt-4 font-display text-3xl leading-tight text-forest-900">&ldquo;Before, we walked three hours for water. Now the spring near our village runs again.&rdquo;</blockquote>
           <p className="mt-5 text-sm text-ink-soft">&mdash; Community member, Elgeyo-Marakwet County</p>
-          <div className="mt-8 relative aspect-video overflow-hidden">
+            <div className="soft-image mt-8 relative aspect-video">
             <Image
-              src="/img/new/pexels-ian-panelo-31371429.jpg"
+              src={marakwetPhotos.gathering}
               alt="Community members"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
@@ -341,7 +360,7 @@ export default function Home() {
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {latestNews.map((news) => (
-              <Link key={news.slug} href={`/news/${news.slug}`} className="border border-line bg-mist-50 p-6 hover:border-forest-700 transition-colors">
+              <Link key={news.slug} href={`/news/${news.slug}`} className="soft-card block bg-mist-50 p-6 transition-colors hover:border-forest-700">
                 <p className="text-xs text-ink-soft">{formatDate(news.publishedAt)}</p>
                 <h3 className="mt-3 font-display text-xl text-forest-900">{news.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">{news.summary}</p>

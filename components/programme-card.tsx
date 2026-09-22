@@ -5,7 +5,7 @@ export function ProgrammeCard({ programme }: { programme: Programme }) {
   return (
     <Link
       href={`/programmes/${programme.slug}`}
-      className="group block border border-line p-6 hover:border-forest-700 hover:bg-forest-900 transition-colors"
+      className="soft-card group block p-6 transition-colors hover:border-forest-700 hover:bg-forest-900"
     >
       <h3 className="font-display text-xl text-forest-900 group-hover:text-mist-50 transition-colors">
         {programme.name}

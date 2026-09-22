@@ -3,6 +3,7 @@ import { Fraunces, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { primaryLocation } from "@/lib/data/location";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -19,12 +20,16 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Save Kenya Water Towers — Protecting the source",
+    default: "Save Kenya Water Towers — Elgeyo-Marakwet County",
     template: "%s — Save Kenya Water Towers",
   },
   description:
-    "A Kenyan NGO restoring the montane forests of Uasin Gishu, Elgeyo Marakwet, Baringo, West Pokot, Trans Nzoia and Nakuru — the water towers that feed the rivers over seventy percent of Kenya depends on.",
+    `${primaryLocation.description} Save Kenya Water Towers also works with connected landscapes across Kenya's Rift Valley.`,
   metadataBase: new URL("https://www.savekenyawatertowers.org"),
+  icons: {
+    icon: "/logo/mylogo/logo2.png",
+    shortcut: "/logo/mylogo/logo2.png",
+  },
 };
 
 export default function RootLayout({

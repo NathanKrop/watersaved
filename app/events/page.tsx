@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { events } from "@/lib/data/content";
 import { EventCard } from "@/components/event-card";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Events" };
 
@@ -12,7 +13,7 @@ export default function EventsPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/new/pexels-utopia36-21352761.jpg"
+          src={marakwetPhotos.gathering}
           alt="Community planting day"
           fill
           priority

@@ -3,6 +3,7 @@ import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { CtaLink } from "@/components/cta-link";
 import { teamMembers } from "@/lib/data/content";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Who We Are" };
 
@@ -19,7 +20,7 @@ export default function WhoWeArePage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/MVIMG_20260617_104556.jpg"
+          src={marakwetPhotos.community}
           alt="Field team in the forest"
           fill
           priority
@@ -47,7 +48,7 @@ export default function WhoWeArePage() {
             </p>
           </div>
           <PhotoPlaceholder
-            src="/img/new/pexels-kashyapps-27580861.jpg"
+            src={marakwetPhotos.trees}
             alt="Community nursery work"
             caption="Community nursery — where restoration begins"
             tone="forest"
@@ -79,7 +80,7 @@ export default function WhoWeArePage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/img/new/pexels-samarmourya-27459539.jpg"
+                src={marakwetPhotos.nursery}
                 alt="Community members taking part in restoration work"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
@@ -88,7 +89,7 @@ export default function WhoWeArePage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/img/new/pexels-ian-panelo-33229639.jpg"
+                src={marakwetPhotos.gathering}
                 alt="A community gathering during a field visit"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
@@ -120,7 +121,7 @@ export default function WhoWeArePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16">
-        <h2 className="font-display text-3xl text-forest-900">Team & board</h2>
+        <h2 id="team" className="font-display text-3xl text-forest-900">Team & board</h2>
         <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {teamMembers.map((member) => (
             <TeamMemberCard key={member.name} member={member} />

@@ -9,7 +9,7 @@ type CtaLinkProps = {
 };
 
 const base =
-  "inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium transition-colors focus-visible:outline-2";
+  "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors focus-visible:outline-2";
 
 const variants: Record<NonNullable<CtaLinkProps["variant"]>, string> = {
   primary: "bg-clay-600 text-paper hover:bg-clay-700",

@@ -1,6 +1,7 @@
 node_modules/
 .next/
 out/
+*.tsbuildinfo
 
 # Original download archive; extracted web assets are tracked separately.
 public/img/drive-download-20260917T181614Z-1-001.zip

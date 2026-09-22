@@ -1,4 +1,5 @@
 import type { Project } from "@/lib/types";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const projects: Project[] = [
   {
@@ -21,7 +22,7 @@ export const projects: Project[] = [
     householdsEngaged: 180,
     donationGoalKes: 6200000,
     donationRaisedKes: 1850000,
-    image: "/img/IMG_0526.jpeg",
+    image: marakwetPhotos.highlands,
   },
   {
     slug: "kesup-forest",
@@ -43,7 +44,7 @@ export const projects: Project[] = [
     householdsEngaged: 340,
     donationGoalKes: 4500000,
     donationRaisedKes: 2860000,
-    image: "/img/IMG_0528.jpeg",
+    image: marakwetPhotos.nursery,
   },
   {
     slug: "kaptagat-forest",
@@ -63,7 +64,7 @@ export const projects: Project[] = [
     householdsEngaged: 210,
     donationGoalKes: 3200000,
     donationRaisedKes: 1975000,
-    image: "/img/IMG_0532.jpeg",
+    image: marakwetPhotos.trees,
   },
   {
     slug: "chemususu-catchment",
@@ -83,7 +84,7 @@ export const projects: Project[] = [
     householdsEngaged: 265,
     donationGoalKes: 2100000,
     donationRaisedKes: 640000,
-    image: "/img/IMG_0533.jpeg",
+    image: marakwetPhotos.restoration,
   },
   {
     slug: "cherangani-north-corridor",
@@ -103,7 +104,7 @@ export const projects: Project[] = [
     householdsEngaged: 60,
     donationGoalKes: 3800000,
     donationRaisedKes: 210000,
-    image: "/img/IMG_0840.jpeg",
+    image: marakwetPhotos.communityWork,
   },
   {
     slug: "mt-elgon-lower-slopes",
@@ -123,7 +124,7 @@ export const projects: Project[] = [
     householdsEngaged: 180,
     donationGoalKes: 2600000,
     donationRaisedKes: 1840000,
-    image: "/img/IMG_0893.jpeg",
+    image: marakwetPhotos.orchard,
   },
   {
     slug: "mau-adjacent-highlands",
@@ -143,7 +144,7 @@ export const projects: Project[] = [
     householdsEngaged: 0,
     donationGoalKes: 5200000,
     donationRaisedKes: 0,
-    image: "/img/IMG_0901.jpeg",
+    image: marakwetPhotos.landscape,
   },
 ];
 

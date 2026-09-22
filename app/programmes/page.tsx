@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { programmes } from "@/lib/data/programmes";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Programmes" };
 
 const programmeImages: Record<string, string> = {
-  "agroforestry-reforestation": "/img/new/pexels-blitzboy-1106428.jpg",
-  "water-source-protection": "/img/new/pexels-eduraw-20927485.jpg",
-  "education-awareness": "/img/new/pexels-imsogabriel-31163138.jpg",
-  "regenerative-agriculture": "/img/new/pexels-fasevarc-39489237.jpg",
-  "gender-intergenerational-equity": "/img/new/pexels-csilla-katus-2159553586-36129199.jpg",
-  "wildlife-biodiversity": "/img/new/pexels-franckfrommada-37270569.jpg",
+  "agroforestry-reforestation": marakwetPhotos.restoration,
+  "water-source-protection": marakwetPhotos.landscape,
+  "education-awareness": marakwetPhotos.community,
+  "regenerative-agriculture": marakwetPhotos.orchard,
+  "gender-intergenerational-equity": marakwetPhotos.gathering,
+  "wildlife-biodiversity": marakwetPhotos.mountain,
 };
 
 export default function ProgrammesPage() {
@@ -18,7 +19,7 @@ export default function ProgrammesPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/new/pexels-timon-cornelissen-241844481-14078245.jpg"
+          src={marakwetPhotos.highlands}
           alt="Forest canopy and restoration landscape"
           fill
           priority
@@ -93,7 +94,7 @@ export default function ProgrammesPage() {
           </div>
           <div className="relative aspect-video lg:aspect-auto overflow-hidden">
             <Image
-              src="/img/new/pexels-marcelo-mora-203572590-37543995.jpg"
+              src={marakwetPhotos.fieldView}
               alt="Agroforestry and community restoration"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

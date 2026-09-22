@@ -1,4 +1,5 @@
 import type { EventItem, ImpactGoal, NewsPost, Story, TeamMember } from "@/lib/types";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const stories: Story[] = [
   {
@@ -9,7 +10,7 @@ export const stories: Story[] = [
     publishedAt: "2026-06-02",
     relatedProjectSlug: "kesup-forest",
     relatedProgrammeSlug: "agroforestry-reforestation",
-    image: "/img/MVIMG_20260603_113312.jpg",
+    image: marakwetPhotos.community,
     body: [
       "The road to Kesup climbs out of Iten past the training camps and drops away suddenly at the escarpment edge, the Kerio Valley opening out two thousand feet below. It is easy to see, standing there, why this ridge line matters more than its size suggests: every spring on this slope either reaches the valley or doesn't, and for years, fewer of them did.",
       "Beatrice Chepkirui has run the Kesup women's nursery group since it started with forty seedling bags under a borrowed shade net. 'We used to buy trees from outside,' she says, 'wattle, mostly, because it grows fast. Now we grow what belongs here — podo, olive — because the roots hold the slope the way wattle never did.'",
@@ -25,7 +26,7 @@ export const stories: Story[] = [
     publishedAt: "2026-04-18",
     relatedProjectSlug: "kaptagat-forest",
     relatedProgrammeSlug: "wildlife-biodiversity",
-    image: "/img/MVIMG_20260603_130618.jpg",
+    image: marakwetPhotos.landscape,
     body: [
       "Kaptagat's cedar stands are among the oldest in Uasin Gishu, some trees well over a century old. Losing one is not a five-year setback; it is closer to permanent within a working lifetime.",
       "Joint patrols with Kenya Forest Service now cover the block twice weekly, timed around the hours illegal pit-sawing is most common. It is unglamorous work — mostly walking, mostly nothing happens — but the difference shows in the stumps that stop appearing.",
@@ -39,7 +40,7 @@ export const stories: Story[] = [
     publishedAt: "2026-02-09",
     relatedProjectSlug: "chemususu-catchment",
     relatedProgrammeSlug: "regenerative-agriculture",
-    image: "/img/MVIMG_20260603_133646.jpg",
+    image: marakwetPhotos.restoration,
     body: [
       "Chemususu Dam supplies much of Eldoret's piped water, and for years its reservoir has been filling faster with silt than anyone planned for. The silt doesn't come from the dam — it comes from bare hillside plots two and three farms upstream.",
       "Terracing training here is deliberately unglamorous: contour lines, grass strips, fodder trees on the steepest margins. Farmers who adopt it see less topsoil washed away by December — and, just as importantly, keep it on their own land instead of losing it to the dam.",

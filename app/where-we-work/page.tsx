@@ -4,22 +4,28 @@ import { counties } from "@/lib/data/counties";
 import { getProjectsByCounty } from "@/lib/data/projects";
 import { ProjectCard } from "@/components/project-card";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { primaryLocation } from "@/lib/data/location";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { newPhotos } from "@/lib/data/new-photos";
 
-export const metadata = { title: "Where We Work" };
+export const metadata = {
+  title: `${primaryLocation.name} and connected landscapes`,
+  description: `${primaryLocation.description} See our connected county projects and field work.`,
+};
 
 const fieldNotes = [
-  { src: "/img/MVIMG_20260603_113312.jpg", title: "In the field", copy: "Restoration work on the ground, season after season." },
-  { src: "/img/IMG_0528.jpeg", title: "Growing the canopy", copy: "Indigenous seedlings raised close to the landscapes they will restore." },
-  { src: "/img/MVIMG_20260603_130618.jpg", title: "Walking the line", copy: "Care and presence protect old-growth forest." },
-  { src: "/img/IMG_20260617_173433.jpg", title: "Community first", copy: "Restoration works when it belongs to everyone." },
-  { src: "/img/MVIMG_20260603_133646.jpg", title: "Terraces take hold", copy: "Practical work that keeps fertile soil on the farm." },
-  { src: "/img/IMG_0893.jpeg", title: "Learning outdoors", copy: "Young people building a lasting relationship with nature." },
-  { src: "/img/MVIMG_20260603_113331.jpg", title: "Rooted locally", copy: "Local action is the foundation of lasting change." },
-  { src: "/img/IMG_20260617_173643.jpg", title: "Nature-positive futures", copy: "Restoration supports both ecological health and daily life." },
-  { src: "/img/PHOTO-2026-07-14-14-03-45.jpg", title: "Leadership in practice", copy: "Guiding restoration with purpose and accountability." },
-  { src: "/img/whatsapp-5.jpeg", title: "Shared momentum", copy: "Every gathering begins with listening and learning." },
-  { src: "/img/IMG_0901.jpeg", title: "Looking ahead", copy: "New catchments, new partnerships, the same shared purpose." },
-  { src: "/img/MVIMG_20260617_104556.jpg", title: "Forest stewards", copy: "Protection depends on people who show up, season after season." },
+  { src: marakwetPhotos.community, title: "In the field", alt: "Community members gathered beside a forest planting area", copy: "Restoration work on the ground, season after season." },
+  { src: marakwetPhotos.nursery, title: "Growing the canopy", alt: "Young seedlings growing in planting bags", copy: "Indigenous seedlings raised close to the landscapes they will restore." },
+  { src: marakwetPhotos.landscape, title: "Walking the line", alt: "Green highland vegetation and trees", copy: "Care and presence protect the living landscape." },
+  { src: marakwetPhotos.gathering, title: "Community first", alt: "A community gathering in a highland restoration landscape", copy: "Restoration works when it belongs to everyone." },
+  { src: marakwetPhotos.restoration, title: "Restoration takes hold", alt: "Restoration planting on red highland soil", copy: "Practical work that keeps fertile soil and vegetation on the farm." },
+  { src: marakwetPhotos.species, title: "Learning outdoors", alt: "A local plant species documented in the field", copy: "Local knowledge guides the species that return to the landscape." },
+  { src: marakwetPhotos.trees, title: "Rooted locally", alt: "Young trees growing in a local landscape", copy: "Local action is the foundation of lasting change." },
+  { src: marakwetPhotos.orchard, title: "Nature-positive futures", alt: "Fruit trees growing on a cultivated highland plot", copy: "Restoration supports both ecological health and daily life." },
+  { src: marakwetPhotos.fieldwork, title: "Leadership in practice", alt: "Fieldwork taking place among local vegetation", copy: "Guiding restoration with purpose and accountability." },
+  { src: marakwetPhotos.communityWork, title: "Shared momentum", alt: "People working together in a restoration setting", copy: "Every gathering begins with listening and learning." },
+  { src: marakwetPhotos.mountain, title: "Looking ahead", alt: "Highland mountain landscape framed by trees", copy: "New catchments, new partnerships, the same shared purpose." },
+  { src: marakwetPhotos.seedlings, title: "Forest stewards", alt: "Seedlings and vegetation ready for restoration work", copy: "Protection depends on people who show up, season after season." },
 ];
 
 export default function WhereWeWorkPage() {
@@ -27,8 +33,8 @@ export default function WhereWeWorkPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/new/pexels-maurizio-catalucci-1869702690-28664804.jpg"
-          alt="Six counties, one connected watershed"
+          src={marakwetPhotos.highlands}
+          alt="Forest and escarpment landscape"
           fill
           priority
           sizes="100vw"
@@ -38,11 +44,11 @@ export default function WhereWeWorkPage() {
         <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16">
           <p className="text-sm text-forest-300">Where we work</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-2xl text-balance">
-            Six counties, one connected watershed.
+            Elgeyo-Marakwet first. Connected landscapes beyond.
           </h1>
           <p className="mt-5 text-forest-300 max-w-2xl">
-            Every project below sits somewhere on the Cherangani, Mt Elgon or Mau-adjacent water
-            towers. Jump to a county to see what&apos;s happening there.
+            Our home landscape runs from Iten and the Cherangani escarpment down toward the Kerio Valley.
+            From there, our work follows the water into connected counties and communities.
           </p>
           <nav className="mt-6 flex flex-wrap gap-2" aria-label="Jump to county">
             {counties.map((c) => (
@@ -60,9 +66,9 @@ export default function WhereWeWorkPage() {
 
       <div className="mx-auto max-w-6xl px-5">
         <PhotoPlaceholder
-          src="/img/IMG_20260617_173557.jpg"
-          alt="The Cherangani escarpment, viewed from Iten"
-          caption="The Cherangani escarpment, viewed from Iten"
+          src={marakwetPhotos.fieldView}
+          alt="A Marakwet highland field landscape"
+          caption="A Marakwet highland field landscape"
           tone="mist"
           aspect="wide"
         />
@@ -115,7 +121,7 @@ export default function WhereWeWorkPage() {
               <figure key={note.src} className="group relative aspect-[4/3] overflow-hidden bg-forest-700">
                 <Image
                   src={note.src}
-                  alt={note.title}
+                  alt={note.alt}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition duration-700 group-hover:scale-105"
@@ -127,6 +133,23 @@ export default function WhereWeWorkPage() {
                 </figcaption>
               </figure>
             ))}
+          </div>
+          <div className="mt-12 border-t border-forest-700/60 pt-10">
+            <p className="text-sm uppercase tracking-[0.18em] text-clay-600">Visual archive</p>
+            <h3 className="mt-3 font-display text-2xl text-paper">More ways to see the work.</h3>
+            <div className="mt-6 grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+              {newPhotos.map(([src, alt]) => (
+                <figure key={src} className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem] bg-forest-700">
+                  <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-cover transition duration-700 hover:scale-105"
+                  />
+                </figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>

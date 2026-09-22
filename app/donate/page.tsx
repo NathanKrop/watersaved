@@ -2,6 +2,7 @@ import Image from "next/image";
 import { DonateWidget } from "@/components/donate-widget";
 import { projects } from "@/lib/data/projects";
 import Link from "next/link";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Donate" };
 
@@ -12,7 +13,7 @@ export default function DonatePage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/new/pexels-vivian-venhasque-484321734-30096041.jpg"
+          src={marakwetPhotos.nursery}
           alt="Restoration work in the field"
           fill
           priority

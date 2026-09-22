@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ProjectsFilter } from "@/components/projects-filter";
+import { marakwetPhotos } from "@/lib/data/marakwet-photos";
 
 export const metadata = { title: "Projects" };
 
@@ -8,7 +9,7 @@ export default function ProjectsPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src="/img/whatsapp-3.jpeg"
+          src={marakwetPhotos.landscape}
           alt="Every forest, every spring, every farm-edge site"
           fill
           priority
