@@ -3,7 +3,7 @@ import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { CtaLink } from "@/components/cta-link";
 import { teamMembers } from "@/lib/data/content";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { sitePhotos } from "@/lib/data/site-photos";
 
 export const metadata = { title: "Who We Are" };
 
@@ -20,7 +20,7 @@ export default function WhoWeArePage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src={marakwetPhotos.community}
+          src={sitePhotos.whoHero}
           alt="Field team in the forest"
           fill
           priority
@@ -48,7 +48,7 @@ export default function WhoWeArePage() {
             </p>
           </div>
           <PhotoPlaceholder
-            src={marakwetPhotos.trees}
+            src={sitePhotos.whoTrees}
             alt="Community nursery work"
             caption="Community nursery — where restoration begins"
             tone="forest"
@@ -80,7 +80,7 @@ export default function WhoWeArePage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src={marakwetPhotos.nursery}
+                src={sitePhotos.whoNursery}
                 alt="Community members taking part in restoration work"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
@@ -89,7 +89,7 @@ export default function WhoWeArePage() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src={marakwetPhotos.gathering}
+                src={sitePhotos.whoGathering}
                 alt="A community gathering during a field visit"
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
@@ -162,4 +162,3 @@ export default function WhoWeArePage() {
     </>
   );
 }
-

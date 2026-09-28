@@ -1,52 +1,5 @@
-import type { EventItem, ImpactGoal, NewsPost, Story, TeamMember } from "@/lib/types";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import type { EventItem, ImpactGoal, NewsPost, TeamMember } from "@/lib/types";
 
-export const stories: Story[] = [
-  {
-    slug: "kesup-forest-escarpment-breathes-life",
-    title: "Kesup Forest: Where the Escarpment Breathes Life",
-    dek: "Just past the highland town of Iten, where runners chase the sky and clouds hug the cliffs, a quiet revolution is taking root.",
-    author: "Field Team, Elgeyo Marakwet",
-    publishedAt: "2026-06-02",
-    relatedProjectSlug: "kesup-forest",
-    relatedProgrammeSlug: "agroforestry-reforestation",
-    image: marakwetPhotos.community,
-    body: [
-      "The road to Kesup climbs out of Iten past the training camps and drops away suddenly at the escarpment edge, the Kerio Valley opening out two thousand feet below. It is easy to see, standing there, why this ridge line matters more than its size suggests: every spring on this slope either reaches the valley or doesn't, and for years, fewer of them did.",
-      "Beatrice Chepkirui has run the Kesup women's nursery group since it started with forty seedling bags under a borrowed shade net. 'We used to buy trees from outside,' she says, 'wattle, mostly, because it grows fast. Now we grow what belongs here — podo, olive — because the roots hold the slope the way wattle never did.'",
-      "The nursery now supplies both boundary planting for member farms and direct stock for escarpment blocks fenced off from grazing two seasons ago. Youth scouts, paid a small monthly stipend, walk the fence line weekly and report breaks before goats find them.",
-      "It is slow work, measured in centimetres of canopy and litres of spring flow rather than headlines. But walk the fenced block today and the undergrowth is knee-high where it was bare rock two years ago. The forest is speaking — and Kesup is calling you home.",
-    ],
-  },
-  {
-    slug: "kaptagat-cedar-patrols",
-    title: "Walking the Cedar Line: Night Patrols in Kaptagat",
-    dek: "Old-growth cedar doesn't regrow in a funding cycle. In Kaptagat, protection means showing up.",
-    author: "Field Team, Uasin Gishu",
-    publishedAt: "2026-04-18",
-    relatedProjectSlug: "kaptagat-forest",
-    relatedProgrammeSlug: "wildlife-biodiversity",
-    image: marakwetPhotos.landscape,
-    body: [
-      "Kaptagat's cedar stands are among the oldest in Uasin Gishu, some trees well over a century old. Losing one is not a five-year setback; it is closer to permanent within a working lifetime.",
-      "Joint patrols with Kenya Forest Service now cover the block twice weekly, timed around the hours illegal pit-sawing is most common. It is unglamorous work — mostly walking, mostly nothing happens — but the difference shows in the stumps that stop appearing.",
-    ],
-  },
-  {
-    slug: "chemususu-terraces-take-hold",
-    title: "The Terraces Above Chemususu",
-    dek: "Eldoret's water supply starts on hillside farms most of the town's residents will never see.",
-    author: "Field Team, Baringo",
-    publishedAt: "2026-02-09",
-    relatedProjectSlug: "chemususu-catchment",
-    relatedProgrammeSlug: "regenerative-agriculture",
-    image: marakwetPhotos.restoration,
-    body: [
-      "Chemususu Dam supplies much of Eldoret's piped water, and for years its reservoir has been filling faster with silt than anyone planned for. The silt doesn't come from the dam — it comes from bare hillside plots two and three farms upstream.",
-      "Terracing training here is deliberately unglamorous: contour lines, grass strips, fodder trees on the steepest margins. Farmers who adopt it see less topsoil washed away by December — and, just as importantly, keep it on their own land instead of losing it to the dam.",
-    ],
-  },
-];
 
 export const newsPosts: NewsPost[] = [
   {
@@ -180,4 +133,3 @@ export const impactGoals: ImpactGoal[] = [
     methodologyNote: "Households with an active nursery membership, farm-edge training, or forest-scout role.",
   },
 ];
-

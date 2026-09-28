@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { programmes, getProgrammeBySlug } from "@/lib/data/programmes";
 import { getProjectsByProgramme } from "@/lib/data/projects";
-import { stories } from "@/lib/data/content";
+import { stories } from "@/lib/data/stories";
 import { ProjectCard } from "@/components/project-card";
 import { StoryCard } from "@/components/story-card";
 import { CtaLink } from "@/components/cta-link";

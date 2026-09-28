@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
       <div className="mx-auto max-w-6xl px-5">
         <PhotoPlaceholder
-          src={project.image}
+          src={project.detailImage ?? project.image}
           alt={`${project.name} restoration work in ${county?.name ?? "Kenya"}`}
           caption={`${project.name}, ${county?.name}`}
           aspect="wide"

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { programmes } from "@/lib/data/programmes";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { sitePhotos } from "@/lib/data/site-photos";
 
 export const metadata = { title: "Programmes" };
 
 const programmeImages: Record<string, string> = {
-  "agroforestry-reforestation": marakwetPhotos.restoration,
-  "water-source-protection": marakwetPhotos.landscape,
-  "education-awareness": marakwetPhotos.community,
-  "regenerative-agriculture": marakwetPhotos.orchard,
-  "gender-intergenerational-equity": marakwetPhotos.gathering,
-  "wildlife-biodiversity": marakwetPhotos.mountain,
+  "agroforestry-reforestation": sitePhotos.programmeAgroforestry,
+  "water-source-protection": sitePhotos.programmeWater,
+  "education-awareness": sitePhotos.programmeEducation,
+  "regenerative-agriculture": sitePhotos.programmeAgriculture,
+  "gender-intergenerational-equity": sitePhotos.programmeEquity,
+  "wildlife-biodiversity": sitePhotos.programmeBiodiversity,
 };
 
 export default function ProgrammesPage() {
@@ -19,7 +19,7 @@ export default function ProgrammesPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src={marakwetPhotos.highlands}
+          src={sitePhotos.programmesHero}
           alt="Forest canopy and restoration landscape"
           fill
           priority
@@ -94,7 +94,7 @@ export default function ProgrammesPage() {
           </div>
           <div className="relative aspect-video lg:aspect-auto overflow-hidden">
             <Image
-              src={marakwetPhotos.fieldView}
+              src={sitePhotos.programmeFeature}
               alt="Agroforestry and community restoration"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -106,4 +106,3 @@ export default function ProgrammesPage() {
     </>
   );
 }
-

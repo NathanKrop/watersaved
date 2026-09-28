@@ -39,6 +39,8 @@ export type Project = {
   donationGoalKes: number;
   donationRaisedKes: number;
   image?: string;
+  detailImage?: string;
+  donationImage?: string;
 };
 
 export type Story = {
@@ -47,7 +49,8 @@ export type Story = {
   dek: string;
   body: string[];
   author: string;
-  publishedAt: string;
+  publishedAt: string | null;
+  images?: string[];
   relatedProjectSlug?: string;
   relatedProgrammeSlug?: ProgrammeSlug;
   image?: string;

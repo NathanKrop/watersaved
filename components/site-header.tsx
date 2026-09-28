@@ -62,7 +62,6 @@ const NAV_ITEMS = [
       },
     ],
   },
-  { label: "Elgeyo-Marakwet", href: "/where-we-work#elgeyo-marakwet" },
   { label: "Get involved", href: "/get-involved" },
   { label: "Impact", href: "/impact" },
   { label: "Stories", href: "/stories" },

@@ -6,8 +6,7 @@ import { CtaLink } from "@/components/cta-link";
 import { newsPosts } from "@/lib/data/content";
 import { formatDate } from "@/lib/format";
 import { primaryLocation } from "@/lib/data/location";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
-import { newPhotoHomepageFeature, newPhotoHomepageLandscape } from "@/lib/data/new-photos";
+import { sitePhotos } from "@/lib/data/site-photos";
 
 export const metadata = {
   title: `${primaryLocation.name} forest and water restoration`,
@@ -62,7 +61,7 @@ export default function Home() {
       {/* Hero */}
       <section className="soft-hero relative bg-forest-900 text-mist-50">
         <Image
-          src={primaryLocation.image}
+          src={sitePhotos.location}
           alt={primaryLocation.imageAlt}
           fill
           priority
@@ -92,8 +91,8 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <CtaLink href="/donate">Donate to restoration</CtaLink>
-            <CtaLink href={primaryLocation.countyHref} variant="secondary" className="border-forest-300 text-mist-50 hover:bg-mist-50 hover:text-forest-900">
-              Explore Elgeyo-Marakwet
+            <CtaLink href="/projects" variant="secondary" className="border-forest-300 text-mist-50 hover:bg-mist-50 hover:text-forest-900">
+              Explore our projects
             </CtaLink>
           </div>
           <p className="mt-8 text-xs uppercase tracking-[0.14em] text-mist-50">
@@ -110,7 +109,7 @@ export default function Home() {
             {/* Large left image — spans full height */}
             <div className="soft-image group relative lg:row-span-2">
               <Image
-                src={newPhotoHomepageFeature}
+                src={sitePhotos.homeFeature}
                 alt="Forest restoration work"
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
@@ -125,7 +124,7 @@ export default function Home() {
             {/* Top-right */}
             <div className="soft-image group relative">
               <Image
-                src={marakwetPhotos.community}
+                src={sitePhotos.homeCommunity}
                 alt="Community planting day"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -137,7 +136,7 @@ export default function Home() {
             {/* Bottom-right */}
             <div className="soft-image group relative">
               <Image
-                src={newPhotoHomepageLandscape}
+                src={sitePhotos.homeLandscape}
                 alt="Landscape and water catchment"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -152,7 +151,7 @@ export default function Home() {
           </div>
           <div className="mt-6 flex items-center justify-between">
             <p className="text-sm text-forest-300">Nurseries, farms, forest patrols, and community days.</p>
-            <Link href="/where-we-work" className="text-sm text-clay-500 underline underline-offset-4">See where we work &rarr;</Link>
+            <Link href="/projects" className="text-sm text-clay-500 underline underline-offset-4">See our projects &rarr;</Link>
           </div>
         </div>
       </section>
@@ -177,7 +176,7 @@ export default function Home() {
           </div>
             <div className="soft-image relative aspect-[3/4]">
             <Image
-              src={marakwetPhotos.orchard}
+              src={sitePhotos.homeOrchard}
               alt="Fruit trees growing on a cultivated highland plot"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
@@ -228,7 +227,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-5 py-16 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <PhotoPlaceholder
-            src={marakwetPhotos.nursery}
+            src={sitePhotos.homeNursery}
             alt="Community nursery seedlings"
             caption="Community nursery seedlings — the starting point for landscape restoration"
             aspect="wide"
@@ -271,7 +270,7 @@ export default function Home() {
       <section className="border-t border-line bg-clay-100">
         <div className="relative overflow-hidden">
           <Image
-            src={marakwetPhotos.trees}
+            src={sitePhotos.homeTrees}
             alt="Forest restoration landscape"
             fill
             sizes="100vw"
@@ -299,7 +298,7 @@ export default function Home() {
           <p className="mt-5 text-sm text-ink-soft">&mdash; Community member, Elgeyo-Marakwet County</p>
             <div className="soft-image mt-8 relative aspect-video">
             <Image
-              src={marakwetPhotos.gathering}
+              src={sitePhotos.homeGathering}
               alt="Community members"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
@@ -392,4 +391,3 @@ export default function Home() {
     </>
   );
 }
-

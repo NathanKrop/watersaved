@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { stories } from "@/lib/data/content";
+import { stories } from "@/lib/data/stories";
 import { getProjectBySlug } from "@/lib/data/projects";
 import { getProgrammeBySlug } from "@/lib/data/programmes";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
@@ -31,7 +31,7 @@ export default async function StoryDetailPage({ params }: { params: Promise<{ sl
         ← All stories
       </Link>
       <p className="mt-6 text-sm text-ink-soft">
-        {formatDate(story.publishedAt)} · {story.author}
+        {story.publishedAt ? formatDate(story.publishedAt) : "Date not listed"} · {story.author}
       </p>
       <h1 className="mt-2 font-display text-4xl text-forest-900 text-balance">{story.title}</h1>
       <p className="mt-4 text-lg text-ink-soft">{story.dek}</p>
@@ -44,6 +44,14 @@ export default async function StoryDetailPage({ params }: { params: Promise<{ sl
           aspect="wide"
         />
       </div>
+
+      {story.images && story.images.length > 1 && (
+        <div className="mt-5 grid grid-cols-2 gap-4">
+          {story.images.slice(1).map((image) => (
+            <PhotoPlaceholder key={image} src={image} alt={story.title} caption={story.title} aspect="video" />
+          ))}
+        </div>
+      )}
 
       <div className="mt-10 space-y-5 text-lg leading-relaxed text-ink max-w-[65ch]">
         {story.body.map((para, i) => (

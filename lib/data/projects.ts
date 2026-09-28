@@ -1,5 +1,5 @@
 import type { Project } from "@/lib/types";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { sitePhotos } from "@/lib/data/site-photos";
 
 export const projects: Project[] = [
   {
@@ -22,7 +22,9 @@ export const projects: Project[] = [
     householdsEngaged: 180,
     donationGoalKes: 6200000,
     donationRaisedKes: 1850000,
-    image: marakwetPhotos.highlands,
+    image: sitePhotos.projectSpencer,
+    detailImage: sitePhotos.projectSpencerDetail,
+    donationImage: sitePhotos.projectSpencerDonation,
   },
   {
     slug: "kesup-forest",
@@ -44,7 +46,9 @@ export const projects: Project[] = [
     householdsEngaged: 340,
     donationGoalKes: 4500000,
     donationRaisedKes: 2860000,
-    image: marakwetPhotos.nursery,
+    image: sitePhotos.projectKesup,
+    detailImage: sitePhotos.projectKesupDetail,
+    donationImage: sitePhotos.projectKesupDonation,
   },
   {
     slug: "kaptagat-forest",
@@ -64,7 +68,9 @@ export const projects: Project[] = [
     householdsEngaged: 210,
     donationGoalKes: 3200000,
     donationRaisedKes: 1975000,
-    image: marakwetPhotos.trees,
+    image: sitePhotos.projectKaptagat,
+    detailImage: sitePhotos.projectKaptagatDetail,
+    donationImage: sitePhotos.projectKaptagatDonation,
   },
   {
     slug: "chemususu-catchment",
@@ -84,7 +90,9 @@ export const projects: Project[] = [
     householdsEngaged: 265,
     donationGoalKes: 2100000,
     donationRaisedKes: 640000,
-    image: marakwetPhotos.restoration,
+    image: sitePhotos.projectChemususu,
+    detailImage: sitePhotos.projectChemususuDetail,
+    donationImage: sitePhotos.projectChemususuDonation,
   },
   {
     slug: "cherangani-north-corridor",
@@ -104,7 +112,9 @@ export const projects: Project[] = [
     householdsEngaged: 60,
     donationGoalKes: 3800000,
     donationRaisedKes: 210000,
-    image: marakwetPhotos.communityWork,
+    image: sitePhotos.projectCherangani,
+    detailImage: sitePhotos.projectCheranganiDetail,
+    donationImage: sitePhotos.projectCheranganiDonation,
   },
   {
     slug: "mt-elgon-lower-slopes",
@@ -124,7 +134,9 @@ export const projects: Project[] = [
     householdsEngaged: 180,
     donationGoalKes: 2600000,
     donationRaisedKes: 1840000,
-    image: marakwetPhotos.orchard,
+    image: sitePhotos.projectElgon,
+    detailImage: sitePhotos.projectElgonDetail,
+    donationImage: sitePhotos.projectElgonDonation,
   },
   {
     slug: "mau-adjacent-highlands",
@@ -144,7 +156,9 @@ export const projects: Project[] = [
     householdsEngaged: 0,
     donationGoalKes: 5200000,
     donationRaisedKes: 0,
-    image: marakwetPhotos.landscape,
+    image: sitePhotos.projectMau,
+    detailImage: sitePhotos.projectMauDetail,
+    donationImage: sitePhotos.projectMauDonation,
   },
 ];
 
@@ -159,4 +173,3 @@ export function getProjectsByCounty(countySlug: string) {
 export function getProjectsByProgramme(programmeSlug: string) {
   return projects.filter((p) => p.programmeSlugs.includes(programmeSlug as never));
 }
-

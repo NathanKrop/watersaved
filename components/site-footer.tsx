@@ -34,10 +34,8 @@ export function SiteFooter() {
           <p className="text-sm font-medium text-mist-50">Counties of operation</p>
           <ul className="mt-3 space-y-1.5 text-sm text-forest-300">
             {counties.map((c) => (
-              <li key={c.slug}>
-                <Link href={`/where-we-work#${c.slug}`} className="hover:text-mist-50">
-                  {c.name}
-                </Link>
+              <li key={c.slug} className="hover:text-mist-50">
+                {c.name}
               </li>
             ))}
           </ul>

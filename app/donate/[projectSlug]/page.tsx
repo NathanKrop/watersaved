@@ -36,7 +36,7 @@ export default async function ProjectDonatePage({ params }: { params: Promise<{ 
 
         <div className="mt-8">
           <PhotoPlaceholder
-            src={project.image}
+            src={project.donationImage ?? project.image}
             alt={`${project.name} restoration work`}
             caption={project.name}
             aspect="wide"

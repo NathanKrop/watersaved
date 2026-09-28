@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import PartnerLogoSlideshow from "@/components/partner-logo-slideshow";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { sitePhotos } from "@/lib/data/site-photos";
 
 export const metadata = { title: "Get Involved" };
 
@@ -76,7 +76,7 @@ export default function GetInvolvedPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src={marakwetPhotos.community}
+          src={sitePhotos.getInvolved}
           alt="Volunteers at a community planting day"
           fill
           priority
@@ -166,4 +166,3 @@ export default function GetInvolvedPage() {
     </>
   );
 }
-

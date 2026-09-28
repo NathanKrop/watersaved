@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { sitePhotos } from "@/lib/data/site-photos";
 
 export const metadata = { title: "Contact" };
 
@@ -9,7 +9,7 @@ export default function ContactPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src={marakwetPhotos.communityWork}
+          src={sitePhotos.contactHero}
           alt="Field team at work"
           fill
           priority
@@ -43,4 +43,3 @@ export default function ContactPage() {
     </>
   );
 }
-

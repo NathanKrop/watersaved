@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { newsPosts } from "@/lib/data/content";
 import { formatDate } from "@/lib/format";
-import { marakwetPhotos } from "@/lib/data/marakwet-photos";
+import { sitePhotos } from "@/lib/data/site-photos";
 
 export const metadata = { title: "News" };
 
@@ -18,7 +18,7 @@ export default function NewsPage() {
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
         <Image
-          src={marakwetPhotos.fieldwork}
+          src={sitePhotos.newsHero}
           alt="News from the field"
           fill
           priority
@@ -54,4 +54,3 @@ export default function NewsPage() {
     </>
   );
 }
-
