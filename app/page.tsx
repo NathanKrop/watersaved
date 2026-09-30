@@ -7,6 +7,7 @@ import { newsPosts } from "@/lib/data/content";
 import { formatDate } from "@/lib/format";
 import { primaryLocation } from "@/lib/data/location";
 import { sitePhotos } from "@/lib/data/site-photos";
+import PartnerLogoSlideshow from "@/components/partner-logo-slideshow";
 
 export const metadata = {
   title: `${primaryLocation.name} forest and water restoration`,
@@ -66,9 +67,9 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-55"
+          className="object-cover object-center opacity-70"
         />
-        <div className="absolute inset-0 bg-forest-900/65" />
+        <div className="absolute inset-0 bg-forest-900/45" />
         <div className="relative z-10 mx-auto max-w-6xl px-5 pt-20 pb-24 lg:pt-28 lg:pb-32">
           <div className="flex justify-start">
             <div className="relative h-28 w-28 overflow-hidden bg-transparent sm:h-32 sm:w-32 lg:h-40 lg:w-40">
@@ -103,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Photo feature strip */}
-      <section className="border-t border-line bg-forest-900">
+      <section className="border-t border-line bg-forest-700">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <div className="grid gap-2 lg:grid-cols-[2fr_1fr] lg:grid-rows-2 lg:h-[600px]">
             {/* Large left image — spans full height */}
@@ -326,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* How it works pathway */}
-      <section className="border-t border-line bg-forest-900 text-mist-50">
+      <section className="border-t border-line bg-forest-700 text-mist-50">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <p className="text-sm uppercase tracking-[0.18em] text-clay-600">How it works</p>
           <h2 className="mt-3 font-display text-3xl text-paper max-w-xl">From degraded land to living forest &mdash; a clear pathway.</h2>
@@ -369,11 +370,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners */}
+      <section className="border-t border-line bg-mist-100">
+        <div className="mx-auto max-w-6xl px-5 py-16">
+          <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Our partners</p>
+          <h2 className="mt-3 font-display text-3xl text-forest-900 max-w-2xl">
+            Protecting Kenya&apos;s water towers requires cooperation across communities, government, research and conservation.
+          </h2>
+          <p className="mt-4 max-w-2xl text-ink-soft leading-relaxed">
+            Partners contribute technical expertise, research, funding, policy support, community mobilisation,
+            restoration materials and local knowledge. The exact role of each organisation is confirmed on a
+            project-by-project basis.
+          </p>
+          <PartnerLogoSlideshow />
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="bg-forest-900 text-mist-50">
+      <section className="bg-forest-700 text-mist-50">
         <div className="mx-auto max-w-6xl px-5 py-16">
           <h2 className="font-display text-4xl">Restoring these landscapes takes all of us.</h2>
-          <div className="mt-8 grid gap-px bg-forest-700 sm:grid-cols-3">
+          <div className="mt-8 grid gap-px bg-forest-500 sm:grid-cols-3">
             {[
               ["/donate", "Donate", "Fund forest restoration and clean water access", "Donate &rarr;"],
               ["/get-involved/partner", "Partner With Us", "Bring your organisation into the work", "Become a Partner &rarr;"],
