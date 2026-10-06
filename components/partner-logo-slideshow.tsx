@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const PARTNER_LOGOS = [
   { file: "CAOK.jpeg", label: "Conservation Alliance of Kenya" },
@@ -27,51 +27,42 @@ const PARTNER_LOGOS = [
   { file: "SKWT.png", label: "Save Kenya Water Towers" },
 ];
 
-const LOGOS_PER_SLIDE = 5;
+function PartnerLogoGroup({
+  logos,
+  hidden = false,
+}: {
+  logos: typeof PARTNER_LOGOS;
+  hidden?: boolean;
+}) {
+  return (
+    <div className="flex shrink-0 items-center gap-3 px-2" aria-hidden={hidden || undefined}>
+      {logos.map((logo) => (
+        <div
+          key={logo.file}
+          className="relative flex h-32 w-48 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-line/70 bg-mist-50 p-2 sm:w-64 lg:w-72"
+        >
+          <Image
+            src={`/logo/partners%20logo/${encodeURIComponent(logo.file)}`}
+            alt={logo.label}
+            fill
+            sizes="(min-width: 1024px) 22vw, 50vw"
+            className="object-contain p-2"
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function PartnerLogoSlideshow() {
-  const totalSlides = Math.ceil(PARTNER_LOGOS.length / LOGOS_PER_SLIDE);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) {
-      setIsPaused(true);
-    }
-
-    if (isPaused || reducedMotion) {
-      return;
-    }
-
-    const interval = setInterval(() => {
-      setCurrentSlide((current) => (current + 1) % totalSlides);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, [isPaused, totalSlides]);
-
-  const slideStart = currentSlide * LOGOS_PER_SLIDE;
-  const visibleLogos = PARTNER_LOGOS.slice(slideStart, slideStart + LOGOS_PER_SLIDE);
-
   return (
-    <div className="mt-10">
-      <div className="soft-card overflow-hidden bg-white">
-        <div className="grid h-32 grid-cols-5 gap-3 p-3 sm:p-4">
-          {visibleLogos.map((logo, index) => (
-            <div
-              key={`${logo.file}-${currentSlide}-${index}`}
-              className="relative flex h-full items-center justify-center overflow-hidden rounded-xl border border-line/70 bg-mist-50 p-2"
-            >
-              <Image
-                src={`/logo/partners%20logo/${encodeURIComponent(logo.file)}`}
-                alt={logo.label}
-                fill
-                sizes="(min-width: 1024px) 15vw, 40vw"
-                className="object-contain p-2"
-              />
-            </div>
-          ))}
+    <div className="mt-10 overflow-hidden rounded-2xl bg-white py-3 soft-card">
+      <div className="overflow-hidden">
+        <div className={`partner-logo-track flex w-max ${isPaused ? "is-paused" : ""}`}>
+          <PartnerLogoGroup logos={PARTNER_LOGOS} />
+          <PartnerLogoGroup logos={PARTNER_LOGOS} hidden />
         </div>
       </div>
 
@@ -80,30 +71,36 @@ export default function PartnerLogoSlideshow() {
           type="button"
           onClick={() => setIsPaused((paused) => !paused)}
           aria-pressed={isPaused}
-          aria-label={isPaused ? "Resume partner logo rotation" : "Pause partner logo rotation"}
-          title={isPaused ? "Resume rotation" : "Pause rotation"}
+          aria-label={isPaused ? "Resume partner logo slideshow" : "Pause partner logo slideshow"}
+          title={isPaused ? "Resume slideshow" : "Pause slideshow"}
           className="rounded-full px-2 py-1 text-xs text-ink-soft hover:bg-mist-100"
         >
           {isPaused ? ">" : "||"}
         </button>
-        {Array.from({ length: totalSlides }, (_, index) => {
-          const pageStart = index * LOGOS_PER_SLIDE;
-          const isActive = currentSlide === index;
-
-          return (
-            <button
-              key={`slide-${pageStart}`}
-              type="button"
-              aria-label={`Show partners ${pageStart + 1} to ${Math.min(pageStart + LOGOS_PER_SLIDE, PARTNER_LOGOS.length)}`}
-              onClick={() => setCurrentSlide(index)}
-              aria-current={isActive ? "true" : undefined}
-              className={`h-2.5 w-2.5 rounded-full transition-colors ${
-                isActive ? "bg-forest-700" : "bg-line"
-              }`}
-            />
-          );
-        })}
       </div>
+
+      <style>{`
+        .partner-logo-track {
+          animation: partner-logo-scroll 28s linear infinite;
+          will-change: transform;
+        }
+
+        .partner-logo-track.is-paused {
+          animation-play-state: paused;
+        }
+
+        @keyframes partner-logo-scroll {
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .partner-logo-track {
+            animation: none;
+            transform: translate3d(0, 0, 0);
+          }
+        }
+      `}</style>
     </div>
   );
 }
