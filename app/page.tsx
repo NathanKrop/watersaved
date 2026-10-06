@@ -59,48 +59,81 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="soft-hero relative bg-forest-900 text-mist-50">
-        <Image
-          src={sitePhotos.location}
-          alt={primaryLocation.imageAlt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center opacity-70"
-        />
-        <div className="absolute inset-0 bg-forest-900/45" />
-        <div className="relative z-10 mx-auto max-w-6xl px-5 pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <div className="flex justify-start">
-            <div className="relative h-28 w-28 overflow-hidden bg-transparent sm:h-32 sm:w-32 lg:h-40 lg:w-40">
-              <Image
-                src="/logo/mylogo/logo2.png"
-                alt="Save Kenya Water Towers logo"
-                fill
-                sizes="160px"
-                className="object-contain"
-              />
+      {/* Split hero */}
+      <section className="relative overflow-hidden bg-forest-900 text-mist-50 lg:min-h-[calc(100vh-5rem)]">
+        <div className="grid lg:grid-cols-2">
+          <div className="relative z-10 flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-12 lg:py-20 xl:px-16">
+            <div className="flex items-center gap-4">
+              <div className="relative h-20 w-20 overflow-hidden bg-transparent sm:h-24 sm:w-24">
+                <Image
+                  src="/logo/mylogo/logo2.png"
+                  alt="Save Kenya Water Towers logo"
+                  fill
+                  sizes="96px"
+                  className="object-contain"
+                />
+              </div>
+              <p className="max-w-xs text-xs font-semibold uppercase leading-relaxed tracking-[0.16em] text-forest-300">
+                Community-led restoration across Kenya&apos;s water towers
+              </p>
+            </div>
+
+            <div className="mt-10 max-w-xl lg:mt-16">
+              <p className="text-sm uppercase tracking-[0.2em] text-clay-600">Elgeyo-Marakwet County</p>
+              <h1 className="mt-5 font-display text-5xl leading-[0.98] text-balance text-paper sm:text-6xl lg:text-[4.7rem]">
+                Restore the landscape. Secure the water. Strengthen the people.
+              </h1>
+              <p className="mt-7 text-lg leading-relaxed text-forest-300">
+                From the forest edge of Iten and Kesup to the Spencer Line above the Kerio Valley, we restore
+                indigenous ecosystems, protect springs and create lasting livelihoods with local communities.
+              </p>
+            </div>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <CtaLink href="/donate">Donate to restoration</CtaLink>
+              <CtaLink
+                href="/projects"
+                variant="secondary"
+                className="border-forest-300 text-mist-50 hover:bg-mist-50 hover:text-forest-900"
+              >
+                Explore our projects
+              </CtaLink>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-forest-300/30 pt-5 text-xs uppercase tracking-[0.12em] text-forest-300">
+              <span>Community-led</span>
+              <span>Indigenous ecosystems</span>
+              <span>Measurable impact</span>
             </div>
           </div>
-          <h1 className="mt-5 font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.98] max-w-4xl text-balance text-paper">
-            Restore Elgeyo-Marakwet&apos;s escarpment. Secure the water. Strengthen the communities.
-          </h1>
-          <p className="mt-7 max-w-2xl text-mist-50 text-lg leading-relaxed">
-            From Iten and Kesup Forest to the Spencer Line above the Kerio Valley, we work with communities
-            to restore indigenous forest, protect springs and build nature-positive livelihoods. This is our
-            home landscape, connected to water-tower work across Kenya&apos;s Rift Valley.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <CtaLink href="/donate">Donate to restoration</CtaLink>
-            <CtaLink href="/projects" variant="secondary" className="border-forest-300 text-mist-50 hover:bg-mist-50 hover:text-forest-900">
-              Explore our projects
-            </CtaLink>
+
+          <div className="relative min-h-[430px] overflow-hidden lg:min-h-full">
+            <Image
+              src={sitePhotos.homeFeature}
+              alt={primaryLocation.imageAlt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/10 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-6 p-6 sm:p-8 lg:p-10">
+              <div className="max-w-md">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-clay-600">Where restoration begins</p>
+                <p className="mt-3 font-display text-2xl leading-tight text-paper sm:text-3xl">
+                  Healthy forest protects the water that communities depend on.
+                </p>
+              </div>
+              <Link
+                href="/projects"
+                className="hidden shrink-0 rounded-full border border-mist-50/40 bg-forest-900/50 px-4 py-2 text-sm text-paper backdrop-blur transition-colors hover:bg-forest-900 sm:inline-flex"
+              >
+                See our work &rarr;
+              </Link>
+            </div>
           </div>
-          <p className="mt-8 text-xs uppercase tracking-[0.14em] text-mist-50">
-            Community-led restoration <span aria-hidden="true">•</span> Indigenous ecosystems <span aria-hidden="true">•</span> Measurable impact
-          </p>
         </div>
-        <ContourLines animate className="absolute -bottom-1 left-0 w-full h-24 text-forest-500" />
+        <ContourLines animate className="pointer-events-none absolute -bottom-1 left-0 z-20 h-24 w-full text-forest-500" />
       </section>
 
       {/* Photo feature strip */}
