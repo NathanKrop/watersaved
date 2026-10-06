@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 
 const NAV_ITEMS = [
@@ -68,9 +69,22 @@ const NAV_ITEMS = [
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const closeTimeoutRef = useRef<number | null>(null);
+
+  const isLinkActive = (href: string) => {
+    const route = href.split("#")[0];
+    return pathname === route || pathname.startsWith(`${route}/`);
+  };
+
+  const isMenuActive = (item: (typeof NAV_ITEMS)[number]) =>
+    item.href
+      ? isLinkActive(item.href)
+      : item.groups?.some((group) =>
+          group.items.some((link) => isLinkActive(link.href)),
+        ) ?? false;
 
   const openDropdown = (label: string) => {
     if (closeTimeoutRef.current) {
@@ -117,16 +131,23 @@ export function SiteHeader() {
         >
           {NAV_ITEMS.map((item) => {
             if (item.href) {
+              const active = isLinkActive(item.href);
+
               return (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-full px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-mist-100 hover:text-forest-900"
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-mist-100 hover:text-forest-900 ${
+                    active ? "bg-mist-100 text-clay-700" : "text-ink-soft"
+                  }`}
                 >
                   {item.label}
                 </Link>
               );
             }
+
+            const active = isMenuActive(item);
 
             return (
               <div
@@ -137,11 +158,14 @@ export function SiteHeader() {
               >
                 <button
                   type="button"
-                  className="flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-mist-100 hover:text-forest-900"
+                  className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-mist-100 hover:text-forest-900 ${
+                    active ? "bg-mist-100 text-clay-700" : "text-ink-soft"
+                  }`}
                   onFocus={() => openDropdown(item.label)}
                   onMouseEnter={() => openDropdown(item.label)}
                   onClick={() => setOpenMenu((current) => (current === item.label ? null : item.label))}
                   aria-expanded={openMenu === item.label}
+                  aria-current={active ? "page" : undefined}
                 >
                   {item.label}
                   <span aria-hidden="true" className="text-[10px] leading-none">▾</span>
@@ -217,25 +241,35 @@ export function SiteHeader() {
           <div className="flex flex-col gap-3">
             {NAV_ITEMS.map((item) => {
               if (item.href) {
+                const active = isLinkActive(item.href);
+
                 return (
                   <Link
                     key={item.label}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="py-3 text-lg font-display text-forest-900"
+                    aria-current={active ? "page" : undefined}
+                    className={`py-3 text-lg font-display transition-colors ${
+                      active ? "text-clay-700" : "text-forest-900"
+                    }`}
                   >
                     {item.label}
                   </Link>
                 );
               }
 
+              const active = isMenuActive(item);
+
               return (
                 <div key={item.label} className="rounded-[1.35rem] border border-line/50 bg-paper p-3 shadow-[0_8px_18px_rgba(22,40,31,0.03)]">
                   <button
                     type="button"
-                    className="flex w-full items-center justify-between text-left text-lg font-display text-forest-900"
+                    className={`flex w-full items-center justify-between text-left text-lg font-display transition-colors ${
+                      active ? "text-clay-700" : "text-forest-900"
+                    }`}
                     onClick={() => setOpenMenu((current) => (current === item.label ? null : item.label))}
                     aria-expanded={openMenu === item.label}
+                    aria-current={active ? "page" : undefined}
                     aria-controls={`mobile-menu-${item.label.toLowerCase().replaceAll(" ", "-")}`}
                   >
                     {item.label}
