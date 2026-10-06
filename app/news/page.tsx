@@ -3,6 +3,8 @@ import Link from "next/link";
 import { newsPosts } from "@/lib/data/content";
 import { formatDate } from "@/lib/format";
 import { sitePhotos } from "@/lib/data/site-photos";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { newsGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "News" };
 
@@ -50,6 +52,12 @@ export default function NewsPage() {
           </li>
         ))}
         </ul>
+      </section>
+      <section className="border-t border-line bg-mist-100">
+        <div className="mx-auto max-w-6xl px-5 py-12">
+          <h2 className="font-display text-3xl text-forest-900">Updates from the field</h2>
+          <PhotoCarousel photos={newsGallery} label="News field photos" />
+        </div>
       </section>
     </>
   );

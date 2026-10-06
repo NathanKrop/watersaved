@@ -4,6 +4,8 @@ import { CtaLink } from "@/components/cta-link";
 import { impactGoals, newsPosts } from "@/lib/data/content";
 import { formatDate } from "@/lib/format";
 import { sitePhotos } from "@/lib/data/site-photos";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { impactGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "Impact" };
 
@@ -125,6 +127,12 @@ export default function ImpactPage() {
         </ul>
         <div className="mt-8">
           <CtaLink href="/donate">Help us reach these goals faster</CtaLink>
+        </div>
+      </section>
+      <section className="border-t border-line bg-mist-100">
+        <div className="mx-auto max-w-6xl px-5 py-12">
+          <h2 className="font-display text-3xl text-forest-900">The work behind the numbers</h2>
+          <PhotoCarousel photos={impactGallery} label="Restoration impact photos" />
         </div>
       </section>
     </>

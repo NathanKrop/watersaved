@@ -2,6 +2,8 @@ import Image from "next/image";
 import { events } from "@/lib/data/content";
 import { EventCard } from "@/components/event-card";
 import { sitePhotos } from "@/lib/data/site-photos";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { eventsGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "Events" };
 
@@ -51,6 +53,12 @@ export default function EventsPage() {
           </div>
         </>
       )}
+      </section>
+      <section className="border-t border-line bg-mist-100">
+        <div className="mx-auto max-w-6xl px-5 py-12">
+          <h2 className="font-display text-3xl text-forest-900">Together in the field</h2>
+          <PhotoCarousel photos={eventsGallery} label="Event field photos" />
+        </div>
       </section>
     </>
   );

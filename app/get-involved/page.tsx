@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import PartnerLogoSlideshow from "@/components/partner-logo-slideshow";
 import { sitePhotos } from "@/lib/data/site-photos";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { involvementGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "Get Involved" };
 
@@ -162,6 +164,10 @@ export default function GetInvolvedPage() {
             Get the fundraising toolkit →
           </Link>
         </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-5 py-12">
+        <h2 className="font-display text-3xl text-forest-900">Join the work on the ground</h2>
+        <PhotoCarousel photos={involvementGallery} label="Ways to get involved" />
       </section>
     </>
   );

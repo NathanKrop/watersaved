@@ -4,6 +4,8 @@ import { TeamMemberCard } from "@/components/team-member-card";
 import { CtaLink } from "@/components/cta-link";
 import { teamMembers } from "@/lib/data/content";
 import { sitePhotos } from "@/lib/data/site-photos";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { aboutGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "Who We Are" };
 
@@ -69,6 +71,11 @@ export default function WhoWeArePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-12">
+        <h2 className="font-display text-3xl text-forest-900">People and places behind the work</h2>
+        <PhotoCarousel photos={aboutGallery} label="People and places" />
       </section>
 
       <section className="border-t border-line bg-paper">
