@@ -8,6 +8,8 @@ import { formatDate } from "@/lib/format";
 import { primaryLocation } from "@/lib/data/location";
 import { sitePhotos } from "@/lib/data/site-photos";
 import PartnerLogoSlideshow from "@/components/partner-logo-slideshow";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { homeGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = {
   title: `${primaryLocation.name} forest and water restoration`,
@@ -109,8 +111,8 @@ export default function Home() {
 
           <div className="relative min-h-[430px] overflow-hidden lg:min-h-full">
             <Image
-              src={sitePhotos.homeFeature}
-              alt={primaryLocation.imageAlt}
+              src="/img/new/pexels-nyar-kaheti-76506250-8614553.jpg"
+              alt="Highland landscape in Elgeyo-Marakwet"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -143,7 +145,7 @@ export default function Home() {
             {/* Large left image — spans full height */}
             <div className="soft-image group relative lg:row-span-2">
               <Image
-                src={sitePhotos.homeFeature}
+                src="/img/IMG_0526.jpeg"
                 alt="Forest restoration work"
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
@@ -188,6 +190,14 @@ export default function Home() {
             <Link href="/projects" className="text-sm text-clay-500 underline underline-offset-4">See our projects &rarr;</Link>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-12">
+        <div className="max-w-2xl">
+          <p className="text-sm uppercase tracking-[0.18em] text-clay-700">A closer look</p>
+          <h2 className="mt-3 font-display text-3xl text-forest-900">Restoration, led by the people who know this land.</h2>
+        </div>
+        <PhotoCarousel photos={homeGallery} label="Community restoration photos" />
       </section>
 
       {/* The crisis */}
@@ -332,8 +342,8 @@ export default function Home() {
           <p className="mt-5 text-sm text-ink-soft">&mdash; Community member, Elgeyo-Marakwet County</p>
             <div className="soft-image mt-8 relative aspect-video">
             <Image
-              src={sitePhotos.homeGathering}
-              alt="Community members"
+              src="/img/new/pexels-franckfrommada-37270569.jpg"
+              alt="Landscape view of the restoration area"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
