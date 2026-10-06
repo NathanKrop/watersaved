@@ -62,30 +62,30 @@ export default function Home() {
   return (
     <>
       {/* Split hero */}
-      <section className="relative overflow-hidden bg-forest-900 text-mist-50 lg:min-h-[calc(100vh-5rem)]">
+      <section className="relative overflow-hidden bg-paper text-forest-900 lg:min-h-[calc(100vh-5rem)]">
         <div className="grid lg:grid-cols-2">
-          <div className="relative z-10 flex flex-col justify-center px-5 py-16 sm:px-8 lg:px-12 lg:py-20 xl:px-16">
+          <div className="relative z-10 flex flex-col justify-center bg-paper px-5 py-16 text-forest-900 sm:px-8 lg:px-12 lg:py-20 xl:px-16">
             <div className="flex items-center gap-4">
-              <div className="relative h-20 w-20 overflow-hidden bg-transparent sm:h-24 sm:w-24">
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden bg-transparent sm:h-36 sm:w-36 lg:h-44 lg:w-44">
                 <Image
                   src="/logo/mylogo/logo2.png"
                   alt="Save Kenya Water Towers logo"
                   fill
-                  sizes="96px"
+                  sizes="(min-width: 1024px) 176px, 144px"
                   className="object-contain"
                 />
               </div>
-              <p className="max-w-xs text-xs font-semibold uppercase leading-relaxed tracking-[0.16em] text-forest-300">
+              <p className="max-w-xs text-xs font-semibold uppercase leading-relaxed tracking-[0.16em] text-forest-700">
                 Community-led restoration across Kenya&apos;s water towers
               </p>
             </div>
 
             <div className="mt-10 max-w-xl lg:mt-16">
-              <p className="text-sm uppercase tracking-[0.2em] text-clay-600">Elgeyo-Marakwet County</p>
-              <h1 className="mt-5 font-display text-5xl leading-[0.98] text-balance text-paper sm:text-6xl lg:text-[4.7rem]">
+              <p className="text-sm uppercase tracking-[0.2em] text-clay-700">Elgeyo-Marakwet County</p>
+              <h1 className="mt-5 font-display text-5xl leading-[0.98] text-balance text-forest-900 sm:text-6xl lg:text-[4.7rem]">
                 Restore the landscape. Secure the water. Strengthen the people.
               </h1>
-              <p className="mt-7 text-lg leading-relaxed text-forest-300">
+              <p className="mt-7 text-lg leading-relaxed text-ink-soft">
                 From the forest edge of Iten and Kesup to the Spencer Line above the Kerio Valley, we restore
                 indigenous ecosystems, protect springs and create lasting livelihoods with local communities.
               </p>
@@ -96,13 +96,13 @@ export default function Home() {
               <CtaLink
                 href="/projects"
                 variant="secondary"
-                className="border-forest-300 text-mist-50 hover:bg-mist-50 hover:text-forest-900"
+                className="border-forest-700 text-forest-900 hover:bg-forest-700 hover:text-paper"
               >
                 Explore our projects
               </CtaLink>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-forest-300/30 pt-5 text-xs uppercase tracking-[0.12em] text-forest-300">
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-forest-300/50 pt-5 text-xs uppercase tracking-[0.12em] text-forest-700">
               <span>Community-led</span>
               <span>Indigenous ecosystems</span>
               <span>Measurable impact</span>
@@ -111,8 +111,8 @@ export default function Home() {
 
           <div className="relative min-h-[430px] overflow-hidden lg:min-h-full">
             <Image
-              src="/img/new/pexels-nyar-kaheti-76506250-8614553.jpg"
-              alt="Highland landscape in Elgeyo-Marakwet"
+              src="/img/new/pexels-rudi-chandra-1981866-37555098.jpg"
+              alt="Natural landscape in Kenya"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"
