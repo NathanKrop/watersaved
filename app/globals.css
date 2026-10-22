@@ -3,12 +3,11 @@
 /*
   DESIGN TOKENS — Kenya Water Towers
   Palette grounded in the subject: montane forest green, elevation-map
-  ochre for the single call-to-action accent, and a limestone-grey
-  background (not cream) that reads like old survey paper.
+  ochre for the single call-to-action accent, and a clean white background.
 */
 :root {
-  --color-mist-50: #f4f5f0;   /* page background — limestone, not cream */
-  --color-mist-100: #eceee5;
+  --color-mist-50: #ffffff;
+  --color-mist-100: #ffffff;
   --color-line: #d7d9c9;      /* hairline / contour rule */
   --radius-soft: 1.125rem;
   --radius-card: 1.5rem;
@@ -27,7 +26,7 @@
 
   --color-ink: #20241f;
   --color-ink-soft: #4a5147;
-  --color-paper: #fbfbf8;
+  --color-paper: #ffffff;
 }
 
 @theme inline {
@@ -47,7 +46,7 @@
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-worksans);
-  --font-nav: var(--font-libre-baskerville);
+  --font-nav: Arial, Helvetica, sans-serif;
 }
 
 * {

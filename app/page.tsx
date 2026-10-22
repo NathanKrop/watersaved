@@ -108,7 +108,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[430px] overflow-hidden lg:min-h-full">
+          <div className="soft-image relative min-h-[430px] lg:min-h-full">
             <Image
               src="/img/new/pexels-rudi-chandra-1981866-37555098.jpg"
               alt="Natural landscape in Kenya"

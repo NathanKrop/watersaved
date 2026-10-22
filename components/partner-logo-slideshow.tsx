@@ -39,7 +39,7 @@ function PartnerLogoGroup({
       {logos.map((logo) => (
         <div
           key={logo.file}
-          className="relative flex h-40 w-56 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-line/70 bg-mist-50 sm:h-48 sm:w-72 lg:h-56 lg:w-80"
+          className="relative flex h-40 w-56 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white sm:h-48 sm:w-72 lg:h-56 lg:w-80"
         >
           <Image
             src={`/logo/partners%20logo/${encodeURIComponent(logo.file)}`}
@@ -58,7 +58,7 @@ export default function PartnerLogoSlideshow() {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <div className="mt-10 overflow-hidden rounded-2xl bg-white py-3 soft-card">
+    <div className="mt-10 overflow-hidden rounded-2xl bg-white py-3">
       <div className="overflow-hidden">
         <div className={`partner-logo-track flex w-max ${isPaused ? "is-paused" : ""}`}>
           <PartnerLogoGroup logos={PARTNER_LOGOS} />

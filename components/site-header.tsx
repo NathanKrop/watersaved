@@ -105,16 +105,14 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b-2 border-forest-700/25 bg-mist-50/95 font-nav shadow-[0_4px_18px_rgba(22,40,31,0.06)] backdrop-blur">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5">
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <div className="rounded-lg bg-white p-1">
-            <div className="relative h-16 w-32 overflow-hidden sm:w-36 lg:w-40">
-              <Image
-                src="/logo/mylogo/logo2.png"
-                alt="Save Kenya Water Towers logo"
-                fill
-                sizes="160px"
-                className="object-contain"
-              />
-            </div>
+          <div className="relative h-16 w-32 overflow-hidden sm:w-36 lg:w-40">
+            <Image
+              src="/logo/mylogo/logo2.png"
+              alt="Save Kenya Water Towers logo"
+              fill
+              sizes="160px"
+              className="object-contain"
+            />
           </div>
         </Link>
 
@@ -137,8 +135,10 @@ export function SiteHeader() {
                   key={item.label}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-full border px-3 py-2 text-sm font-medium transition-colors hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900 ${
-                    active ? "border-clay-700/30 bg-clay-100 text-forest-900" : "border-transparent text-ink-soft"
+                  className={`rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+                    active
+                      ? "border-clay-600 bg-clay-600 text-paper hover:border-clay-700 hover:bg-clay-700 hover:text-paper"
+                      : "border-transparent text-ink-soft hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900"
                   }`}
                 >
                   {item.label}
@@ -157,8 +157,10 @@ export function SiteHeader() {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 rounded-full border px-3 py-2 text-sm font-medium transition-colors hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900 ${
-                    active ? "border-clay-700/30 bg-clay-100 text-forest-900" : "border-transparent text-ink-soft"
+                  className={`flex items-center gap-1 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+                    active
+                      ? "border-clay-600 bg-clay-600 text-paper hover:border-clay-700 hover:bg-clay-700 hover:text-paper"
+                      : "border-transparent text-ink-soft hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900"
                   }`}
                   onFocus={() => openDropdown(item.label)}
                   onMouseEnter={() => openDropdown(item.label)}
