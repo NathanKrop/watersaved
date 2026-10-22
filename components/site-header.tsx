@@ -54,11 +54,8 @@ const NAV_ITEMS = [
           { href: "/get-involved#partners", label: "FAO" },
           { href: "/get-involved#partners", label: "AFR100" },
           { href: "/get-involved#partners", label: "WRI" },
-          { href: "/get-involved#partners", label: "TerraFund AFR100" },
           { href: "/get-involved#partners", label: "The Restoration Alliance" },
-          { href: "/get-involved#partners", label: "The Conservation Alliance of Kenya" },
           { href: "/get-involved#partners", label: "KFS" },
-          { href: "/get-involved#partners", label: "KUCCG" },
         ],
       },
     ],
@@ -105,17 +102,19 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/50 bg-mist-50/95 shadow-[0_4px_18px_rgba(22,40,31,0.025)] backdrop-blur">
+    <header className="sticky top-0 z-40 border-b-2 border-forest-700/25 bg-mist-50/95 font-nav shadow-[0_4px_18px_rgba(22,40,31,0.06)] backdrop-blur">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5">
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <div className="relative h-20 w-20 overflow-hidden bg-transparent sm:h-24 sm:w-24 lg:h-28 lg:w-28">
-            <Image
-              src="/logo/mylogo/logo2.png"
-              alt="Save Kenya Water Towers logo"
-              fill
-              sizes="112px"
-              className="object-contain"
-            />
+          <div className="rounded-lg bg-white p-1">
+            <div className="relative h-16 w-32 overflow-hidden sm:w-36 lg:w-40">
+              <Image
+                src="/logo/mylogo/logo2.png"
+                alt="Save Kenya Water Towers logo"
+                fill
+                sizes="160px"
+                className="object-contain"
+              />
+            </div>
           </div>
         </Link>
 
@@ -138,8 +137,8 @@ export function SiteHeader() {
                   key={item.label}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-mist-100 hover:text-forest-900 ${
-                    active ? "bg-mist-100 text-clay-700" : "text-ink-soft"
+                  className={`rounded-full border px-3 py-2 text-sm font-medium transition-colors hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900 ${
+                    active ? "border-clay-700/30 bg-clay-100 text-forest-900" : "border-transparent text-ink-soft"
                   }`}
                 >
                   {item.label}
@@ -158,8 +157,8 @@ export function SiteHeader() {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-mist-100 hover:text-forest-900 ${
-                    active ? "bg-mist-100 text-clay-700" : "text-ink-soft"
+                  className={`flex items-center gap-1 rounded-full border px-3 py-2 text-sm font-medium transition-colors hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900 ${
+                    active ? "border-clay-700/30 bg-clay-100 text-forest-900" : "border-transparent text-ink-soft"
                   }`}
                   onFocus={() => openDropdown(item.label)}
                   onMouseEnter={() => openDropdown(item.label)}
@@ -173,7 +172,7 @@ export function SiteHeader() {
 
                 {openMenu === item.label && (
                   <div
-                    className="absolute left-1/2 top-full z-50 mt-3 w-[620px] -translate-x-1/2 rounded-[1.75rem] border border-line/50 bg-paper p-3 shadow-[0_14px_30px_rgba(22,40,31,0.06)]"
+                    className="absolute left-1/2 top-full z-50 mt-3 w-[620px] -translate-x-1/2 rounded-[1.75rem] border-2 border-forest-700/25 bg-white p-3 shadow-[0_14px_30px_rgba(22,40,31,0.12)]"
                     onMouseEnter={() => {
                       if (closeTimeoutRef.current) {
                         window.clearTimeout(closeTimeoutRef.current);
@@ -184,7 +183,7 @@ export function SiteHeader() {
                   >
                     <div className="grid gap-3 md:grid-cols-2">
                       {item.groups?.map((group) => (
-                        <div key={group.title} className="rounded-[1.35rem] border border-line/50 bg-mist-50 p-4">
+                        <div key={group.title} className="rounded-[1.35rem] border border-forest-700/20 bg-mist-50 p-4">
                           <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-clay-700">{group.title}</p>
                           <ul className="mt-3 space-y-2">
                             {group.items.map((link) => (
@@ -249,7 +248,7 @@ export function SiteHeader() {
                     href={item.href}
                     onClick={() => setOpen(false)}
                     aria-current={active ? "page" : undefined}
-                    className={`py-3 text-lg font-display transition-colors ${
+                    className={`py-3 text-lg transition-colors ${
                       active ? "text-clay-700" : "text-forest-900"
                     }`}
                   >
@@ -261,10 +260,10 @@ export function SiteHeader() {
               const active = isMenuActive(item);
 
               return (
-                <div key={item.label} className="rounded-[1.35rem] border border-line/50 bg-paper p-3 shadow-[0_8px_18px_rgba(22,40,31,0.03)]">
+                <div key={item.label} className="rounded-[1.35rem] border border-forest-700/20 bg-paper p-3 shadow-[0_8px_18px_rgba(22,40,31,0.03)]">
                   <button
                     type="button"
-                    className={`flex w-full items-center justify-between text-left text-lg font-display transition-colors ${
+                    className={`flex w-full items-center justify-between text-left text-lg transition-colors ${
                       active ? "text-clay-700" : "text-forest-900"
                     }`}
                     onClick={() => setOpenMenu((current) => (current === item.label ? null : item.label))}
@@ -310,4 +309,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

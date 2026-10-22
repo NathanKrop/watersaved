@@ -47,6 +47,7 @@
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-worksans);
+  --font-nav: var(--font-libre-baskerville);
 }
 
 * {

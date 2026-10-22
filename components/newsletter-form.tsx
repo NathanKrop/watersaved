@@ -1,26 +1,34 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { readFormApiResponse } from "@/lib/form-response";
 
 export function NewsletterForm({ dark = false }: { dark?: boolean }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!consent) return;
     setStatus("submitting");
     try {
-      // Backend: POST /api/newsletter/subscribe — see build spec.
-      await fetch("/api/newsletter/subscribe", {
+      const response = await fetch("/api/newsletter/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, consent }),
+        body: JSON.stringify({ name, email, consent }),
       });
+      const result = await readFormApiResponse(response);
+      if (result.newsletterStatus !== "pending") {
+        throw new Error("We could not confirm your newsletter subscription. Please try again.");
+      }
       setStatus("done");
+      setName("");
       setEmail("");
-    } catch {
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong — please try again.");
       setStatus("error");
     }
   }
@@ -28,7 +36,7 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
   if (status === "done") {
     return (
       <p className={`text-sm ${dark ? "text-forest-300" : "text-forest-700"}`}>
-        Check your inbox to confirm your subscription.
+        Check your inbox to confirm your newsletter subscription.
       </p>
     );
   }
@@ -38,6 +46,18 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
       <label htmlFor="newsletter-email" className={`block text-sm mb-2 ${dark ? "text-forest-300" : "text-ink-soft"}`}>
         Field notes from the forest, roughly once a month.
       </label>
+      <input
+        id="newsletter-name"
+        type="text"
+        required
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Your name"
+        aria-label="Your name"
+        className={`mb-2 w-full min-w-0 border px-3 py-2 text-sm ${
+          dark ? "bg-forest-900 border-forest-500 text-paper placeholder:text-forest-300" : "border-line bg-paper"
+        }`}
+      />
       <div className="flex gap-2">
         <input
           id="newsletter-email"
@@ -75,9 +95,8 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
         </span>
       </label>
       {status === "error" && (
-        <p className="mt-2 text-xs text-clay-700">Something went wrong — please try again.</p>
+        <p role="alert" className="mt-2 text-xs text-clay-700">{errorMessage}</p>
       )}
     </form>
   );
 }
-

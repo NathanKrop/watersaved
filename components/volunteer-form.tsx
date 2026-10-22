@@ -2,34 +2,54 @@
 
 import { useState, type FormEvent } from "react";
 import { counties } from "@/lib/data/counties";
+import { readFormApiResponse } from "@/lib/form-response";
+import { isNewsletterStatus, type NewsletterStatus } from "@/lib/newsletter";
 
 export function VolunteerForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
+  const [newsletterStatus, setNewsletterStatus] = useState<NewsletterStatus>("not_requested");
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
     const form = new FormData(e.currentTarget);
     try {
-      // Backend: POST /api/volunteer — inserts into volunteer_applications,
-      // notifies staff, sends an auto-acknowledgement to the applicant.
-      await fetch("/api/volunteer", {
+      const response = await fetch("/api/volunteer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(form.entries())),
+        body: JSON.stringify({
+          ...Object.fromEntries(form.entries()),
+          newsletter_opt_in: form.get("newsletter_opt_in") === "true",
+        }),
       });
+      const result = await readFormApiResponse(response);
+      if (result.applicationSaved !== true || !isNewsletterStatus(result.newsletterStatus)) {
+        throw new Error("We could not confirm that your application was saved. Please try again.");
+      }
+      setNewsletterStatus(result.newsletterStatus);
       setStatus("done");
       e.currentTarget.reset();
-    } catch {
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
       setStatus("error");
     }
   }
 
   if (status === "done") {
     return (
-      <p className="text-forest-700">
-        Thank you — we&apos;ve received your application and will be in touch within two weeks.
-      </p>
+      <div className="space-y-2 text-forest-700">
+        <p>Thank you — we&apos;ve received your application and will be in touch within two weeks.</p>
+        {newsletterStatus === "pending" && (
+          <p>We&apos;ve also sent you an email to confirm your newsletter subscription.</p>
+        )}
+        {newsletterStatus === "not_configured" && (
+          <p>Your application is saved, but newsletter sign-up is not available yet.</p>
+        )}
+        {newsletterStatus === "failed" && (
+          <p>Your application is saved, but we couldn&apos;t complete the newsletter sign-up. Please subscribe separately.</p>
+        )}
+      </div>
     );
   }
 
@@ -68,6 +88,17 @@ export function VolunteerForm() {
         </label>
         <textarea id="motivation" name="motivation" required rows={4} className="w-full border border-line px-3 py-2 text-sm bg-paper" />
       </div>
+      <label className="flex items-start gap-2 text-sm text-ink-soft">
+        <input type="checkbox" name="newsletter_opt_in" value="true" className="mt-1" />
+        <span>
+          I&apos;d also like to receive occasional Mailchimp newsletters. This is optional; only my name and email will be
+          shared with Mailchimp. See the{" "}
+          <a href="/legal/privacy-policy" className="underline underline-offset-2">
+            privacy policy
+          </a>
+          .
+        </span>
+      </label>
       <button
         type="submit"
         disabled={status === "submitting"}
@@ -75,7 +106,7 @@ export function VolunteerForm() {
       >
         {status === "submitting" ? "Sending…" : "Submit application"}
       </button>
-      {status === "error" && <p className="text-sm text-clay-700">Something went wrong — please try again.</p>}
+      {status === "error" && <p role="alert" className="text-sm text-clay-700">{errorMessage}</p>}
     </form>
   );
 }
@@ -109,4 +140,3 @@ function Field({
     </div>
   );
 }
-

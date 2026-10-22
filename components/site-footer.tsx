@@ -79,13 +79,13 @@ export function SiteFooter() {
     <footer className="bg-forest-900 text-mist-50">
       <div className="mx-auto max-w-6xl px-5 py-14 grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <div className="flex items-center gap-3">
-            <div className="relative h-20 w-20 overflow-hidden bg-transparent sm:h-24 sm:w-24 lg:h-28 lg:w-28">
+          <div className="inline-flex rounded-xl bg-white p-2">
+            <div className="relative h-20 w-36 overflow-hidden sm:h-24 sm:w-40 lg:h-28 lg:w-44">
               <Image
                 src="/logo/mylogo/logo2.png"
                 alt="Save Kenya Water Towers logo"
                 fill
-                sizes="112px"
+                sizes="176px"
                 className="object-contain"
               />
             </div>
@@ -183,4 +183,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-

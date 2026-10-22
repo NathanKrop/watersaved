@@ -65,23 +65,22 @@ export default function Home() {
       <section className="relative overflow-hidden bg-paper text-forest-900 lg:min-h-[calc(100vh-5rem)]">
         <div className="grid lg:grid-cols-2">
           <div className="relative z-10 flex flex-col justify-center bg-paper px-5 py-16 text-forest-900 sm:px-8 lg:px-12 lg:py-20 xl:px-16">
-            <div className="flex items-center gap-4">
-              <div className="relative h-28 w-28 shrink-0 overflow-hidden bg-transparent sm:h-36 sm:w-36 lg:h-44 lg:w-44">
+            <div className="flex flex-col items-start">
+              <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-xl bg-white p-2 sm:h-40 sm:w-40 lg:h-48 lg:w-48">
                 <Image
                   src="/logo/mylogo/logo2.png"
                   alt="Save Kenya Water Towers logo"
                   fill
-                  sizes="(min-width: 1024px) 176px, 144px"
+                  sizes="(min-width: 1024px) 192px, 160px"
                   className="object-contain"
                 />
               </div>
-              <p className="max-w-xs text-xs font-semibold uppercase leading-relaxed tracking-[0.16em] text-forest-700">
+              <p className="mt-3 max-w-xs text-xs font-semibold uppercase leading-relaxed tracking-[0.16em] text-forest-700">
                 Community-led restoration across Kenya&apos;s water towers
               </p>
             </div>
 
             <div className="mt-10 max-w-xl lg:mt-16">
-              <p className="text-sm uppercase tracking-[0.2em] text-clay-700">Elgeyo-Marakwet County</p>
               <h1 className="mt-5 font-display text-5xl leading-[0.98] text-balance text-forest-900 sm:text-6xl lg:text-[4.7rem]">
                 Restore the landscape. Secure the water. Strengthen the people.
               </h1>
@@ -135,7 +134,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <ContourLines animate className="pointer-events-none absolute -bottom-1 left-0 z-20 h-24 w-full text-forest-500" />
+        <ContourLines animate className="pointer-events-none absolute -bottom-1 left-0 z-20 h-24 w-full text-sky-700" />
       </section>
 
       {/* Photo feature strip */}

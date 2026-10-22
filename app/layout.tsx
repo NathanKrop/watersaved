@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Work_Sans } from "next/font/google";
+import { Fraunces, Libre_Baskerville, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -16,6 +16,12 @@ const workSans = Work_Sans({
   variable: "--font-worksans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const libreBaskerville = Libre_Baskerville({
+  variable: "--font-libre-baskerville",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fraunces.variable} ${workSans.variable} antialiased`}>
+      <body className={`${fraunces.variable} ${workSans.variable} ${libreBaskerville.variable} antialiased`}>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-forest-900 focus:text-paper focus:px-4 focus:py-2 focus:rounded"
@@ -53,4 +59,3 @@ export default function RootLayout({
     </html>
   );
 }
-

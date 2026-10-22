@@ -1,0 +1,176 @@
+[
+  {
+    "_type": "siteSettings",
+    "title": "Save Kenya Water Towers",
+    "description": "Community-led restoration in Elgeyo-Marakwet County, from Iten and Kesup Forest to the Spencer Line above the Kerio Valley.",
+    "locationName": "Elgeyo-Marakwet County",
+    "locationDescription": "The Elgeyo-Marakwet escarpment is a critical water tower for Kenya's Rift Valley, sustaining springs, rivers, farms, forests and communities downstream.",
+    "logo": null,
+    "heroImage": null
+  },
+  {
+    "_type": "page",
+    "title": "Home",
+    "slug": { "_type": "slug", "current": "home" },
+    "summary": "Community-led restoration across the Elgeyo-Marakwet escarpment.",
+    "heroTitle": "Restore Elgeyo-Marakwet's escarpment. Secure the water. Strengthen the communities.",
+    "heroText": "From Iten and Kesup Forest to the Spencer Line above the Kerio Valley, we work with communities to restore indigenous forest, protect springs and build nature-positive livelihoods. This is our home landscape, connected to water-tower work across Kenya's Rift Valley.",
+    "heroImage": null,
+    "body": [
+      "The Elgeyo-Marakwet escarpment is where forest, farms and springs meet above the Kerio Valley — a local landscape with consequences far beyond its ridgeline.",
+      "When these forests are degraded through encroachment, charcoal cutting or unmanaged grazing, the consequences travel downhill: thinner springs, soil erosion, landslides and lost productive land.",
+      "Our response brings together ecology, livelihoods, governance and community leadership so restoration lasts beyond a single project cycle."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Impact",
+    "slug": { "_type": "slug", "current": "impact" },
+    "summary": "Our organisation-wide commitments across six counties, measured and reported transparently.",
+    "heroTitle": "Where we stand, on the way to 2030.",
+    "heroText": "These are our organisation-wide commitments across all six counties, not any single project's target. Every figure links to how it was measured.",
+    "heroImage": null,
+    "body": [
+      "We track what changes, not just what gets distributed. A seedling count is a starting point, not proof of restoration.",
+      "Our reporting follows the work from inputs and activities through to survival, vegetation recovery, livelihoods and stronger local stewardship.",
+      "Figures are published with their date, geography, definition and verification method so stakeholders can understand both our progress and the limits of the evidence."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Programmes",
+    "slug": { "_type": "slug", "current": "programmes" },
+    "summary": "Six interconnected strategies for protecting a catchment and restoring livelihoods.",
+    "heroTitle": "Six ways we protect a catchment.",
+    "heroText": "Every project we run is built from one or more of these. None of them works alone — a protected spring needs a fenced buffer, a fenced buffer needs a community that sees the point of it, and a community needs livelihoods that don't depend on clearing the forest.",
+    "heroImage": null,
+    "body": [
+      "Restoration is more than tree planting. Forests hold and regulate water. Vegetation stabilises soils. Communities steward the landscape. Livelihoods reduce pressure on forests.",
+      "Each programme is designed to reinforce the others. A community nursery supplies seedlings for agroforestry plots. Agroforestry reduces the need to clear forest for farmland. Reduced clearing protects water sources.",
+      "The result is a more durable restoration system that combines ecology, local leadership and economic resilience."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Projects",
+    "slug": { "_type": "slug", "current": "projects" },
+    "summary": "A project database covering restoration work across Kenya's water tower landscapes.",
+    "heroTitle": "Every forest, every spring, every farm-edge site.",
+    "heroText": "Filter by county, programme, or status — or search a site by name.",
+    "heroImage": null,
+    "body": [
+      "Our project portfolio reflects the landscape-scale reality of catchment restoration. Each site is different, but the pattern is similar: degraded forest, water stress, community pressure and a practical local response.",
+      "Some projects focus on nursery development and tree planting. Others integrate agroforestry, fencing, spring protection or community governance. All of them combine ecological recovery with local livelihoods.",
+      "The portfolio helps us track both site-specific outcomes and the broader system changes needed for resilient water towers."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Stories",
+    "slug": { "_type": "slug", "current": "stories" },
+    "summary": "Field dispatches and longer-form stories from the people doing the work.",
+    "heroTitle": "Field dispatches, not press releases.",
+    "heroText": "Longer, slower pieces from the people doing the work — one forest, one nursery, one patrol at a time.",
+    "heroImage": null,
+    "body": [
+      "These stories capture the lived reality of restoration work: the rain, the labour, the uncertainty, the small wins and the long-term learning.",
+      "Rather than telling the story from outside, we tell it from the ground — through forests, community meetings, field visits and restoration conversations.",
+      "This is where we describe what it actually takes to protect a water tower and keep people at the centre of the work."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "News",
+    "slug": { "_type": "slug", "current": "news" },
+    "summary": "Short updates from the field, partnerships and project milestones.",
+    "heroTitle": "Short updates, as they happen.",
+    "heroText": "Timely updates from the field, programme teams and partners as restoration work moves forward.",
+    "heroImage": null,
+    "body": [
+      "We publish regular updates on grants, partnerships, completion milestones, field activities and programme progress.",
+      "This section keeps stakeholders informed without overstating the work. It is a practical record of what is happening now.",
+      "The goal is to make progress visible and understandable to partners, funders and communities alike."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Events",
+    "slug": { "_type": "slug", "current": "events" },
+    "summary": "Events, community days, partner briefings and forums across the landscape.",
+    "heroTitle": "Planting days, briefings, and forums.",
+    "heroText": "Community-led field activity, partner dialogue and public learning moments across our landscapes and counties.",
+    "heroImage": null,
+    "body": [
+      "We host and join events that connect communities, partners and technical stakeholders around restoration and water security.",
+      "These include planting days, donor briefings, policy forums, community meetings and regional gatherings.",
+      "The events calendar helps people stay connected with the work as it moves across counties and seasons."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Donate",
+    "slug": { "_type": "slug", "current": "donate" },
+    "summary": "Support restoration work, urgent spring protection and site-based interventions.",
+    "heroTitle": "Give where the need is greatest, or pick a forest.",
+    "heroText": "Unrestricted gifts let us move fast when a fence breaks or a spring needs urgent protection. If you'd rather support one specific site, choose it below.",
+    "heroImage": null,
+    "body": [
+      "Every donation supports the practical work of restoration: seedlings, fencing, local labour, monitoring, training and protection.",
+      "Unrestricted funds help us respond quickly to urgent water and ecosystem needs. Site-specific gifts support a particular forest or spring project.",
+      "Whether you give once or regularly, your support strengthens the long-term resilience of the catchment."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Contact",
+    "slug": { "_type": "slug", "current": "contact" },
+    "summary": "Connect with the Save Kenya Water Towers team.",
+    "heroTitle": "Talk to us.",
+    "heroText": "We are available to discuss partnerships, volunteer opportunities, project support, safeguarding concerns and general programme inquiries.",
+    "heroImage": null,
+    "body": [
+      "We are based in Eldoret and work across the Rift Valley landscapes where our programmes are active.",
+      "Use the contact form for general enquiries, partnership conversations or donor-related conversations. To report a safeguarding concern, please say so in your message.",
+      "We aim to respond clearly and promptly."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Get Involved",
+    "slug": { "_type": "slug", "current": "get-involved" },
+    "summary": "Volunteer, partner, fundraise or join the work on the ground.",
+    "heroTitle": "There's more than one way to help.",
+    "heroText": "Money matters, but so does time, land access, local knowledge, and a phone number to call when a fence line is cut.",
+    "heroImage": null,
+    "body": [
+      "There are many ways to support restoration: volunteering, fundraising, partner support, project sponsorship and direct field involvement.",
+      "We work with communities, NGOs, government actors, researchers and supporters who want practical, place-based action for water tower protection.",
+      "The work only lasts when people and institutions stay connected to the landscape over time."
+    ],
+    "gallery": []
+  },
+  {
+    "_type": "page",
+    "title": "Who We Are",
+    "slug": { "_type": "slug", "current": "who-we-are" },
+    "summary": "A field-based organisation protecting the water towers of Kenya's Rift Valley.",
+    "heroTitle": "A field organisation first, a headquarters second.",
+    "heroText": "Save Kenya Water Towers was founded in 2010 to protect and restore the forest catchments of Kenya's Rift Valley — the 'water towers' whose highland rain feeds rivers that most of the country downstream depends on. We work directly with the communities who farm the forest edge, because no fence outlasts a community that doesn't see the point of it.",
+    "heroImage": null,
+    "body": [
+      "We work closely with communities who depend on forests, springs and agricultural land in the higher catchments of Kenya's Rift Valley.",
+      "Our work is practical and rooted in place. We focus on systems that support ecological restoration, social inclusion and long-term stewardship.",
+      "Today we operate across six counties and work to ensure restoration remains community-led and accountable."
+    ],
+    "gallery": []
+  }
+]

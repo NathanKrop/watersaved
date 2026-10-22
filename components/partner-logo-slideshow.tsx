@@ -39,14 +39,14 @@ function PartnerLogoGroup({
       {logos.map((logo) => (
         <div
           key={logo.file}
-          className="relative flex h-32 w-48 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-line/70 bg-mist-50 p-2 sm:w-64 lg:w-72"
+          className="relative flex h-40 w-56 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-line/70 bg-mist-50 sm:h-48 sm:w-72 lg:h-56 lg:w-80"
         >
           <Image
             src={`/logo/partners%20logo/${encodeURIComponent(logo.file)}`}
             alt={logo.label}
             fill
-            sizes="(min-width: 1024px) 22vw, 50vw"
-            className="object-contain p-2"
+            sizes="(min-width: 1024px) 320px, 288px"
+            className="object-contain p-1"
           />
         </div>
       ))}
@@ -81,7 +81,7 @@ export default function PartnerLogoSlideshow() {
 
       <style>{`
         .partner-logo-track {
-          animation: partner-logo-scroll 28s linear infinite;
+          animation: partner-logo-scroll 36s linear infinite;
           will-change: transform;
         }
 

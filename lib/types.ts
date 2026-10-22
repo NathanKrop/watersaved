@@ -5,6 +5,26 @@ export type County = {
   stat: string;
 };
 
+export type SiteSettings = {
+  title: string;
+  description: string;
+  locationName: string;
+  locationDescription: string;
+  logo?: string | null;
+  heroImage?: string | null;
+};
+
+export type PageDocument = {
+  slug: string;
+  title: string;
+  summary?: string | null;
+  heroTitle?: string | null;
+  heroText?: string | null;
+  heroImage?: string | null;
+  body?: string[];
+  gallery?: string[];
+};
+
 export type ProgrammeSlug =
   | "agroforestry-reforestation"
   | "water-source-protection"
@@ -91,4 +111,3 @@ export type ImpactGoal = {
   targetYear: number;
   methodologyNote: string;
 };
-
