@@ -1,21 +1,22 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { newsPosts } from "@/lib/data/content";
+import { getNewsPosts, getNewsPostBySlug } from "@/lib/sanity/content";
 import { formatDate } from "@/lib/format";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const newsPosts = await getNewsPosts();
   return newsPosts.map((n) => ({ slug: n.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = newsPosts.find((n) => n.slug === slug);
+  const post = await getNewsPostBySlug(slug);
   return { title: post?.title ?? "News" };
 }
 
 export default async function NewsDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = newsPosts.find((n) => n.slug === slug);
+  const post = await getNewsPostBySlug(slug);
   if (!post) notFound();
 
   return (

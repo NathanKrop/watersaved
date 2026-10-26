@@ -12,6 +12,34 @@ export const homeGallery: CarouselPhoto[] = [
   { src: "/img/new/pexels-samarmourya-27459539.jpg", alt: "Field landscape" },
 ];
 
+function numberedCarouselPhotos(folder: string, photoNumbers: readonly number[], description: string): CarouselPhoto[] {
+  return photoNumbers.map((photoNumber, index) => ({
+    src: `/Carousel/${encodeURIComponent(folder)}/photo_${photoNumber}_2026-10-26_13-12-15.jpg`,
+    alt: `${description}, photo ${index + 1}`,
+  }));
+}
+
+export const homeHeroCarousel = numberedCarouselPhotos(
+  "Healthy forest protects the water that communities depend on",
+  [53, 27, 35, 45, 47, 49, 58, 62, 64],
+  "Water-tower restoration field photograph",
+);
+
+export const restorationBeginsCarousel = numberedCarouselPhotos(
+  "Where Restoration Begins with the people who live there",
+  [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34, 36, 37, 39,
+  ],
+  "Community restoration field photograph",
+);
+
+export const communityFirstCarousel = numberedCarouselPhotos(
+  "Community First",
+  [41, 42, 44, 50, 51, 52, 56, 65],
+  "Community first field photograph",
+);
+
 export const aboutGallery: CarouselPhoto[] = [
   { src: "/img/IMG_0833.jpeg", alt: "Community-led conservation" },
   { src: "/img/IMG_0840.jpeg", alt: "Restoration in the field" },

@@ -1,29 +1,31 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { programmes, getProgrammeBySlug } from "@/lib/data/programmes";
-import { getProjectsByProgramme } from "@/lib/data/projects";
-import { stories } from "@/lib/data/stories";
+import { getProgrammes, getProgrammeBySlug, getProjectsByProgramme, getStories } from "@/lib/sanity/content";
 import { ProjectCard } from "@/components/project-card";
 import { StoryCard } from "@/components/story-card";
 import { CtaLink } from "@/components/cta-link";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const programmes = await getProgrammes();
   return programmes.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const programme = getProgrammeBySlug(slug);
+  const programme = await getProgrammeBySlug(slug);
   return { title: programme?.name ?? "Programme" };
 }
 
 export default async function ProgrammeDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const programme = getProgrammeBySlug(slug);
+  const programme = await getProgrammeBySlug(slug);
   if (!programme) notFound();
 
-  const relatedProjects = getProjectsByProgramme(programme.slug);
-  const relatedStories = stories.filter((s) => s.relatedProgrammeSlug === programme.slug);
+  const [relatedProjects, allStories] = await Promise.all([
+    getProjectsByProgramme(programme.slug),
+    getStories(),
+  ]);
+  const relatedStories = allStories.filter((s) => s.relatedProgrammeSlug === programme.slug);
 
   return (
     <>

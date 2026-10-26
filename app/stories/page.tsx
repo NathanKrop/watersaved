@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { StoryCard } from "@/components/story-card";
-import { stories } from "@/lib/data/stories";
+import { getStories } from "@/lib/sanity/content";
 import { sitePhotos } from "@/lib/data/site-photos";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { storiesGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "Stories" };
 
-export default function StoriesPage() {
+export default async function StoriesPage() {
+  const stories = await getStories();
+
   return (
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">

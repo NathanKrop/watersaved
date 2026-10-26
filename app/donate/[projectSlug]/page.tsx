@@ -1,23 +1,24 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { projects, getProjectBySlug } from "@/lib/data/projects";
+import { getProjects, getProjectBySlug } from "@/lib/sanity/content";
 import { DonateWidget } from "@/components/donate-widget";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { formatKes } from "@/lib/format";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const projects = await getProjects();
   return projects.map((p) => ({ projectSlug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ projectSlug: string }> }) {
   const { projectSlug } = await params;
-  const project = getProjectBySlug(projectSlug);
+  const project = await getProjectBySlug(projectSlug);
   return { title: project ? `Donate to ${project.name}` : "Donate" };
 }
 
 export default async function ProjectDonatePage({ params }: { params: Promise<{ projectSlug: string }> }) {
   const { projectSlug } = await params;
-  const project = getProjectBySlug(projectSlug);
+  const project = await getProjectBySlug(projectSlug);
   if (!project) notFound();
 
   const raisedPercent = Math.min(100, Math.round((project.donationRaisedKes / project.donationGoalKes) * 100));

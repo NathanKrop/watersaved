@@ -1,11 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { projects } from "@/lib/data/projects";
 import { counties } from "@/lib/data/counties";
 import { programmes } from "@/lib/data/programmes";
 import { ProjectCard } from "@/components/project-card";
-import type { ProjectStatus } from "@/lib/types";
+import type { Project, ProjectStatus } from "@/lib/types";
 
 const STATUS_OPTIONS: { value: ProjectStatus | "all"; label: string }[] = [
   { value: "all", label: "All statuses" },
@@ -14,7 +13,7 @@ const STATUS_OPTIONS: { value: ProjectStatus | "all"; label: string }[] = [
   { value: "completed", label: "Completed" },
 ];
 
-export function ProjectsFilter() {
+export function ProjectsFilter({ projects }: { projects: Project[] }) {
   const [county, setCounty] = useState("all");
   const [programme, setProgramme] = useState("all");
   const [status, setStatus] = useState<ProjectStatus | "all">("all");

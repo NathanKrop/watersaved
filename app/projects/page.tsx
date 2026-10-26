@@ -1,12 +1,15 @@
 import Image from "next/image";
 import { ProjectsFilter } from "@/components/projects-filter";
+import { getProjects } from "@/lib/sanity/content";
 import { sitePhotos } from "@/lib/data/site-photos";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { projectsGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "Projects" };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+
   return (
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
@@ -30,13 +33,8 @@ export default function ProjectsPage() {
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-5 pt-10 pb-20">
-        <p className="mt-1 text-xs text-ink-soft">
-          This filter runs over the site&apos;s project data client-side; wire it to
-          <code className="mx-1">GET /api/projects</code> once the backend is live for full
-          pagination and search.
-        </p>
         <div className="mt-8">
-          <ProjectsFilter />
+          <ProjectsFilter projects={projects} />
         </div>
       </section>
       <section className="border-t border-line bg-mist-100">

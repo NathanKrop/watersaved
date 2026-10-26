@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { programmes } from "@/lib/data/programmes";
+import { getProgrammes } from "@/lib/sanity/content";
 import { sitePhotos } from "@/lib/data/site-photos";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { programmesGallery } from "@/lib/data/photo-galleries";
@@ -16,7 +16,8 @@ const programmeImages: Record<string, string> = {
   "wildlife-biodiversity": sitePhotos.programmeBiodiversity,
 };
 
-export default function ProgrammesPage() {
+export default async function ProgrammesPage() {
+  const programmes = await getProgrammes();
   return (
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">

@@ -103,7 +103,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b-2 border-forest-700/25 bg-mist-50/95 font-nav shadow-[0_4px_18px_rgba(22,40,31,0.06)] backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5">
+      <div className="mx-auto flex h-20 w-full max-w-[1600px] items-center px-5">
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
           <div className="relative h-16 w-32 overflow-hidden sm:w-36 lg:w-40">
             <Image
@@ -117,7 +117,7 @@ export function SiteHeader() {
         </Link>
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="ml-6 hidden min-w-0 flex-1 items-center justify-between xl:flex"
           aria-label="Primary"
           onMouseLeave={closeDropdown}
           onKeyDown={(event) => {
@@ -126,8 +126,95 @@ export function SiteHeader() {
             }
           }}
         >
-          {NAV_ITEMS.map((item) => {
-            if (item.href) {
+          <div className="flex items-center gap-2">
+            {NAV_ITEMS.slice(0, 5).map((item) => {
+              if (item.href) {
+                const active = isLinkActive(item.href);
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+                      active
+                        ? "border-clay-600 bg-clay-600 text-paper hover:border-clay-700 hover:bg-clay-700 hover:text-paper"
+                        : "border-transparent text-ink-soft hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              const active = isMenuActive(item);
+
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => openDropdown(item.label)}
+                  onMouseLeave={closeDropdown}
+                >
+                  <button
+                    type="button"
+                    className={`flex items-center gap-1 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
+                      openMenu === item.label
+                        ? "border-forest-700 bg-forest-700 text-paper"
+                        : active
+                          ? "border-clay-600 bg-clay-600 text-paper hover:border-clay-700 hover:bg-clay-700 hover:text-paper"
+                          : "border-transparent text-ink-soft hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900"
+                    }`}
+                    onFocus={() => openDropdown(item.label)}
+                    onMouseEnter={() => openDropdown(item.label)}
+                    onClick={() => setOpenMenu(item.label)}
+                    aria-expanded={openMenu === item.label}
+                    aria-current={active ? "page" : undefined}
+                  >
+                    {item.label}
+                    <span aria-hidden="true" className="text-[10px] leading-none">▾</span>
+                  </button>
+
+                  {openMenu === item.label && (
+                    <div
+                      className="absolute left-1/2 top-full z-50 mt-3 w-[620px] -translate-x-1/2 rounded-[1.75rem] border-2 border-forest-700/25 bg-white p-3 shadow-[0_14px_30px_rgba(22,40,31,0.12)]"
+                      onMouseEnter={() => {
+                        if (closeTimeoutRef.current) {
+                          window.clearTimeout(closeTimeoutRef.current);
+                          closeTimeoutRef.current = null;
+                        }
+                      }}
+                      onMouseLeave={closeDropdown}
+                    >
+                      <div className="grid gap-3 md:grid-cols-2">
+                        {item.groups?.map((group) => (
+                          <div key={group.title} className="rounded-[1.35rem] border border-forest-700/20 bg-mist-50 p-4">
+                            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-clay-700">{group.title}</p>
+                            <ul className="mt-3 space-y-2">
+                              {group.items.map((link) => (
+                                <li key={link.href + link.label}>
+                                  <Link
+                                    href={link.href}
+                                    className="block rounded-lg px-2 py-2 text-sm text-ink-soft transition-colors hover:bg-white hover:text-forest-900"
+                                    onClick={() => setOpenMenu(null)}
+                                  >
+                                    {link.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex items-center gap-2 xl:gap-3">
+            {NAV_ITEMS.slice(5).map((item) => {
+              if (!item.href) return null;
               const active = isLinkActive(item.href);
 
               return (
@@ -144,82 +231,20 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               );
-            }
-
-            const active = isMenuActive(item);
-
-            return (
-              <div
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => openDropdown(item.label)}
-                onMouseLeave={closeDropdown}
-              >
-                <button
-                  type="button"
-                  className={`flex items-center gap-1 rounded-full border px-3 py-2 text-sm font-medium transition-colors ${
-                    active
-                      ? "border-clay-600 bg-clay-600 text-paper hover:border-clay-700 hover:bg-clay-700 hover:text-paper"
-                      : "border-transparent text-ink-soft hover:border-forest-700/30 hover:bg-mist-100 hover:text-forest-900"
-                  }`}
-                  onFocus={() => openDropdown(item.label)}
-                  onMouseEnter={() => openDropdown(item.label)}
-                  onClick={() => setOpenMenu((current) => (current === item.label ? null : item.label))}
-                  aria-expanded={openMenu === item.label}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {item.label}
-                  <span aria-hidden="true" className="text-[10px] leading-none">▾</span>
-                </button>
-
-                {openMenu === item.label && (
-                  <div
-                    className="absolute left-1/2 top-full z-50 mt-3 w-[620px] -translate-x-1/2 rounded-[1.75rem] border-2 border-forest-700/25 bg-white p-3 shadow-[0_14px_30px_rgba(22,40,31,0.12)]"
-                    onMouseEnter={() => {
-                      if (closeTimeoutRef.current) {
-                        window.clearTimeout(closeTimeoutRef.current);
-                        closeTimeoutRef.current = null;
-                      }
-                    }}
-                    onMouseLeave={closeDropdown}
-                  >
-                    <div className="grid gap-3 md:grid-cols-2">
-                      {item.groups?.map((group) => (
-                        <div key={group.title} className="rounded-[1.35rem] border border-forest-700/20 bg-mist-50 p-4">
-                          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-clay-700">{group.title}</p>
-                          <ul className="mt-3 space-y-2">
-                            {group.items.map((link) => (
-                              <li key={link.href + link.label}>
-                                <Link
-                                  href={link.href}
-                                  className="block rounded-lg px-2 py-2 text-sm text-ink-soft transition-colors hover:bg-white hover:text-forest-900"
-                                  onClick={() => setOpenMenu(null)}
-                                >
-                                  {link.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+            })}
+            <Link
+              href="/donate"
+              className="inline-flex items-center rounded-full bg-clay-600 px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-clay-700"
+            >
+              Donate
+            </Link>
+          </div>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href="/donate"
-            className="hidden sm:inline-flex items-center rounded-full px-4 py-2 text-sm font-medium bg-clay-600 text-paper transition-colors hover:bg-clay-700"
-          >
-            Donate
-          </Link>
+        <div className="ml-auto flex items-center gap-3 xl:ml-0">
           <button
             type="button"
-            className="p-2 text-forest-900 lg:hidden"
+            className="p-2 text-forest-900 xl:hidden"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
@@ -238,7 +263,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav className="border-t border-line bg-mist-50 px-5 py-6 lg:hidden" aria-label="Mobile">
+        <nav className="border-t border-line bg-mist-50 px-5 py-6 xl:hidden" aria-label="Mobile">
           <div className="flex flex-col gap-3">
             {NAV_ITEMS.map((item) => {
               if (item.href) {

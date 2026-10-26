@@ -2,7 +2,7 @@ import Image from "next/image";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { CtaLink } from "@/components/cta-link";
-import { teamMembers } from "@/lib/data/content";
+import { getTeamMembers } from "@/lib/sanity/content";
 import { sitePhotos } from "@/lib/data/site-photos";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { aboutGallery } from "@/lib/data/photo-galleries";
@@ -17,7 +17,8 @@ const timeline = [
   { year: "2026", text: "Sixth county added: work begins in the Mau-adjacent highlands of Nakuru." },
 ];
 
-export default function WhoWeArePage() {
+export default async function WhoWeArePage() {
+  const teamMembers = await getTeamMembers();
   return (
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">

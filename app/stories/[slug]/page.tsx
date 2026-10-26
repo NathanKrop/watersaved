@@ -1,29 +1,29 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { stories } from "@/lib/data/stories";
-import { getProjectBySlug } from "@/lib/data/projects";
-import { getProgrammeBySlug } from "@/lib/data/programmes";
+import { getStories, getStoryBySlug } from "@/lib/sanity/content";
+import { getProjectBySlug, getProgrammeBySlug } from "@/lib/sanity/content";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaLink } from "@/components/cta-link";
 import { formatDate } from "@/lib/format";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const stories = await getStories();
   return stories.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const story = stories.find((s) => s.slug === slug);
+  const story = await getStoryBySlug(slug);
   return { title: story?.title ?? "Story" };
 }
 
 export default async function StoryDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const story = stories.find((s) => s.slug === slug);
+  const story = await getStoryBySlug(slug);
   if (!story) notFound();
 
-  const relatedProject = story.relatedProjectSlug ? getProjectBySlug(story.relatedProjectSlug) : undefined;
-  const relatedProgramme = story.relatedProgrammeSlug ? getProgrammeBySlug(story.relatedProgrammeSlug) : undefined;
+  const relatedProject = story.relatedProjectSlug ? await getProjectBySlug(story.relatedProjectSlug) : undefined;
+  const relatedProgramme = story.relatedProgrammeSlug ? await getProgrammeBySlug(story.relatedProgrammeSlug) : undefined;
 
   return (
     <article className="mx-auto max-w-3xl px-5 pt-16 pb-20">

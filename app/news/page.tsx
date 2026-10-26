@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { newsPosts } from "@/lib/data/content";
+import { getNewsPosts } from "@/lib/sanity/content";
 import { formatDate } from "@/lib/format";
 import { sitePhotos } from "@/lib/data/site-photos";
 import { PhotoCarousel } from "@/components/photo-carousel";
@@ -15,7 +15,9 @@ const categoryLabel: Record<string, string> = {
   grant: "Grant",
 };
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const newsPosts = await getNewsPosts();
+
   return (
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">

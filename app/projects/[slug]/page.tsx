@@ -1,29 +1,31 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { projects, getProjectBySlug } from "@/lib/data/projects";
+import { getProjects, getProjectBySlug } from "@/lib/sanity/content";
+import { getProgrammes } from "@/lib/sanity/content";
 import { counties } from "@/lib/data/counties";
-import { programmes } from "@/lib/data/programmes";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { DonateWidget } from "@/components/donate-widget";
 import { formatNumber, formatKes, formatDate } from "@/lib/format";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const projects = await getProjects();
   return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getProjectBySlug(slug);
   return { title: project?.name ?? "Project" };
 }
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = await getProjectBySlug(slug);
   if (!project) notFound();
 
   const county = counties.find((c) => c.slug === project.countySlug);
-  const projectProgrammes = programmes.filter((p) => project.programmeSlugs.includes(p.slug));
+  const allProgrammes = await getProgrammes();
+  const projectProgrammes = allProgrammes.filter((p) => project.programmeSlugs.includes(p.slug));
   const raisedPercent = Math.min(
     100,
     Math.round((project.donationRaisedKes / project.donationGoalKes) * 100)

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { events } from "@/lib/data/content";
+import { getEvents } from "@/lib/sanity/content";
 import { EventCard } from "@/components/event-card";
 import { sitePhotos } from "@/lib/data/site-photos";
 import { PhotoCarousel } from "@/components/photo-carousel";
@@ -7,7 +7,8 @@ import { eventsGallery } from "@/lib/data/photo-galleries";
 
 export const metadata = { title: "Events" };
 
-export default function EventsPage() {
+export default async function EventsPage() {
+  const events = await getEvents();
   const upcoming = events.filter((e) => new Date(e.startsAt) >= new Date());
   const past = events.filter((e) => new Date(e.startsAt) < new Date());
 

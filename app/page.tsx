@@ -3,13 +3,19 @@ import Image from "next/image";
 import { ContourLines } from "@/components/contour-lines";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaLink } from "@/components/cta-link";
-import { newsPosts } from "@/lib/data/content";
+import { getNewsPosts } from "@/lib/sanity/content";
 import { formatDate } from "@/lib/format";
 import { primaryLocation } from "@/lib/data/location";
 import { sitePhotos } from "@/lib/data/site-photos";
 import PartnerLogoSlideshow from "@/components/partner-logo-slideshow";
 import { PhotoCarousel } from "@/components/photo-carousel";
-import { homeGallery } from "@/lib/data/photo-galleries";
+import { HomePhotoCarousel } from "@/components/home-photo-carousel";
+import {
+  communityFirstCarousel,
+  homeGallery,
+  homeHeroCarousel,
+  restorationBeginsCarousel,
+} from "@/lib/data/photo-galleries";
 
 export const metadata = {
   title: `${primaryLocation.name} forest and water restoration`,
@@ -56,8 +62,8 @@ const responseAreas = [
   },
 ];
 
-export default function Home() {
-  const latestNews = newsPosts.slice(0, 3);
+export default async function Home() {
+  const latestNews = (await getNewsPosts()).slice(0, 3);
 
   return (
     <>
@@ -108,15 +114,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="soft-image relative min-h-[430px] lg:min-h-full">
-            <Image
-              src="/img/new/pexels-rudi-chandra-1981866-37555098.jpg"
-              alt="Natural landscape in Kenya"
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-center"
-            />
+          <HomePhotoCarousel
+            photos={homeHeroCarousel}
+            label="Healthy forest protects the water that communities depend on"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="soft-image relative min-h-[430px] lg:min-h-full"
+            eagerFirst
+          >
             <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-6 p-6 sm:p-8 lg:p-10">
               <div className="max-w-md">
@@ -132,7 +136,7 @@ export default function Home() {
                 See our work &rarr;
               </Link>
             </div>
-          </div>
+          </HomePhotoCarousel>
         </div>
         <ContourLines animate className="pointer-events-none absolute -bottom-1 left-0 z-20 h-24 w-full text-sky-700" />
       </section>
@@ -142,32 +146,40 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 py-16">
           <div className="grid gap-2 lg:grid-cols-[2fr_1fr] lg:grid-rows-2 lg:h-[600px]">
             {/* Large left image — spans full height */}
-            <div className="soft-image group relative lg:row-span-2">
-              <Image
-                src="/img/IMG_0526.jpeg"
-                alt="Forest restoration work"
-                fill
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                className="object-cover transition duration-700 group-hover:scale-105"
-              />
+            <HomePhotoCarousel
+              photos={restorationBeginsCarousel}
+              label="Where restoration begins — with the people who live there"
+              sizes="(min-width: 1024px) 60vw, 100vw"
+              className="soft-image relative min-h-[420px] lg:row-span-2"
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <p className="text-xs uppercase tracking-widest text-clay-500">In the field</p>
-                <p className="mt-1 font-display text-2xl text-paper">Where restoration begins — with the people who live there</p>
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 sm:p-6">
+                <div>
+                  <p className="inline-flex rounded-full bg-paper/90 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-forest-900">
+                    In the field
+                  </p>
+                  <p className="mt-2 font-display text-xl text-paper sm:text-2xl">
+                    Where restoration begins — with the people who live there
+                  </p>
+                </div>
+                <Link
+                  href="/donate"
+                  className="shrink-0 rounded-full bg-clay-600 px-4 py-2 text-sm font-semibold text-paper shadow-md transition-colors hover:bg-clay-700 sm:px-5 sm:py-3"
+                >
+                  Donate
+                </Link>
               </div>
-            </div>
+            </HomePhotoCarousel>
             {/* Top-right */}
-            <div className="soft-image group relative">
-              <Image
-                src={sitePhotos.homeCommunity}
-                alt="Community planting day"
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover transition duration-700 group-hover:scale-105"
-              />
+            <HomePhotoCarousel
+              photos={communityFirstCarousel}
+              label="Community first"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="soft-image relative min-h-[240px]"
+            >
               <div className="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent" />
               <p className="absolute bottom-0 left-0 p-4 font-display text-lg text-paper">Community first</p>
-            </div>
+            </HomePhotoCarousel>
             {/* Bottom-right */}
             <div className="soft-image group relative">
               <Image
@@ -313,8 +325,8 @@ export default function Home() {
       <section className="border-t border-line bg-clay-100">
         <div className="relative overflow-hidden">
           <Image
-            src={sitePhotos.homeTrees}
-            alt="Forest restoration landscape"
+            src="/Carousel/Community%20First/photo_41_2026-10-26_13-12-15.jpg"
+            alt="Community and landscape in Kenya's highlands"
             fill
             sizes="100vw"
             className="object-cover object-center opacity-20"

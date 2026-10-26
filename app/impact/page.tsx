@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ImpactCounter } from "@/components/impact-counter";
 import { CtaLink } from "@/components/cta-link";
-import { impactGoals, newsPosts } from "@/lib/data/content";
+import { getImpactGoals, getNewsPosts } from "@/lib/sanity/content";
 import { formatDate } from "@/lib/format";
 import { sitePhotos } from "@/lib/data/site-photos";
 import { PhotoCarousel } from "@/components/photo-carousel";
@@ -15,7 +15,8 @@ const annualReports = [
   { year: 2023, title: "2023 Annual Report", note: "Baseline data for the current 2030 goals." },
 ];
 
-export default function ImpactPage() {
+export default async function ImpactPage() {
+  const [impactGoals, newsPosts] = await Promise.all([getImpactGoals(), getNewsPosts()]);
   return (
     <>
       <section className="relative bg-forest-900 text-mist-50 overflow-hidden">
