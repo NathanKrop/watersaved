@@ -125,7 +125,7 @@ export default function GetInvolvedPage() {
           </p>
 
           {/* Logo slideshow */}
-          <PartnerLogoSlideshow direction="right" />
+          <PartnerLogoSlideshow />
 
           {/* Partner categories */}
           <div className="mt-14 grid gap-8 sm:grid-cols-2">
