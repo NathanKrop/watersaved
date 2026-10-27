@@ -164,8 +164,6 @@ export function SiteFooter() {
             <a href={`mailto:${primaryLocation.contactEmail}`} className="hover:text-mist-50">
               {primaryLocation.contactEmail}
             </a>
-            <br />
-            Member, Kenya Climate Change Working Group (KCCWG)
           </p>
         </div>
 

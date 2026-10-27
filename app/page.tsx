@@ -72,15 +72,9 @@ export default async function Home() {
         <div className="grid lg:grid-cols-2">
           <div className="relative z-10 flex flex-col justify-center bg-paper px-5 py-4 text-forest-900 sm:px-8 lg:px-10 lg:py-4 xl:px-12">
             <div className="flex flex-col items-start">
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-white p-1 sm:h-24 sm:w-24 lg:h-20 lg:w-20">
-                <Image
-                  src="/logo/mylogo/logo2.png"
-                  alt="Save Kenya Water Towers logo"
-                  fill
-                  sizes="(min-width: 1024px) 80px, 96px"
-                  className="object-contain"
-                />
-              </div>
+              <CtaLink href="/projects/spencer-line-restoration">
+                Explore The Spencer Line
+              </CtaLink>
               <p className="mt-2 max-w-xs text-xs font-semibold uppercase leading-snug tracking-[0.14em] text-forest-700">
                 Community-led restoration across Kenya&apos;s water towers
               </p>
@@ -119,6 +113,7 @@ export default async function Home() {
             label="Healthy forest protects the water that communities depend on"
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="soft-image relative min-h-[430px] lg:min-h-full"
+            direction="left"
             eagerFirst
           >
             <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/10 to-transparent" />
@@ -151,6 +146,7 @@ export default async function Home() {
               label="Where restoration begins — with the people who live there"
               sizes="(min-width: 1024px) 60vw, 100vw"
               className="soft-image relative min-h-[420px] lg:row-span-2"
+              direction="up"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 sm:p-6">
@@ -176,6 +172,7 @@ export default async function Home() {
               label="Community first"
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="soft-image relative min-h-[240px]"
+              direction="down"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent" />
               <p className="absolute bottom-0 left-0 p-4 font-display text-lg text-paper">Community first</p>
@@ -208,7 +205,7 @@ export default async function Home() {
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">A closer look</p>
           <h2 className="mt-3 font-display text-3xl text-forest-900">Restoration, led by the people who know this land.</h2>
         </div>
-        <PhotoCarousel photos={homeGallery} label="Community restoration photos" />
+        <PhotoCarousel photos={homeGallery} label="Community restoration photos" direction="up" />
       </section>
 
       {/* The crisis */}
@@ -436,7 +433,7 @@ export default async function Home() {
             restoration materials and local knowledge. The exact role of each organisation is confirmed on a
             project-by-project basis.
           </p>
-          <PartnerLogoSlideshow />
+          <PartnerLogoSlideshow direction="up" />
         </div>
       </section>
 

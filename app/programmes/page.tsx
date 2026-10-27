@@ -109,7 +109,7 @@ export default async function ProgrammesPage() {
       <section className="border-t border-line bg-mist-100">
         <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="font-display text-3xl text-forest-900">From nursery to catchment</h2>
-          <PhotoCarousel photos={programmesGallery} label="Programme photos" />
+          <PhotoCarousel photos={programmesGallery} label="Programme photos" direction="right" />
         </div>
       </section>
     </>

@@ -125,7 +125,7 @@ export default function GetInvolvedPage() {
           </p>
 
           {/* Logo slideshow */}
-          <PartnerLogoSlideshow />
+          <PartnerLogoSlideshow direction="right" />
 
           {/* Partner categories */}
           <div className="mt-14 grid gap-8 sm:grid-cols-2">
@@ -167,7 +167,7 @@ export default function GetInvolvedPage() {
       </section>
       <section className="mx-auto max-w-6xl px-5 py-12">
         <h2 className="font-display text-3xl text-forest-900">Join the work on the ground</h2>
-        <PhotoCarousel photos={involvementGallery} label="Ways to get involved" />
+        <PhotoCarousel photos={involvementGallery} label="Ways to get involved" direction="down" />
       </section>
     </>
   );

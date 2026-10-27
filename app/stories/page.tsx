@@ -43,7 +43,7 @@ export default async function StoriesPage() {
       <section className="border-t border-line bg-mist-100">
         <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="font-display text-3xl text-forest-900">Scenes from the field</h2>
-          <PhotoCarousel photos={storiesGallery} label="Story field photos" />
+          <PhotoCarousel photos={storiesGallery} label="Story field photos" direction="left" />
         </div>
       </section>
     </>

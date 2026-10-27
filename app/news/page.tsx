@@ -58,7 +58,7 @@ export default async function NewsPage() {
       <section className="border-t border-line bg-mist-100">
         <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="font-display text-3xl text-forest-900">Updates from the field</h2>
-          <PhotoCarousel photos={newsGallery} label="News field photos" />
+          <PhotoCarousel photos={newsGallery} label="News field photos" direction="left" />
         </div>
       </section>
     </>

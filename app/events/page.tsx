@@ -58,7 +58,7 @@ export default async function EventsPage() {
       <section className="border-t border-line bg-mist-100">
         <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="font-display text-3xl text-forest-900">Together in the field</h2>
-          <PhotoCarousel photos={eventsGallery} label="Event field photos" />
+          <PhotoCarousel photos={eventsGallery} label="Event field photos" direction="up" />
         </div>
       </section>
     </>

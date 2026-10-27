@@ -133,7 +133,7 @@ export default async function ImpactPage() {
       <section className="border-t border-line bg-mist-100">
         <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="font-display text-3xl text-forest-900">The work behind the numbers</h2>
-          <PhotoCarousel photos={impactGallery} label="Restoration impact photos" />
+          <PhotoCarousel photos={impactGallery} label="Restoration impact photos" direction="up" />
         </div>
       </section>
     </>

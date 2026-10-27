@@ -4,12 +4,15 @@ import Image from "next/image";
 import { useEffect, useState, type ReactNode } from "react";
 import type { CarouselPhoto } from "@/components/photo-carousel";
 
+type SlideDirection = "left" | "right" | "up" | "down";
+
 export function HomePhotoCarousel({
   photos,
   label,
   sizes,
   className,
   children,
+  direction = "left",
   eagerFirst = false,
 }: {
   photos: readonly CarouselPhoto[];
@@ -17,13 +20,13 @@ export function HomePhotoCarousel({
   sizes: string;
   className: string;
   children: ReactNode;
+  direction?: SlideDirection;
   eagerFirst?: boolean;
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const isStopped = isPaused || isHovered || isFocused;
+  const isStopped = isPaused || isFocused;
 
   useEffect(() => {
     if (photos.length < 2 || isStopped || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -32,7 +35,7 @@ export function HomePhotoCarousel({
 
     const interval = window.setInterval(() => {
       setActiveIndex((index) => (index + 1) % photos.length);
-    }, 5500);
+    }, 3000);
 
     return () => window.clearInterval(interval);
   }, [isStopped, photos.length]);
@@ -47,8 +50,6 @@ export function HomePhotoCarousel({
       role="region"
       aria-roledescription="carousel"
       aria-label={label}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onFocusCapture={() => setIsFocused(true)}
       onBlurCapture={(event) => {
         if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) {
@@ -56,14 +57,21 @@ export function HomePhotoCarousel({
         }
       }}
     >
-      <div
-        className="absolute inset-0 flex transition-transform duration-700 ease-in-out motion-reduce:transition-none"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-      >
-        {photos.map((photo, index) => (
+      <div className="absolute inset-0 overflow-hidden">
+        {photos.map((photo, index) => {
+          const relativeIndex = (index - activeIndex + photos.length) % photos.length;
+          const offset = relativeIndex > photos.length / 2 ? relativeIndex - photos.length : relativeIndex;
+          const horizontalOffset = direction === "left" ? offset : -offset;
+          const verticalOffset = direction === "up" ? offset : -offset;
+          const transform = direction === "left" || direction === "right"
+            ? `translateX(${horizontalOffset * 100}%)`
+            : `translateY(${verticalOffset * 100}%)`;
+
+          return (
           <div
             key={photo.src}
-            className="relative h-full w-full shrink-0"
+            className="absolute inset-0 transition-transform duration-500 ease-in-out motion-reduce:transition-none"
+            style={{ transform }}
             role="group"
             aria-roledescription="slide"
             aria-label={`${index + 1} of ${photos.length}`}
@@ -78,7 +86,8 @@ export function HomePhotoCarousel({
               className="object-cover"
             />
           </div>
-        ))}
+          );
+        })}
       </div>
 
       {children}
