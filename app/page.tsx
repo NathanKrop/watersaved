@@ -433,7 +433,7 @@ export default async function Home() {
             restoration materials and local knowledge. The exact role of each organisation is confirmed on a
             project-by-project basis.
           </p>
-          <PartnerLogoSlideshow />
+          <PartnerLogoSlideshow direction="up" />
         </div>
       </section>
 
