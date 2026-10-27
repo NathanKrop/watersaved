@@ -103,9 +103,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b-2 border-forest-700/25 bg-mist-50/95 font-nav shadow-[0_4px_18px_rgba(22,40,31,0.06)] backdrop-blur">
-      <div className="mx-auto flex h-20 w-full max-w-[1600px] items-center px-5">
+      <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center px-5">
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <div className="relative h-16 w-32 overflow-hidden sm:w-36 lg:w-40">
+          <div className="relative h-14 w-32 overflow-hidden sm:w-36 lg:w-40">
             <Image
               src="/logo/mylogo/logo2.png"
               alt="Save Kenya Water Towers logo"

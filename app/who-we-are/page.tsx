@@ -31,7 +31,7 @@ export default async function WhoWeArePage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-24 lg:pt-28 lg:pb-32 grid gap-10 lg:grid-cols-2 items-center">
+        <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-20 lg:pt-20 lg:pb-24 grid gap-8 lg:grid-cols-2 items-center">
           <div>
             <p className="text-sm text-forest-300">Who we are</p>
             <h1 className="mt-2 font-display text-4xl text-mist-50 text-balance">
@@ -61,7 +61,7 @@ export default async function WhoWeArePage() {
       </section>
 
       <section className="border-t border-line bg-mist-100">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="font-display text-3xl text-forest-900">How we got here</h2>
           <div className="mt-8 divide-y divide-line">
             {timeline.map((item) => (
@@ -80,7 +80,7 @@ export default async function WhoWeArePage() {
       </section>
 
       <section className="border-t border-line bg-paper">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <div className="max-w-2xl">
             <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Life in the field</p>
             <h2 className="mt-3 font-display text-3xl text-forest-900">The work is built alongside communities.</h2>
@@ -109,7 +109,7 @@ export default async function WhoWeArePage() {
       </section>
 
       <section className="border-t border-line bg-mist-100">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">How we work</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl text-forest-900">Restoration is more than tree planting.</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -128,7 +128,7 @@ export default async function WhoWeArePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-6xl px-5 py-12">
         <h2 id="team" className="font-display text-3xl text-forest-900">Team & board</h2>
         <div className="mt-8 grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {teamMembers.map((member) => (
@@ -138,7 +138,7 @@ export default async function WhoWeArePage() {
       </section>
 
       <section className="border-t border-line bg-forest-900 text-mist-50">
-        <div className="mx-auto max-w-6xl px-5 py-16 grid gap-8 lg:grid-cols-2">
+        <div className="mx-auto max-w-6xl px-5 py-12 grid gap-8 lg:grid-cols-2">
           <div>
             <h2 className="font-display text-3xl">Our accountability</h2>
             <p className="mt-4 text-forest-300">

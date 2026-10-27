@@ -30,14 +30,14 @@ export default async function NewsPage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-4xl px-5 pt-20 pb-16">
+        <div className="relative mx-auto max-w-4xl px-5 pt-16 pb-12">
           <p className="text-sm text-forest-300">News</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-2xl text-balance">
             Short updates, as they happen.
           </h1>
         </div>
       </section>
-      <section className="mx-auto max-w-4xl px-5 pt-10 pb-20">
+      <section className="mx-auto max-w-4xl px-5 pt-10 pb-16">
         <ul className="mt-4 divide-y divide-line border-t border-line">
         {newsPosts.map((post) => (
           <li key={post.slug} className="py-6">

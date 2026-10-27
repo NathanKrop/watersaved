@@ -19,11 +19,13 @@ function numberedCarouselPhotos(folder: string, photoNumbers: readonly number[],
   }));
 }
 
-export const homeHeroCarousel = numberedCarouselPhotos(
-  "Healthy forest protects the water that communities depend on",
-  [53, 27, 35, 45, 47, 49, 58, 62, 64],
-  "Water-tower restoration field photograph",
-);
+export const homeHeroCarousel: CarouselPhoto[] = Array.from({ length: 20 }, (_, index) => {
+  const photoNumber = index + 1;
+  return {
+    src: `/Carousel/Environment/photo_${photoNumber}_2026-10-27_15-48-11.jpg`,
+    alt: `Environmental restoration field photograph, photo ${photoNumber}`,
+  };
+});
 
 export const restorationBeginsCarousel = numberedCarouselPhotos(
   "Where Restoration Begins with the people who live there",

@@ -86,7 +86,7 @@ export default function GetInvolvedPage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16">
+        <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-12">
           <p className="text-sm text-forest-300">Get involved</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-2xl text-balance">
             There&apos;s more than one way to help.
@@ -98,7 +98,7 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pt-2 pb-16 grid gap-px bg-line sm:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-5 pt-2 pb-12 grid gap-px bg-line sm:grid-cols-2">
         {tracks.map((track) => (
           <Link key={track.href} href={track.href} className="group bg-paper p-8 hover:bg-forest-900 transition-colors">
             <p className="font-display text-2xl text-forest-900 group-hover:text-mist-50 transition-colors">
@@ -113,7 +113,7 @@ export default function GetInvolvedPage() {
 
       {/* Partners section */}
       <section id="partners" className="border-t border-line bg-mist-100 scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Our partners</p>
           <h2 className="mt-3 font-display text-3xl text-forest-900 max-w-2xl">
             Protecting Kenya&apos;s water towers requires cooperation across communities, government, research and conservation.
@@ -128,7 +128,7 @@ export default function GetInvolvedPage() {
           <PartnerLogoSlideshow />
 
           {/* Partner categories */}
-          <div className="mt-14 grid gap-10 sm:grid-cols-2">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2">
             {partnerCategories.map((cat) => (
               <div key={cat.category}>
                 <p className="text-xs uppercase tracking-[0.16em] text-clay-700 border-b border-line pb-2">{cat.category}</p>
@@ -153,7 +153,7 @@ export default function GetInvolvedPage() {
       </section>
 
       <section id="fundraise" className="border-t border-line scroll-mt-20">
-        <div className="mx-auto max-w-3xl px-5 py-16">
+        <div className="mx-auto max-w-3xl px-5 py-12">
           <h2 className="font-display text-2xl text-forest-900">Fundraise for us</h2>
           <p className="mt-3 text-ink-soft">
             If you&apos;d like to run your own campaign — a birthday fundraiser, a school tree

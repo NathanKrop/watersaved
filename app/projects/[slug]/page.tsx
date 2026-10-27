@@ -33,7 +33,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <section className="mx-auto max-w-6xl px-5 pt-16 pb-6">
+      <section className="mx-auto max-w-6xl px-5 pt-12 pb-6">
         <Link href="/projects" className="text-sm text-forest-500 underline underline-offset-4">
           ← All projects
         </Link>
@@ -55,7 +55,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
         />
       </div>
 
-      <section className="mx-auto max-w-6xl px-5 py-14 grid gap-12 lg:grid-cols-3">
+      <section className="mx-auto max-w-6xl px-5 py-14 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <div className="space-y-4 text-ink-soft">
             {project.body.map((para, i) => (

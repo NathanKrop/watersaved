@@ -22,7 +22,7 @@ export default async function StoriesPage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16">
+        <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-12">
           <p className="text-sm text-forest-300">Stories</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-2xl text-balance">
             Field dispatches, not press releases.
@@ -33,8 +33,8 @@ export default async function StoriesPage() {
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-5 pt-10 pb-20">
-        <div className="mt-4 grid gap-12 sm:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-5 pt-10 pb-16">
+        <div className="mt-4 grid gap-8 sm:grid-cols-2">
           {stories.map((story) => (
             <StoryCard key={story.slug} story={story} />
           ))}

@@ -4,6 +4,8 @@ export const primaryLocation = {
   name: "Elgeyo-Marakwet County",
   shortName: "Elgeyo-Marakwet",
   places: ["Iten", "Kesup Forest", "Spencer Line", "Kerio Valley"],
+  officeAddress: "Room T-04, 3rd Floor, Laneen Centre, Utalii Road (next to Cicada Hotel)",
+  contactEmail: "hello@savekenyawatertowers.org",
   description:
     "Community-led restoration along the Elgeyo-Marakwet escarpment, where forests, springs and farms meet above the Kerio Valley.",
   image: sitePhotos.location,

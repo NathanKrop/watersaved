@@ -24,7 +24,7 @@ export default async function ProjectDonatePage({ params }: { params: Promise<{ 
   const raisedPercent = Math.min(100, Math.round((project.donationRaisedKes / project.donationGoalKes) * 100));
 
   return (
-    <section className="mx-auto max-w-6xl px-5 pt-16 pb-20 grid gap-12 lg:grid-cols-2 items-start">
+    <section className="mx-auto max-w-6xl px-5 pt-12 pb-16 grid gap-8 lg:grid-cols-2 items-start">
       <div>
         <Link href={`/projects/${project.slug}`} className="text-sm text-forest-500 underline underline-offset-4">
           ← About {project.name}

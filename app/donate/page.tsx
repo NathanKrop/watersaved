@@ -21,14 +21,14 @@ export default function DonatePage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16">
+        <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-12">
           <p className="text-sm text-forest-300">Donate</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-lg text-balance">
             Give where the need is greatest, or pick a forest.
           </h1>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-5 pt-12 pb-20 grid gap-12 lg:grid-cols-2 items-start">
+      <section className="mx-auto max-w-6xl px-5 pt-12 pb-16 grid gap-8 lg:grid-cols-2 items-start">
         <div>
           <p className="mt-5 text-ink-soft max-w-lg">
             Unrestricted gifts let us move fast when a fence breaks or a spring needs urgent

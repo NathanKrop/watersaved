@@ -29,7 +29,7 @@ export default async function ProgrammeDetailPage({ params }: { params: Promise<
 
   return (
     <>
-      <section className="mx-auto max-w-4xl px-5 pt-16 pb-10">
+      <section className="mx-auto max-w-4xl px-5 pt-12 pb-10">
         <Link href="/programmes" className="text-sm text-forest-500 underline underline-offset-4">
           ← All programmes
         </Link>
@@ -61,7 +61,7 @@ export default async function ProgrammeDetailPage({ params }: { params: Promise<
       {relatedStories.length > 0 && (
         <section className="mx-auto max-w-6xl px-5 py-14">
           <h2 className="font-display text-2xl text-forest-900">Related stories</h2>
-          <div className="mt-6 grid gap-10 sm:grid-cols-2">
+          <div className="mt-6 grid gap-8 sm:grid-cols-2">
             {relatedStories.map((story) => (
               <StoryCard key={story.slug} story={story} />
             ))}

@@ -2,7 +2,7 @@ export const metadata = { title: "Safeguarding Policy" };
 
 export default function SafeguardingPolicyPage() {
   return (
-    <article className="mx-auto max-w-3xl px-5 pt-16 pb-20">
+    <article className="mx-auto max-w-3xl px-5 pt-12 pb-16">
       <p className="text-sm text-forest-500">Legal</p>
       <h1 className="mt-2 font-display text-4xl text-forest-900">Safeguarding Policy</h1>
       <div className="mt-8 space-y-5 text-ink-soft max-w-[65ch]">

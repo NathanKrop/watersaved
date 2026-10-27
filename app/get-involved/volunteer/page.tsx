@@ -4,7 +4,7 @@ export const metadata = { title: "Volunteer" };
 
 export default function VolunteerPage() {
   return (
-    <section className="mx-auto max-w-4xl px-5 pt-16 pb-20">
+    <section className="mx-auto max-w-4xl px-5 pt-12 pb-16">
       <p className="text-sm text-forest-500">Get involved / Volunteer</p>
       <h1 className="mt-2 font-display text-4xl text-forest-900 max-w-xl text-balance">
         Bring a spade, or bring a spreadsheet.

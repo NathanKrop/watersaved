@@ -158,9 +158,12 @@ export function SiteFooter() {
             </li>
           </ul>
           <p className="mt-4 text-xs text-forest-300">
-            No 5 Doctors Drive, off Lumumba Avenue, Eldoret, Kenya
+            {primaryLocation.officeAddress}
             <br />
-            +254 722 643 606 · info@savekenyawatertowers.org
+            +254 722 643 606 ·{" "}
+            <a href={`mailto:${primaryLocation.contactEmail}`} className="hover:text-mist-50">
+              {primaryLocation.contactEmail}
+            </a>
             <br />
             Member, Kenya Climate Change Working Group (KCCWG)
           </p>

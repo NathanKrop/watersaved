@@ -26,7 +26,7 @@ export default async function StoryDetailPage({ params }: { params: Promise<{ sl
   const relatedProgramme = story.relatedProgrammeSlug ? await getProgrammeBySlug(story.relatedProgrammeSlug) : undefined;
 
   return (
-    <article className="mx-auto max-w-3xl px-5 pt-16 pb-20">
+    <article className="mx-auto max-w-3xl px-5 pt-12 pb-16">
       <Link href="/stories" className="text-sm text-forest-500 underline underline-offset-4">
         ← All stories
       </Link>

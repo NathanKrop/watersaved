@@ -30,7 +30,7 @@ export default async function ProgrammesPage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16">
+        <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-12">
           <p className="text-sm text-forest-300">Programmes</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-2xl text-balance">
             Six ways we protect a catchment.
@@ -43,7 +43,7 @@ export default async function ProgrammesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pt-10 pb-20">
+      <section className="mx-auto max-w-6xl px-5 pt-10 pb-16">
         <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {programmes.map((programme) => {
             const img = programmeImages[programme.slug];
@@ -81,7 +81,7 @@ export default async function ProgrammesPage() {
         </div>
 
         {/* How programmes connect */}
-        <div className="mt-16 border-t border-line pt-12 grid gap-10 lg:grid-cols-[1fr_1fr]">
+        <div className="mt-16 border-t border-line pt-12 grid gap-8 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.18em] text-clay-700">How they connect</p>
             <h2 className="mt-3 font-display text-3xl text-forest-900">Restoration is more than tree planting.</h2>

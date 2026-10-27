@@ -68,35 +68,35 @@ export default async function Home() {
   return (
     <>
       {/* Split hero */}
-      <section className="relative overflow-hidden bg-paper text-forest-900 lg:min-h-[calc(100vh-5rem)]">
+      <section className="relative overflow-hidden bg-paper text-forest-900 lg:min-h-[calc(100svh-4.125rem)]">
         <div className="grid lg:grid-cols-2">
-          <div className="relative z-10 flex flex-col justify-center bg-paper px-5 py-16 text-forest-900 sm:px-8 lg:px-12 lg:py-20 xl:px-16">
+          <div className="relative z-10 flex flex-col justify-center bg-paper px-5 py-4 text-forest-900 sm:px-8 lg:px-10 lg:py-4 xl:px-12">
             <div className="flex flex-col items-start">
-              <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-xl bg-white p-2 sm:h-40 sm:w-40 lg:h-48 lg:w-48">
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-white p-1 sm:h-24 sm:w-24 lg:h-20 lg:w-20">
                 <Image
                   src="/logo/mylogo/logo2.png"
                   alt="Save Kenya Water Towers logo"
                   fill
-                  sizes="(min-width: 1024px) 192px, 160px"
+                  sizes="(min-width: 1024px) 80px, 96px"
                   className="object-contain"
                 />
               </div>
-              <p className="mt-3 max-w-xs text-xs font-semibold uppercase leading-relaxed tracking-[0.16em] text-forest-700">
+              <p className="mt-2 max-w-xs text-xs font-semibold uppercase leading-snug tracking-[0.14em] text-forest-700">
                 Community-led restoration across Kenya&apos;s water towers
               </p>
             </div>
 
-            <div className="mt-10 max-w-xl lg:mt-16">
-              <h1 className="mt-5 font-display text-5xl leading-[0.98] text-balance text-forest-900 sm:text-6xl lg:text-[4.7rem]">
+            <div className="mt-4 max-w-xl lg:mt-4">
+              <h1 className="font-display text-4xl leading-[0.98] text-balance text-forest-900 sm:text-5xl lg:text-[3rem]">
                 Restore the landscape. Secure the water. Strengthen the people.
               </h1>
-              <p className="mt-7 text-lg leading-relaxed text-ink-soft">
+              <p className="mt-3 text-[0.9375rem] leading-snug text-ink-soft">
                 From the forest edge of Iten and Kesup to the Spencer Line above the Kerio Valley, we restore
                 indigenous ecosystems, protect springs and create lasting livelihoods with local communities.
               </p>
             </div>
 
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-4 flex flex-wrap gap-3">
               <CtaLink href="/donate">Donate to restoration</CtaLink>
               <CtaLink
                 href="/projects"
@@ -107,7 +107,7 @@ export default async function Home() {
               </CtaLink>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-forest-300/50 pt-5 text-xs uppercase tracking-[0.12em] text-forest-700">
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 border-t border-forest-300/50 pt-3 text-[0.65rem] uppercase tracking-[0.1em] text-forest-700">
               <span>Community-led</span>
               <span>Indigenous ecosystems</span>
               <span>Measurable impact</span>
@@ -143,7 +143,7 @@ export default async function Home() {
 
       {/* Photo feature strip */}
       <section className="border-t border-line bg-forest-700">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <div className="grid gap-2 lg:grid-cols-[2fr_1fr] lg:grid-rows-2 lg:h-[600px]">
             {/* Large left image — spans full height */}
             <HomePhotoCarousel
@@ -212,20 +212,20 @@ export default async function Home() {
       </section>
 
       {/* The crisis */}
-      <section className="mx-auto max-w-6xl px-5 py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+      <section className="mx-auto max-w-6xl px-5 py-12 lg:py-16">
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div>
             <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Why this matters</p>
             <p className="mt-4 font-display text-3xl leading-tight text-forest-900 sm:text-4xl">
               The Elgeyo-Marakwet escarpment is where forest, farms and springs meet above the Kerio Valley — a local landscape with consequences far beyond its ridgeline.
             </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
+            <p className="mt-3 text-ink-soft leading-normal">
               Around Iten, Kesup Forest and the Spencer Line, elevation, soils and root systems store, filter and release water that feeds the Kerio Valley and the farms, homes and livelihoods downstream.
             </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
+            <p className="mt-3 text-ink-soft leading-normal">
               When these forests are degraded through encroachment, charcoal cutting or unmanaged grazing, the consequences travel downhill: thinner springs, soil erosion, landslides and lost productive land. The response must restore the whole landscape, not simply plant trees.
             </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
+            <p className="mt-3 text-ink-soft leading-normal">
               Elgeyo-Marakwet shows why water-tower protection is practical infrastructure work: healthy forest and stable soils help keep water available for people and farms below.
             </p>
           </div>
@@ -248,7 +248,7 @@ export default async function Home() {
           ].map(([value, label]) => (
             <div key={label} className="bg-mist-50 p-6">
               <p className="font-display text-5xl text-forest-900">{value}</p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{label}</p>
+              <p className="mt-2 text-sm leading-normal text-ink-soft">{label}</p>
             </div>
           ))}
         </div>
@@ -256,11 +256,11 @@ export default async function Home() {
 
       {/* Our response */}
       <section className="border-t border-line bg-mist-100">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <div className="max-w-xl">
             <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Our response</p>
             <h2 className="mt-3 font-display text-3xl text-forest-900">Restoration lasts when ecology, livelihoods and governance move together.</h2>
-            <p className="mt-3 text-ink-soft leading-relaxed">
+            <p className="mt-3 text-ink-soft leading-normal">
               Restoring a water tower is not just about growing trees. It means healthy ecosystems, fair policy,
               included communities, stronger livelihoods, reliable food and resilient neighbourhoods — together.
             </p>
@@ -270,7 +270,7 @@ export default async function Home() {
               <Link key={area.number} href={area.href} className="soft-card group block bg-mist-50 p-6 transition-colors hover:bg-forest-900">
                 <p className="text-sm text-clay-700 group-hover:text-clay-600">{area.number}</p>
                 <h3 className="mt-5 font-display text-xl text-forest-900 group-hover:text-mist-50 transition-colors">{area.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft group-hover:text-forest-300 transition-colors">{area.body}</p>
+                <p className="mt-3 text-sm leading-normal text-ink-soft group-hover:text-forest-300 transition-colors">{area.body}</p>
               </Link>
             ))}
           </div>
@@ -279,8 +279,8 @@ export default async function Home() {
       </section>
 
       {/* Featured project */}
-      <section className="mx-auto max-w-6xl px-5 py-16 lg:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+      <section className="mx-auto max-w-6xl px-5 py-12 lg:py-16">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <PhotoPlaceholder
             src={sitePhotos.homeNursery}
             alt="Community nursery seedlings"
@@ -294,13 +294,13 @@ export default async function Home() {
               <div><dt className="font-medium text-forest-900">County</dt><dd className="mt-1 text-ink-soft">Elgeyo-Marakwet</dd></div>
               <div><dt className="font-medium text-forest-900">Partners</dt><dd className="mt-1 text-ink-soft">FAO, BMZ, AFR100</dd></div>
             </dl>
-            <p className="mt-6 text-ink-soft leading-relaxed">
+            <p className="mt-5 text-ink-soft leading-normal">
               Along a highland escarpment overlooking the Kerio Valley, decades of encroachment have pushed the forest boundary upward, degrading indigenous cover and weakening the water catchment that communities below depend on.
             </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
+            <p className="mt-3 text-ink-soft leading-normal">
               Working with FAO and its partners, we are restoring this landscape through three interlinked components: reviewing and strengthening forest governance instruments, developing an integrated landscape management plan, and supporting community-led restoration through agroforestry and assisted natural regeneration.
             </p>
-            <p className="mt-4 text-ink-soft leading-relaxed">
+            <p className="mt-3 text-ink-soft leading-normal">
               Farm Forest Producer Organisations are integrating indigenous trees and coffee into farms while protecting natural regrowth in degraded areas — connecting ecological recovery with household livelihoods.
             </p>
           </div>
@@ -314,7 +314,7 @@ export default async function Home() {
             <div key={number} className="border-t-2 border-forest-700 pt-4">
               <p className="text-sm text-clay-700">{number}</p>
               <h3 className="mt-3 font-display text-xl text-forest-900">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{body}</p>
+              <p className="mt-2 text-sm leading-normal text-ink-soft">{body}</p>
             </div>
           ))}
         </div>
@@ -331,13 +331,13 @@ export default async function Home() {
             sizes="100vw"
             className="object-cover object-center opacity-20"
           />
-          <div className="relative mx-auto max-w-6xl px-5 py-16">
+          <div className="relative mx-auto max-w-6xl px-5 py-12">
             <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Our story</p>
             <p className="mt-4 max-w-3xl font-display text-3xl leading-tight text-forest-900">We started because healthy forests and healthy communities cannot be separated.</p>
-            <p className="mt-4 max-w-2xl text-ink-soft leading-relaxed">
+            <p className="mt-3 max-w-2xl text-ink-soft leading-normal">
               Founded in 2010, we work directly with the communities who farm the forest edge — because no fence outlasts a community that doesn&apos;t see the point of it. Today we operate across six counties in Kenya&apos;s Rift Valley and are a member of the Kenya Climate Change Working Group.
             </p>
-            <p className="mt-3 max-w-2xl text-ink-soft leading-relaxed">
+            <p className="mt-3 max-w-2xl text-ink-soft leading-normal">
               Save Kenya Water Towers is an independent, registered NGO in Kenya. We are not affiliated with the former Kenya Water Towers Agency, a government body whose mandate expired and was dissolved in December 2024.
             </p>
             <Link href="/who-we-are" className="mt-6 inline-block text-sm text-forest-500 underline underline-offset-4">Read Our Story &rarr;</Link>
@@ -346,7 +346,7 @@ export default async function Home() {
       </section>
 
       {/* Voices + Partners */}
-      <section className="mx-auto max-w-6xl px-5 py-16 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+      <section className="mx-auto max-w-6xl px-5 py-12 grid gap-8 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Voices from the ground</p>
           <blockquote className="mt-4 font-display text-3xl leading-tight text-forest-900">&ldquo;Before, we walked three hours for water. Now the spring near our village runs again.&rdquo;</blockquote>
@@ -364,13 +364,13 @@ export default async function Home() {
         <div>
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Built on partnership</p>
           <h2 className="mt-3 font-display text-2xl text-forest-900">Restoration at scale requires cooperation across communities, government, science and finance.</h2>
-          <p className="mt-4 text-ink-soft leading-relaxed">
+          <p className="mt-3 text-ink-soft leading-normal">
             We work alongside the Food and Agriculture Organization of the United Nations, BMZ, AFR100,
             Kenya Forest Service, Kenya Forestry Research Institute, the University of Eldoret, the
             World Resources Institute and others &mdash; each contributing technical expertise, funding,
             policy support or community mobilisation to the landscapes we share.
           </p>
-          <p className="mt-3 text-ink-soft leading-relaxed">
+          <p className="mt-3 text-ink-soft leading-normal">
             Together, these partnerships have helped us reach six counties, support hundreds of
             households, and build the governance foundations that make restoration last.
           </p>
@@ -382,7 +382,7 @@ export default async function Home() {
 
       {/* How it works pathway */}
       <section className="border-t border-line bg-forest-700 text-mist-50">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <p className="text-sm uppercase tracking-[0.18em] text-clay-600">How it works</p>
           <h2 className="mt-3 font-display text-3xl text-paper max-w-xl">From degraded land to living forest &mdash; a clear pathway.</h2>
           <div className="mt-10 grid gap-px bg-forest-700 sm:grid-cols-2 lg:grid-cols-5">
@@ -395,7 +395,7 @@ export default async function Home() {
             ].map(([step, desc]) => (
               <div key={step} className="bg-forest-900 p-6">
                 <p className="font-display text-xl text-clay-500">{step}</p>
-                <p className="mt-3 text-sm text-forest-300 leading-relaxed">{desc}</p>
+                <p className="mt-3 text-sm text-forest-300 leading-normal">{desc}</p>
               </div>
             ))}
           </div>
@@ -404,7 +404,7 @@ export default async function Home() {
 
       {/* Latest news */}
       <section className="border-t border-line bg-mist-100">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Latest news & updates</p>
@@ -417,7 +417,7 @@ export default async function Home() {
               <Link key={news.slug} href={`/news/${news.slug}`} className="soft-card block bg-mist-50 p-6 transition-colors hover:border-forest-700">
                 <p className="text-xs text-ink-soft">{formatDate(news.publishedAt)}</p>
                 <h3 className="mt-3 font-display text-xl text-forest-900">{news.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{news.summary}</p>
+                <p className="mt-3 text-sm leading-normal text-ink-soft">{news.summary}</p>
               </Link>
             ))}
           </div>
@@ -426,12 +426,12 @@ export default async function Home() {
 
       {/* Partners */}
       <section className="border-t border-line bg-mist-100">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Our partners</p>
           <h2 className="mt-3 font-display text-3xl text-forest-900 max-w-2xl">
             Protecting Kenya&apos;s water towers requires cooperation across communities, government, research and conservation.
           </h2>
-          <p className="mt-4 max-w-2xl text-ink-soft leading-relaxed">
+          <p className="mt-3 max-w-2xl text-ink-soft leading-normal">
             Partners contribute technical expertise, research, funding, policy support, community mobilisation,
             restoration materials and local knowledge. The exact role of each organisation is confirmed on a
             project-by-project basis.
@@ -442,7 +442,7 @@ export default async function Home() {
 
       {/* CTA */}
       <section className="bg-forest-700 text-mist-50">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <h2 className="font-display text-4xl">Restoring these landscapes takes all of us.</h2>
           <div className="mt-8 grid gap-px bg-forest-500 sm:grid-cols-3">
             {[

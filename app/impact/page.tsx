@@ -29,7 +29,7 @@ export default async function ImpactPage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16">
+        <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-12">
           <p className="text-sm text-forest-300">Impact</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-2xl text-balance">
             Where we stand, on the way to 2030.
@@ -42,8 +42,8 @@ export default async function ImpactPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
-        <div className="grid gap-10 lg:grid-cols-[1fr_auto]">
-          <div className="grid gap-10 sm:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-[1fr_auto]">
+          <div className="grid gap-8 sm:grid-cols-2">
             {impactGoals.map((goal) => (
               <ImpactCounter key={goal.label} goal={goal} />
             ))}
@@ -61,7 +61,7 @@ export default async function ImpactPage() {
       </section>
 
       <section className="border-t border-line bg-mist-100">
-        <div className="mx-auto max-w-6xl px-5 py-16">
+        <div className="mx-auto max-w-6xl px-5 py-12">
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">Our measurement approach</p>
           <h2 className="mt-3 max-w-2xl font-display text-3xl text-forest-900">We track what changes, not just what gets distributed.</h2>
           <p className="mt-4 max-w-3xl text-ink-soft">A seedling count is a starting point, not proof of restoration. Our reporting follows the work from inputs and activities through to survival, vegetation recovery, livelihoods and stronger local stewardship.</p>
@@ -84,7 +84,7 @@ export default async function ImpactPage() {
       </section>
 
       <section className="border-t border-line bg-mist-100">
-        <div className="mx-auto max-w-6xl px-5 py-16 grid gap-10 lg:grid-cols-[1fr_256px]">
+        <div className="mx-auto max-w-6xl px-5 py-12 grid gap-8 lg:grid-cols-[1fr_256px]">
           <div>
             <h2 className="font-display text-3xl text-forest-900">Annual reports</h2>
             <p className="mt-2 text-ink-soft max-w-xl">
@@ -116,7 +116,7 @@ export default async function ImpactPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16">
+      <section className="mx-auto max-w-6xl px-5 py-12">
         <h2 className="font-display text-2xl text-forest-900">Recent announcements</h2>
         <ul className="mt-6 divide-y divide-line">
           {newsPosts.slice(0, 3).map((n) => (

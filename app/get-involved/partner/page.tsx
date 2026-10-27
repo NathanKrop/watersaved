@@ -5,7 +5,7 @@ export const metadata = { title: "Partner With Us" };
 
 export default function PartnerPage() {
   return (
-    <section className="mx-auto max-w-4xl px-5 pt-16 pb-20">
+    <section className="mx-auto max-w-4xl px-5 pt-12 pb-16">
       <p className="text-sm text-forest-500">Get involved / Partner with us</p>
       <h1 className="mt-2 font-display text-4xl text-forest-900 max-w-xl text-balance">
         For funders, NGOs, and government agencies.

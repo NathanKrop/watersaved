@@ -22,7 +22,7 @@ export default async function ProjectsPage() {
           className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-forest-900/60" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-20 pb-16">
+        <div className="relative mx-auto max-w-6xl px-5 pt-16 pb-12">
           <p className="text-sm text-forest-300">Project database</p>
           <h1 className="mt-2 font-display text-4xl text-mist-50 max-w-2xl text-balance">
             Every forest, every spring, every farm-edge site.
@@ -32,7 +32,7 @@ export default async function ProjectsPage() {
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-5 pt-10 pb-20">
+      <section className="mx-auto max-w-6xl px-5 pt-10 pb-16">
         <div className="mt-8">
           <ProjectsFilter projects={projects} />
         </div>
