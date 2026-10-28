@@ -68,7 +68,7 @@ export default async function Home() {
   return (
     <>
       {/* Split hero */}
-      <section className="relative overflow-hidden bg-paper text-forest-900 lg:min-h-[calc(100svh-4.125rem)]">
+      <section className="relative overflow-hidden bg-paper text-forest-900">
         <div className="grid lg:grid-cols-2">
           <div className="relative z-10 flex flex-col justify-center bg-paper px-5 py-4 text-forest-900 sm:px-8 lg:px-10 lg:py-4 xl:px-12">
             <div className="flex flex-col items-start">
@@ -112,7 +112,7 @@ export default async function Home() {
             photos={homeHeroCarousel}
             label="Healthy forest protects the water that communities depend on"
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="soft-image relative min-h-[430px] lg:min-h-full"
+            className="soft-image relative min-h-[430px]"
             direction="left"
             eagerFirst
           >
@@ -205,7 +205,7 @@ export default async function Home() {
           <p className="text-sm uppercase tracking-[0.18em] text-clay-700">A closer look</p>
           <h2 className="mt-3 font-display text-3xl text-forest-900">Restoration, led by the people who know this land.</h2>
         </div>
-        <PhotoCarousel photos={homeGallery} label="Community restoration photos" direction="up" />
+        <PhotoCarousel photos={homeGallery} label="Community restoration photos" direction="right" />
       </section>
 
       {/* The crisis */}
@@ -433,7 +433,7 @@ export default async function Home() {
             restoration materials and local knowledge. The exact role of each organisation is confirmed on a
             project-by-project basis.
           </p>
-          <PartnerLogoSlideshow direction="up" />
+          <PartnerLogoSlideshow direction="left" />
         </div>
       </section>
 
