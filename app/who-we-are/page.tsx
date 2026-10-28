@@ -76,7 +76,7 @@ export default async function WhoWeArePage() {
 
       <section className="mx-auto max-w-6xl px-5 py-12">
         <h2 className="font-display text-3xl text-forest-900">People and places behind the work</h2>
-        <PhotoCarousel photos={aboutGallery} label="People and places" direction="down" />
+        <PhotoCarousel photos={aboutGallery} label="People and places" direction="right" />
       </section>
 
       <section className="border-t border-line bg-paper">

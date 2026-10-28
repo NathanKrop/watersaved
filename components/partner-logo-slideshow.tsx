@@ -30,27 +30,16 @@ const PARTNER_LOGOS = [
 function PartnerLogoGroup({
   logos,
   hidden = false,
-  vertical = false,
 }: {
   logos: typeof PARTNER_LOGOS;
   hidden?: boolean;
-  vertical?: boolean;
 }) {
   return (
-    <div
-      className={`flex shrink-0 items-center gap-3 px-2 ${
-        vertical ? "w-full flex-col" : ""
-      }`}
-      aria-hidden={hidden || undefined}
-    >
+    <div className="flex shrink-0 items-center gap-3 px-2" aria-hidden={hidden || undefined}>
       {logos.map((logo) => (
         <div
           key={logo.file}
-          className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white ${
-            vertical
-              ? "h-40 w-full sm:h-48"
-              : "h-40 w-56 sm:h-48 sm:w-72 lg:h-56 lg:w-80"
-          }`}
+          className="relative flex h-40 w-56 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white sm:h-48 sm:w-72 lg:h-56 lg:w-80"
         >
           <Image
             src={`/logo/partners%20logo/${encodeURIComponent(logo.file)}`}
@@ -68,32 +57,25 @@ function PartnerLogoGroup({
 export default function PartnerLogoSlideshow({
   direction = "left",
 }: {
-  direction?: "left" | "right" | "up" | "down";
+  direction?: "left" | "right";
 }) {
   const [isPaused, setIsPaused] = useState(false);
-  const isVertical = direction === "up" || direction === "down";
   const start = {
     left: "translate3d(0, 0, 0)",
     right: "translate3d(-50%, 0, 0)",
-    up: "translate3d(0, 0, 0)",
-    down: "translate3d(0, -50%, 0)",
   }[direction];
   const end = {
     left: "translate3d(-50%, 0, 0)",
     right: "translate3d(0, 0, 0)",
-    up: "translate3d(0, -50%, 0)",
-    down: "translate3d(0, 0, 0)",
   }[direction];
   const animationName = `partner-logo-scroll-${direction}`;
 
   return (
-    <div className={`mt-10 overflow-hidden rounded-2xl bg-white py-3 ${isVertical ? "h-[28rem]" : ""}`}>
-      <div className={`overflow-hidden ${isVertical ? "h-full" : ""}`}>
-        <div
-          className={`partner-logo-track flex ${isVertical ? "h-max w-full flex-col" : "w-max"} ${isPaused ? "is-paused" : ""}`}
-        >
-          <PartnerLogoGroup logos={PARTNER_LOGOS} vertical={isVertical} />
-          <PartnerLogoGroup logos={PARTNER_LOGOS} vertical={isVertical} hidden />
+    <div className="mt-10 overflow-hidden rounded-2xl bg-white py-3">
+      <div className="overflow-hidden">
+        <div className={`partner-logo-track flex w-max ${isPaused ? "is-paused" : ""}`}>
+          <PartnerLogoGroup logos={PARTNER_LOGOS} />
+          <PartnerLogoGroup logos={PARTNER_LOGOS} hidden />
         </div>
       </div>
 

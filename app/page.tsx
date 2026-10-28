@@ -68,9 +68,9 @@ export default async function Home() {
   return (
     <>
       {/* Split hero */}
-      <section className="relative overflow-hidden bg-paper text-forest-900">
-        <div className="grid lg:grid-cols-2">
-          <div className="relative z-10 flex flex-col justify-center bg-paper px-5 py-4 text-forest-900 sm:px-8 lg:px-10 lg:py-4 xl:px-12">
+      <section className="relative overflow-hidden bg-paper text-forest-900 lg:min-h-[36rem]">
+        <div className="grid lg:min-h-[36rem] lg:grid-cols-2">
+          <div className="relative z-10 flex flex-col justify-center bg-paper px-5 pt-8 pb-4 text-forest-900 sm:px-8 sm:pt-10 lg:px-10 lg:py-4 xl:px-12">
             <div className="flex flex-col items-start">
               <CtaLink href="/projects/spencer-line-restoration">
                 Explore The Spencer Line
@@ -146,7 +146,7 @@ export default async function Home() {
               label="Where restoration begins — with the people who live there"
               sizes="(min-width: 1024px) 60vw, 100vw"
               className="soft-image relative min-h-[420px] lg:row-span-2"
-              direction="up"
+              direction="right"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 sm:p-6">
@@ -172,7 +172,7 @@ export default async function Home() {
               label="Community first"
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="soft-image relative min-h-[240px]"
-              direction="down"
+              direction="left"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent" />
               <p className="absolute bottom-0 left-0 p-4 font-display text-lg text-paper">Community first</p>

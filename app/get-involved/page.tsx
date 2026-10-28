@@ -167,7 +167,7 @@ export default function GetInvolvedPage() {
       </section>
       <section className="mx-auto max-w-6xl px-5 py-12">
         <h2 className="font-display text-3xl text-forest-900">Join the work on the ground</h2>
-        <PhotoCarousel photos={involvementGallery} label="Ways to get involved" direction="down" />
+        <PhotoCarousel photos={involvementGallery} label="Ways to get involved" direction="left" />
       </section>
     </>
   );

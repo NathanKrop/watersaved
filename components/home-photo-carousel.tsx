@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState, type ReactNode } from "react";
 import type { CarouselPhoto } from "@/components/photo-carousel";
 
-type SlideDirection = "left" | "right" | "up" | "down";
+type SlideDirection = "left" | "right";
 
 export function HomePhotoCarousel({
   photos,
@@ -62,16 +62,12 @@ export function HomePhotoCarousel({
           const relativeIndex = (index - activeIndex + photos.length) % photos.length;
           const offset = relativeIndex > photos.length / 2 ? relativeIndex - photos.length : relativeIndex;
           const horizontalOffset = direction === "left" ? offset : -offset;
-          const verticalOffset = direction === "up" ? offset : -offset;
-          const transform = direction === "left" || direction === "right"
-            ? `translateX(${horizontalOffset * 100}%)`
-            : `translateY(${verticalOffset * 100}%)`;
 
           return (
           <div
             key={photo.src}
             className="absolute inset-0 transition-transform duration-500 ease-in-out motion-reduce:transition-none"
-            style={{ transform }}
+            style={{ transform: `translateX(${horizontalOffset * 100}%)` }}
             role="group"
             aria-roledescription="slide"
             aria-label={`${index + 1} of ${photos.length}`}
